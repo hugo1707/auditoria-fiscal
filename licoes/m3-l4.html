@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>3.4 cBenef: o código do benefício fiscal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m3-l4">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 3</span>Tabelas nacionais: CFOP, CST, CSOSN e cBenef</div>
+  <div class="cell"><span>Lição</span>3.4</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>NT 2016.002 e NT 2019.001</div>
+</div>
+<h1>cBenef: o código do benefício fiscal</h1>
+<p class="obj">Entender o cBenef, a tabela cBenef × CST e as regras de validação associadas.</p>
+<div class="content">
+<p>O campo <code>cBenef</code> (I05f, "Código de Benefício Fiscal na UF aplicado ao item") foi criado no leiaute da NF-e/NFC-e pela <strong>NT 2016.002</strong>. As regras de validação e a obrigatoriedade vieram com a <strong>NT 2019.001</strong>, e cada UF publica sua <strong>Tabela cBenef × CST</strong> no Portal Nacional da NF-e.</p>
+<h3>Quando se usa</h3>
+<p>Nos itens com isenção, redução de base de cálculo, diferimento, suspensão ou não incidência, nas UFs que adotam o campo. O código tem estrutura com a sigla da UF seguida de dígitos que indicam o tipo de benefício e o sequencial.</p>
+<h3>Regras de validação (NT 2019.001)</h3>
+<ul>
+<li>CST que exige benefício, sem cBenef → rejeição.</li>
+<li>cBenef informado para CST sem benefício → rejeição.</li>
+<li>cBenef incompatível com o CST e a UF, segundo a tabela → rejeição.</li>
+</ul>
+<p>Quando a desoneração existe mas não há código na tabela, a própria orientação permite o literal <code>SEM CBENEF</code>, nas UFs que o aceitam.</p>
+<h3>Desdobramentos</h3>
+<p>Notas Técnicas posteriores ampliaram a identificação de benefícios no item (por exemplo, códigos de crédito presumido). Confira sempre a NT vigente e a tabela da sua UF.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>O cBenef transforma a renúncia em dado estruturado: some vICMSDeson por cBenef e compare com os requisitos de cada benefício (produto, destinatário, termo de acordo). Benefício usado por quem não cumpre a condição é glosa direta.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>NT 2016.002 (criação do campo I05f — cBenef)</li><li>NT 2019.001 (regras de validação e Tabela cBenef × CST)</li><li>Tabela cBenef × CST da UF — Portal Nacional da NF-e, seção Documentos</li><li>Legislação da UF que concede o benefício</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual NT criou o campo cBenef?</summary><p>A NT 2016.002.</p></details><details class="q"><summary><span class="qn">2</span>O que acontece se o item tiver CST 40 e não trouxer cBenef, em UF que exige?</summary><p>A NF-e é rejeitada, conforme as regras da NT 2019.001.</p></details><details class="q"><summary><span class="qn">3</span>Onde o auditor consulta os códigos válidos?</summary><p>Na Tabela cBenef × CST publicada pela UF no Portal Nacional da NF-e.</p></details></section>
+<button class="done-btn" type="button" data-id="m3-l4">Marcar lição como concluída</button>
+<nav class="pager"><a href="m3-l3.html" class="prev"><small>Anterior</small>3.3 CSOSN: o Simples Nacional no documento</a><a href="m4-l1.html" class="next"><small>Próxima</small>4.1 CT-e e CT-e OS: modelos, modais e participantes</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

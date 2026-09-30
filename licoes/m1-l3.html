@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>1.3 Documentos fiscais eletrônicos: o modelo nacional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m1-l3">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 1</span>Sistema Público de Escrituração Digital</div>
+  <div class="cell"><span>Lição</span>1.3</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Ajustes SINIEF 07/05, 09/07, 21/10, 19/16</div>
+</div>
+<h1>Documentos fiscais eletrônicos: o modelo nacional</h1>
+<p class="obj">Reconhecer os modelos de documento, o papel da autorização de uso e o vocabulário comum aos manuais (MOC).</p>
+<div class="content">
+<p>Todos os documentos fiscais eletrônicos seguem a mesma arquitetura: o emitente gera um arquivo XML, assina digitalmente, transmite à SEFAZ autorizadora e só depois da <strong>Autorização de Uso</strong> o documento passa a ter validade jurídica. Os documentos auxiliares (DANFE, DACTE, DAMDFE) são apenas representações gráficas simplificadas.</p>
+<div class="tbl"><table>
+<tr><th>Documento</th><th>Modelo</th><th>Norma de instituição</th><th>Manual</th></tr>
+<tr><td>NF-e</td><td>55</td><td>Ajuste SINIEF 07/2005</td><td>MOC NF-e/NFC-e 7.0</td></tr>
+<tr><td>NFC-e</td><td>65</td><td>Ajuste SINIEF 19/2016</td><td>MOC NF-e/NFC-e 7.0</td></tr>
+<tr><td>CT-e</td><td>57</td><td>Ajuste SINIEF 09/2007</td><td>MOC CT-e 4.00</td></tr>
+<tr><td>CT-e OS</td><td>67</td><td>Ajuste SINIEF 09/2007</td><td>MOC CT-e 4.00</td></tr>
+<tr><td>MDF-e</td><td>58</td><td>Ajuste SINIEF 21/2010</td><td>MOC MDF-e 3.0b</td></tr>
+</table></div>
+<h3>Autorizadores</h3>
+<p>Algumas UFs mantêm ambiente próprio; as demais usam as SEFAZ Virtuais (SVRS, SVAN). O Ambiente Nacional recebe cópia dos documentos e distribui eventos, o que permite a qualquer fisco interessado consultar um documento emitido em outra UF.</p>
+<h3>Como o leiaute muda</h3>
+<p>O MOC traz a estrutura base (leiaute, regras de validação, webservices). Entre uma versão e outra do MOC, as alterações entram por <strong>Notas Técnicas</strong> (NT), numeradas por ano (ex.: NT 2019.001). Ao estudar um campo, sempre confirme se alguma NT posterior alterou sua regra.</p>
+<h3>Situações do documento</h3>
+<p>Autorizado, cancelado, denegado ou número inutilizado. Um documento rejeitado <em>não existe</em> juridicamente; um denegado existe, tem o número consumido, mas não pode acobertar a operação.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Nunca trabalhe com o DANFE ou uma planilha do contribuinte como fonte primária. A fonte é o XML autorizado, com seus eventos, obtido na base do fisco.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/2005 (NF-e)</li><li>Ajuste SINIEF 19/2016 (NFC-e)</li><li>Ajuste SINIEF 09/2007 (CT-e e CT-e OS)</li><li>Ajuste SINIEF 21/2010 (MDF-e)</li><li>Portal Nacional da NF-e — nfe.fazenda.gov.br (MOC e Notas Técnicas)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>A partir de quando a NF-e tem validade jurídica?</summary><p>A partir da concessão da Autorização de Uso pela SEFAZ autorizadora.</p></details><details class="q"><summary><span class="qn">2</span>Qual a diferença entre NF-e rejeitada e NF-e denegada?</summary><p>A rejeitada não gera documento nem consome número. A denegada consome o número e fica registrada, mas não pode acobertar a circulação.</p></details><details class="q"><summary><span class="qn">3</span>Como o leiaute evolui entre versões do MOC?</summary><p>Por meio de Notas Técnicas publicadas no portal nacional.</p></details></section>
+<button class="done-btn" type="button" data-id="m1-l3">Marcar lição como concluída</button>
+<nav class="pager"><a href="m1-l2.html" class="prev"><small>Anterior</small>1.2 A EFD ICMS/IPI dentro do SPED</a><a href="m2-l1.html" class="next"><small>Próxima</small>2.1 Ciclo de vida e chave de acesso</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

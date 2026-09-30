@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>4.2 Tipos de CT-e, tipos de serviço e ICMS no transporte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m4-l2">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 4</span>CT-e e CT-e OS (MOC 4.00)</div>
+  <div class="cell"><span>Lição</span>4.2</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>MOC CT-e 4.00 — grupos ide e imp</div>
+</div>
+<h1>Tipos de CT-e, tipos de serviço e ICMS no transporte</h1>
+<p class="obj">Classificar o CT-e pelo tipo e pelo serviço e ler o grupo de ICMS da prestação.</p>
+<div class="content">
+<h3>tpCTe</h3>
+<p>0 normal; 1 complementar de valores; 3 substituto. Na versão 4.00 não há mais o CT-e de anulação (veja a próxima lição).</p>
+<h3>tpServ</h3>
+<p>0 normal; 1 subcontratação; 2 redespacho; 3 redespacho intermediário; 4 serviço vinculado a multimodal. Em subcontratação e redespacho, o CT-e referencia o documento anterior da cadeia.</p>
+<h3>Grupo imp — ICMS da prestação</h3>
+<div class="tbl"><table>
+<tr><td>ICMS00</td><td>Tributação normal</td></tr>
+<tr><td>ICMS20</td><td>Com redução de base de cálculo</td></tr>
+<tr><td>ICMS45</td><td>Isento (40), não tributado (41) ou diferido (51)</td></tr>
+<tr><td>ICMS60</td><td>Cobrado por substituição tributária (responsabilidade atribuída ao tomador)</td></tr>
+<tr><td>ICMS90</td><td>Outros</td></tr>
+<tr><td>ICMSOutraUF</td><td>ICMS devido a UF diversa da de origem</td></tr>
+<tr><td>ICMSSN</td><td>Emitente do Simples Nacional</td></tr>
+</table></div>
+<p>A regra material de responsabilidade (quando o tomador deve reter e recolher) está na legislação de cada UF e em convênios; o XML apenas reflete a opção feita.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>CT-e com ICMS60 tira o débito do transportador e o coloca no tomador. Se o tomador é contribuinte da sua UF, verifique se ele recolheu esse imposto — é comum ninguém recolher.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>MOC CT-e 4.00 — leiaute, grupo ide (tpCTe, tpServ) e grupo imp (ICMS)</li><li>LC nº 87/1996, arts. 11, II e 12, V (local e fato gerador na prestação de transporte)</li><li>Legislação da UF sobre substituição tributária no transporte</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Quais valores de tpCTe existem na versão 4.00?</summary><p>0 normal, 1 complementar e 3 substituto.</p></details><details class="q"><summary><span class="qn">2</span>O que é redespacho?</summary><p>Quando o transportador contratado repassa a outro transportador parte do trajeto, que emite CT-e com tpServ de redespacho referenciando o anterior.</p></details><details class="q"><summary><span class="qn">3</span>Qual grupo de ICMS é usado para prestação isenta?</summary><p>ICMS45 (isento, não tributado ou diferido).</p></details></section>
+<button class="done-btn" type="button" data-id="m4-l2">Marcar lição como concluída</button>
+<nav class="pager"><a href="m4-l1.html" class="prev"><small>Anterior</small>4.1 CT-e e CT-e OS: modelos, modais e participantes</a><a href="m4-l3.html" class="next"><small>Próxima</small>4.3 Eventos, correção e substituição do CT-e</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

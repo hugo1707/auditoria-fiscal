@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>2.6 Contingência e particularidades da NFC-e</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m2-l6">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
+  <div class="cell"><span>Lição</span>2.6</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 e Ajuste SINIEF 19/2016</div>
+</div>
+<h1>Contingência e particularidades da NFC-e</h1>
+<p class="obj">Conhecer as formas de emissão em contingência e as regras que distinguem a NFC-e da NF-e.</p>
+<div class="content">
+<h3>Formas de emissão (tpEmis)</h3>
+<div class="tbl"><table>
+<tr><th>tpEmis</th><th>Forma</th></tr>
+<tr><td>1</td><td>Normal</td></tr>
+<tr><td>2</td><td>Contingência FS-IA (formulário de segurança)</td></tr>
+<tr><td>4</td><td>EPEC — evento prévio de emissão em contingência</td></tr>
+<tr><td>5</td><td>Contingência FS-DA</td></tr>
+<tr><td>6</td><td>SVC-AN (SEFAZ Virtual de Contingência Ambiente Nacional)</td></tr>
+<tr><td>7</td><td>SVC-RS</td></tr>
+<tr><td>9</td><td>Contingência off-line da NFC-e</td></tr>
+</table></div>
+<p>Nas contingências em que a nota é emitida sem autorização prévia, o XML deve ser transmitido assim que cessar o problema, nos prazos do MOC e da legislação.</p>
+<h3>NFC-e (modelo 65)</h3>
+<ul>
+<li>Instituída pelo Ajuste SINIEF 19/2016 para operações com <strong>consumidor final</strong>, em regra presenciais ou com entrega em domicílio, e <strong>internas</strong> (idDest=1).</li>
+<li>O DANFE NFC-e traz QR Code gerado com o CSC (Código de Segurança do Contribuinte), permitindo a consulta pelo consumidor.</li>
+<li>A identificação do destinatário é, em regra, opcional, salvo nos casos previstos pela UF (ex.: valores acima de limite, entrega em domicílio).</li>
+<li>Não é documento hábil para operações com contribuinte que vá revender ou para operações interestaduais.</li>
+</ul>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Emissão em contingência recorrente, em dias sem indisponibilidade registrada da SEFAZ, merece atenção: há notas off-line que nunca chegam a ser transmitidas. Compare a sequência numérica da NFC-e com a base autorizada e procure lacunas não inutilizadas.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — grupo B (tpEmis) e seção de contingência</li><li>Ajuste SINIEF 19/2016 (NFC-e)</li><li>Legislação da UF sobre CSC, QR Code e limites de identificação</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual tpEmis corresponde à contingência off-line da NFC-e?</summary><p>tpEmis = 9.</p></details><details class="q"><summary><span class="qn">2</span>A NFC-e pode acobertar venda interestadual?</summary><p>Não. É destinada a operações internas com consumidor final.</p></details><details class="q"><summary><span class="qn">3</span>Para que serve o CSC?</summary><p>Para gerar o hash do QR Code, garantindo a autenticidade da consulta pelo consumidor.</p></details></section>
+<button class="done-btn" type="button" data-id="m2-l6">Marcar lição como concluída</button>
+<nav class="pager"><a href="m2-l5.html" class="prev"><small>Anterior</small>2.5 Eventos: cancelamento, CC-e, inutilização e manifestação</a><a href="m3-l1.html" class="next"><small>Próxima</small>3.1 CFOP: a natureza da operação</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

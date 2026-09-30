@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>2.4 A tributação no item</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m2-l4">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
+  <div class="cell"><span>Lição</span>2.4</div>
+  <div class="cell"><span>Tempo</span>25 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 — grupos M, N, NA, O, Q, S</div>
+</div>
+<h1>A tributação no item</h1>
+<p class="obj">Ler os grupos de ICMS, ICMS-ST, FCP, DIFAL, IPI, PIS e COFINS do item.</p>
+<div class="content">
+<h3>Grupo N — ICMS</h3>
+<p>O XML tem um subgrupo para cada situação tributária (ICMS00, ICMS10, ICMS20, ICMS30, ICMS40, ICMS51, ICMS60, ICMS70, ICMS90, ICMSPart, ICMSST e os ICMSSN do Simples). Campos principais:</p>
+<ul>
+<li><code>orig</code> e <code>CST</code> (ou <code>CSOSN</code>).</li>
+<li><code>modBC</code>: 0 MVA; 1 pauta; 2 preço tabelado máximo; 3 valor da operação.</li>
+<li><code>vBC, pRedBC, pICMS, vICMS</code>.</li>
+<li><code>vICMSDeson</code> e <code>motDesICMS</code>: valor e motivo da desoneração.</li>
+<li>ST: <code>modBCST, pMVAST, pRedBCST, vBCST, pICMSST, vICMSST</code>.</li>
+<li>ST retida anteriormente (CST 60 / CSOSN 500): <code>vBCSTRet, vICMSSTRet</code> e correlatos.</li>
+<li>FCP: <code>vBCFCP, pFCP, vFCP</code> e equivalentes na ST.</li>
+</ul>
+<h3>Grupo NA — ICMSUFDest</h3>
+<p>Usado na venda interestadual a consumidor final não contribuinte: base e alíquota interna da UF de destino, alíquota interestadual e valor devido ao destino (vICMSUFDest).</p>
+<h3>IPI, PIS e COFINS</h3>
+<p>Grupos O, Q e S, cada um com CST próprio. O valor do IPI integra a base do ICMS quando a operação é destinada a consumidor final ou uso e consumo.</p>
+<h3>Reforma Tributária</h3>
+<p>Notas Técnicas da Reforma do Consumo (a partir da NT 2025.002) incluíram grupos de IBS e CBS no item. Eles convivem com o ICMS no período de transição e não substituem os campos acima.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Três verificações rápidas no item: (1) vICMSDeson sempre acompanha motDesICMS e, onde exigido, cBenef; (2) pICMS coerente com idDest e com a alíquota interna/interestadual; (3) CST 60 só faz sentido para quem recebeu a mercadoria com ST já retida — um substituto usando 60 está deixando de reter.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — Anexo I, grupo N (ICMS) e subgrupos, grupo NA (ICMSUFDest), grupos O, Q, S</li><li>EC nº 87/2015 e LC nº 190/2022 (DIFAL)</li><li>NT 2025.002 e seguintes (IBS/CBS)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Em quais campos o XML informa a desoneração do ICMS?</summary><p>vICMSDeson (valor) e motDesICMS (motivo), nos grupos que admitem desoneração.</p></details><details class="q"><summary><span class="qn">2</span>Para que serve o grupo ICMSUFDest?</summary><p>Para informar o DIFAL devido à UF de destino em operação interestadual com consumidor final não contribuinte.</p></details><details class="q"><summary><span class="qn">3</span>Um item com CST 60 deve ter vICMS destacado?</summary><p>Não. CST 60 indica ICMS cobrado anteriormente por ST; informam-se os valores de ST retida anteriormente, não débito próprio.</p></details></section>
+<button class="done-btn" type="button" data-id="m2-l4">Marcar lição como concluída</button>
+<nav class="pager"><a href="m2-l3.html" class="prev"><small>Anterior</small>2.3 Itens, totais, transporte e pagamento</a><a href="m2-l5.html" class="next"><small>Próxima</small>2.5 Eventos: cancelamento, CC-e, inutilização e manifestação</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

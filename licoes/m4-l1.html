@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>4.1 CT-e e CT-e OS: modelos, modais e participantes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m4-l1">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 4</span>CT-e e CT-e OS (MOC 4.00)</div>
+  <div class="cell"><span>Lição</span>4.1</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 09/2007; MOC CT-e 4.00</div>
+</div>
+<h1>CT-e e CT-e OS: modelos, modais e participantes</h1>
+<p class="obj">Distinguir CT-e e CT-e OS e identificar cada participante da prestação, com atenção ao tomador.</p>
+<div class="content">
+<p>O <strong>Ajuste SINIEF 09/2007</strong> instituiu o CT-e (modelo 57), usado na prestação de serviço de transporte de cargas, e o CT-e OS (modelo 67), para outros serviços de transporte, como transporte de pessoas, de valores e de excesso de bagagem. A representação gráfica é o DACTE (ou DACTE OS).</p>
+<h3>Modais (campo modal)</h3>
+<p>01 rodoviário; 02 aéreo; 03 aquaviário; 04 ferroviário; 05 dutoviário; 06 multimodal.</p>
+<h3>Participantes</h3>
+<div class="tbl"><table>
+<tr><td>Remetente</td><td>Quem envia a carga (normalmente o emitente da NF-e)</td></tr>
+<tr><td>Expedidor</td><td>Quem entrega a carga ao transportador, quando não é o remetente</td></tr>
+<tr><td>Recebedor</td><td>Quem recebe a carga do transportador, quando não é o destinatário</td></tr>
+<tr><td>Destinatário</td><td>Destinatário final da carga</td></tr>
+<tr><td>Tomador</td><td>Quem contrata e paga o serviço</td></tr>
+</table></div>
+<p>O tomador é indicado em <code>toma3</code> (0 remetente, 1 expedidor, 2 recebedor, 3 destinatário) ou em <code>toma4</code> (4 outros, com identificação completa).</p>
+<h3>Vínculo com a carga</h3>
+<p>No CT-e normal, o grupo de documentos (<code>infDoc</code>) relaciona as chaves das NF-e transportadas. É esse elo que permite cruzar frete, mercadoria e manifesto.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Só o tomador contribuinte pode se creditar do ICMS do frete, e apenas quando o frete compõe o custo da sua operação tributada. Confira se quem escriturou o CT-e com crédito é, de fato, o tomador informado no XML.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 09/2007 — cláusula primeira (CT-e e CT-e OS)</li><li>MOC CT-e 4.00 — leiaute: ide (modal, toma3/toma4), rem, exped, receb, dest, infCTeNorm/infDoc</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual o modelo do CT-e OS e para que serve?</summary><p>Modelo 67; serviços de transporte de pessoas, valores e excesso de bagagem.</p></details><details class="q"><summary><span class="qn">2</span>O que significa toma3 = 3?</summary><p>O tomador do serviço é o destinatário.</p></details><details class="q"><summary><span class="qn">3</span>Como o CT-e se liga às mercadorias transportadas?</summary><p>Pelas chaves das NF-e informadas no grupo de documentos (infDoc).</p></details></section>
+<button class="done-btn" type="button" data-id="m4-l1">Marcar lição como concluída</button>
+<nav class="pager"><a href="m3-l4.html" class="prev"><small>Anterior</small>3.4 cBenef: o código do benefício fiscal</a><a href="m4-l2.html" class="next"><small>Próxima</small>4.2 Tipos de CT-e, tipos de serviço e ICMS no transporte</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

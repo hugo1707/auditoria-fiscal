@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>7.2 NF-e × C100/C190: documento e valores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m7-l2">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 7</span>Cruzamentos entre DF-e e EFD</div>
+  <div class="cell"><span>Lição</span>7.2</div>
+  <div class="cell"><span>Tempo</span>25 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Guia Prático v3.2.2 — C100/C190; MOC 7.0 — grupo W</div>
+</div>
+<h1>NF-e × C100/C190: documento e valores</h1>
+<p class="obj">Aplicar os testes de situação, totais e analítico entre o XML da NF-e e a escrituração.</p>
+<div class="content">
+<h3>Teste 1 — situação</h3>
+<p>Autorizada ↔ COD_SIT 00/01/06/07/08; cancelada ↔ 02/03; denegada ↔ 04; inutilizada ↔ 05. NF-e cancelada escriturada como regular de entrada gera crédito indevido; autorizada escriturada como cancelada omite débito.</p>
+<h3>Teste 2 — totais do documento</h3>
+<div class="tbl"><table>
+<tr><th>XML (W02)</th><th>EFD (C100)</th></tr>
+<tr><td>vNF</td><td>VL_DOC</td></tr>
+<tr><td>vProd</td><td>VL_MERC</td></tr>
+<tr><td>vBC / vICMS</td><td>VL_BC_ICMS / VL_ICMS</td></tr>
+<tr><td>vBCST / vST</td><td>VL_BC_ICMS_ST / VL_ICMS_ST</td></tr>
+<tr><td>vIPI</td><td>VL_IPI</td></tr>
+</table></div>
+<h3>Teste 3 — analítico</h3>
+<p>Agrupe os itens do XML por CST, CFOP e alíquota e compare com os C190. Nas entradas, lembre que o CFOP escriturado é o do destinatário e que o crédito só é admitido sobre o imposto destacado e legítimo.</p>
+<h3>Teste 4 — datas</h3>
+<p>DT_DOC deve coincidir com a emissão. DT_E_S define o período de escrituração da entrada; créditos antecipados em relação à entrada física são um padrão comum.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Diferença pequena e sistemática entre vICMS do XML e VL_ICMS do C100 de entradas, sempre a favor do contribuinte, costuma ser crédito calculado sobre alíquota errada ou sobre ST/IPI. Olhe o padrão, não a nota isolada.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Guia Prático da EFD v3.2.2 — C100 (campos e exceções) e C190</li><li>MOC NF-e/NFC-e 7.0 — grupo W (totais) e regras de validação</li><li>LC nº 87/1996, art. 23 (idoneidade da documentação)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>A qual campo do C100 corresponde o vNF?</summary><p>VL_DOC.</p></details><details class="q"><summary><span class="qn">2</span>Uma NF-e cancelada aparece na EFD do destinatário como regular com crédito. Qual a consequência?</summary><p>Crédito indevido, pois apoiado em documento sem validade.</p></details><details class="q"><summary><span class="qn">3</span>Como se testa o C190 de uma NF-e de entrada?</summary><p>Agrupando os itens do XML por CST, CFOP e alíquota e comparando com os valores escriturados, observando que o CFOP deve ser o da entrada.</p></details></section>
+<button class="done-btn" type="button" data-id="m7-l2">Marcar lição como concluída</button>
+<nav class="pager"><a href="m7-l1.html" class="prev"><small>Anterior</small>7.1 A lógica do cruzamento</a><a href="m7-l3.html" class="next"><small>Próxima</small>7.3 CT-e e MDF-e × NF-e × EFD</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

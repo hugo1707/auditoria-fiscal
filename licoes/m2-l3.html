@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>2.3 Itens, totais, transporte e pagamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m2-l3">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
+  <div class="cell"><span>Lição</span>2.3</div>
+  <div class="cell"><span>Tempo</span>25 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 — grupos I, W, X, YA, Z</div>
+</div>
+<h1>Itens, totais, transporte e pagamento</h1>
+<p class="obj">Identificar os campos do item e do total que sustentam cruzamentos quantitativos e de valores.</p>
+<div class="content">
+<h3>Grupo I — prod</h3>
+<p>cProd, cEAN, xProd, <strong>NCM</strong>, <strong>CEST</strong>, <strong>CFOP</strong>, e dois conjuntos de unidade: comercial (<code>uCom, qCom, vUnCom</code>) e tributável (<code>uTrib, qTrib, vUnTrib</code>). Seguem vProd, vFrete, vSeg, vDesc, vOutro e indTot (se o item compõe o total).</p>
+<h3>Grupo W — total (ICMSTot)</h3>
+<p>Soma dos itens: vBC, vICMS, vICMSDeson, vFCP, vBCST, vST, vProd, vFrete, vSeg, vDesc, vII, vIPI, vPIS, vCOFINS, vOutro e <strong>vNF</strong>. As regras de validação do MOC exigem que cada total seja igual à soma dos itens e que o vNF resulte da fórmula (produtos, menos descontos e ICMS desonerado quando deduzido, mais ST, frete, seguro, outras despesas, II e IPI).</p>
+<h3>Grupo X — transp</h3>
+<p><strong>modFrete</strong>: 0 por conta do remetente (CIF); 1 por conta do destinatário (FOB); 2 terceiros; 3 transporte próprio do remetente; 4 transporte próprio do destinatário; 9 sem ocorrência de transporte. Também traz transportadora, veículo e volumes.</p>
+<h3>Grupo YA — pag</h3>
+<p>Forma de pagamento (<code>tPag</code>: dinheiro, cartões, PIX etc.) e, para cartões, dados do credenciador. É a ponte com as informações das instituições de pagamento.</p>
+<h3>Grupo Z — infAdic</h3>
+<p>infAdFisco e infCpl: onde o emitente cita o dispositivo legal do benefício, da ST ou do diferimento.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Para levantamento quantitativo, use qTrib/uTrib ou normalize qCom/uCom com os fatores de conversão da EFD (registro 0220). O modFrete decide quem pode se creditar do ICMS do frete — guarde esse campo para o cruzamento com o CT-e.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — Anexo I, grupos I (prod), W (total), X (transp), YA (pag), Z (infAdic)</li><li>MOC 7.0 — regras de validação do grupo W (totais)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual a diferença entre unidade comercial e unidade tributável?</summary><p>A comercial é a usada na venda (ex.: caixa); a tributável é a unidade de referência para tributação (ex.: unidade, kg), com quantidade e valor unitário próprios.</p></details><details class="q"><summary><span class="qn">2</span>O que significa modFrete = 1?</summary><p>Frete por conta do destinatário (FOB).</p></details><details class="q"><summary><span class="qn">3</span>Onde o emitente deve indicar o fundamento legal de um benefício?</summary><p>Em informações adicionais (infAdFisco/infCpl) e, nas UFs que exigem, no campo cBenef do item.</p></details></section>
+<button class="done-btn" type="button" data-id="m2-l3">Marcar lição como concluída</button>
+<nav class="pager"><a href="m2-l2.html" class="prev"><small>Anterior</small>2.2 Identificação da operação e das partes</a><a href="m2-l4.html" class="next"><small>Próxima</small>2.4 A tributação no item</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

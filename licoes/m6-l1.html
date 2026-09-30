@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>6.1 Estrutura do arquivo e Bloco 0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m6-l1">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 6</span>EFD ICMS/IPI (Guia Prático 3.2.2)</div>
+  <div class="cell"><span>Lição</span>6.1</div>
+  <div class="cell"><span>Tempo</span>25 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Guia Prático da EFD v3.2.2 — Cap. I, II e Bloco 0</div>
+</div>
+<h1>Estrutura do arquivo e Bloco 0</h1>
+<p class="obj">Navegar pela hierarquia do arquivo e entender os cadastros do Bloco 0.</p>
+<div class="content">
+<h3>Blocos</h3>
+<div class="tbl"><table>
+<tr><td>0</td><td>Abertura, identificação e referências (cadastros)</td></tr>
+<tr><td>B</td><td>Escrituração do ISS (apenas DF)</td></tr>
+<tr><td>C</td><td>Documentos fiscais I — mercadorias (ICMS/IPI)</td></tr>
+<tr><td>D</td><td>Documentos fiscais II — serviços (ICMS)</td></tr>
+<tr><td>E</td><td>Apuração do ICMS e do IPI</td></tr>
+<tr><td>G</td><td>CIAP — crédito do ativo permanente</td></tr>
+<tr><td>H</td><td>Inventário físico</td></tr>
+<tr><td>K</td><td>Controle da produção e do estoque</td></tr>
+<tr><td>1</td><td>Outras informações</td></tr>
+<tr><td>9</td><td>Controle e encerramento</td></tr>
+</table></div>
+<p>Os registros são hierárquicos (nível 0 a 4+): um registro "filho" só existe dentro do "pai". Cada bloco tem abertura (x001) e encerramento (x990).</p>
+<h3>Bloco 0 — o que usar na auditoria</h3>
+<ul>
+<li><strong>0000</strong>: período, CNPJ, IE, perfil (A, B ou C, definido pela UF) e finalidade (original ou substituto).</li>
+<li><strong>0150</strong>: participantes (fornecedores e clientes).</li>
+<li><strong>0190</strong>: unidades de medida.</li>
+<li><strong>0200</strong>: cadastro de itens, com NCM, tipo de item e código do produto.</li>
+<li><strong>0220</strong>: fatores de conversão entre a unidade do documento e a unidade de estoque.</li>
+</ul>
+<h3>Novidade da versão 3.2.2</h3>
+<p>Vigente a partir de janeiro/2026, incluiu a exceção nº 11 no C100 e orientou que documentos com informações exclusivamente dos novos tributos da Reforma do Consumo (sem ICMS ou IPI) não sejam escriturados; os documentos das operações do Ajuste SINIEF 49/2025 que envolvam também ICMS ou IPI continuam escriturados quanto a esses tributos.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>O 0200 e o 0220 são a base do levantamento quantitativo. Códigos de item reaproveitados para produtos diferentes, ou fatores de conversão ausentes, distorcem estoques — documente isso antes de concluir por omissão.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Guia Prático da EFD ICMS/IPI v3.2.2 — Capítulo I, Capítulo II e Bloco 0 (0000, 0150, 0190, 0200, 0220)</li><li>Ato COTEPE/ICMS 44/2018</li><li>Comunicado do Portal SPED de 25/03/2026 (publicação da v3.2.2)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual bloco contém a apuração do ICMS?</summary><p>O Bloco E.</p></details><details class="q"><summary><span class="qn">2</span>Para que serve o registro 0220?</summary><p>Informar fatores de conversão entre a unidade do documento fiscal e a unidade de controle de estoque do item.</p></details><details class="q"><summary><span class="qn">3</span>O que mudou no C100 com a versão 3.2.2?</summary><p>Inclusão da exceção nº 11 e da orientação de não escriturar documentos exclusivamente de IBS/CBS, sem ICMS ou IPI.</p></details></section>
+<button class="done-btn" type="button" data-id="m6-l1">Marcar lição como concluída</button>
+<nav class="pager"><a href="m5-l2.html" class="prev"><small>Anterior</small>5.2 Eventos do MDF-e e prova de circulação</a><a href="m6-l2.html" class="next"><small>Próxima</small>6.2 Bloco C: C100, C170 e C190</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>3.1 CFOP: a natureza da operação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m3-l1">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 3</span>Tabelas nacionais: CFOP, CST, CSOSN e cBenef</div>
+  <div class="cell"><span>Lição</span>3.1</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Convênio s/nº de 1970 (SINIEF) — Anexo do CFOP</div>
+</div>
+<h1>CFOP: a natureza da operação</h1>
+<p class="obj">Decodificar a estrutura do CFOP e relacioná-lo com o destino e com a escrituração.</p>
+<div class="content">
+<p>O Código Fiscal de Operações e Prestações consta do anexo ao <strong>Convênio s/nº de 15/12/1970</strong> (SINIEF), com as alterações de Ajustes SINIEF posteriores.</p>
+<h3>Primeiro dígito</h3>
+<div class="tbl"><table>
+<tr><th>Entradas</th><th>Saídas</th><th>Abrangência</th></tr>
+<tr><td>1</td><td>5</td><td>Dentro do Estado</td></tr>
+<tr><td>2</td><td>6</td><td>Outro Estado</td></tr>
+<tr><td>3</td><td>7</td><td>Exterior</td></tr>
+</table></div>
+<p>O segundo dígito indica o grupo (ex.: x.1xx compras/vendas; x.4xx operações com ST; x.5xx ativo e consumo nas entradas / remessas de industrialização e depósito nas saídas conforme o grupo; x.9xx outras). Os dois últimos detalham a operação.</p>
+<h3>CFOPs que aparecem muito em auditoria</h3>
+<div class="tbl"><table>
+<tr><td>5.102 / 6.102</td><td>Venda de mercadoria adquirida de terceiros</td></tr>
+<tr><td>5.405</td><td>Venda de mercadoria com ST, adquirida de terceiros, na condição de substituído</td></tr>
+<tr><td>1.556 / 2.556</td><td>Compra de material para uso ou consumo</td></tr>
+<tr><td>1.551 / 2.551</td><td>Compra de bem para o ativo imobilizado</td></tr>
+<tr><td>5.910 / 6.910</td><td>Remessa em bonificação, doação ou brinde</td></tr>
+<tr><td>5.949 / 6.949</td><td>Outra saída não especificada</td></tr>
+<tr><td>5.929</td><td>Lançamento relativo a operação também registrada em equipamento emissor de cupom</td></tr>
+</table></div>
+<h3>Regra de coerência</h3>
+<p>O MOC valida o primeiro dígito do CFOP contra <code>tpNF</code> e <code>idDest</code>. Na escrituração, o destinatário usa o CFOP <em>de entrada</em> correspondente à sua própria operação — não copia o CFOP de saída do fornecedor.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>CFOPs genéricos (x.949) e de remessa (x.910, x.915, x.920) sem retorno ou contrapartida são o esconderijo clássico de vendas. Liste as saídas por CFOP e peça justificativa para os volumes relevantes fora do grupo x.1xx/x.4xx.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Convênio s/nº de 15/12/1970 (SINIEF) — Anexo: Código Fiscal de Operações e Prestações e notas explicativas</li><li>MOC NF-e/NFC-e 7.0 — regras de validação do CFOP (grupo I)</li><li>Guia Prático da EFD v3.2.2 — orientação do campo CFOP nos registros C170/C190</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>O que indica o CFOP 6.102?</summary><p>Venda interestadual de mercadoria adquirida ou recebida de terceiros.</p></details><details class="q"><summary><span class="qn">2</span>Qual o primeiro dígito de uma entrada vinda do exterior?</summary><p>3.</p></details><details class="q"><summary><span class="qn">3</span>Ao escriturar uma compra, o destinatário deve informar o CFOP 5.102 do fornecedor?</summary><p>Não. Deve usar o CFOP de entrada adequado à sua operação (ex.: 1.102, 1.556, 1.551).</p></details></section>
+<button class="done-btn" type="button" data-id="m3-l1">Marcar lição como concluída</button>
+<nav class="pager"><a href="m2-l6.html" class="prev"><small>Anterior</small>2.6 Contingência e particularidades da NFC-e</a><a href="m3-l2.html" class="next"><small>Próxima</small>3.2 CST do ICMS e do IPI</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

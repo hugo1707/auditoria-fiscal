@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>6.3 Bloco D: serviços de transporte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m6-l3">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 6</span>EFD ICMS/IPI (Guia Prático 3.2.2)</div>
+  <div class="cell"><span>Lição</span>6.3</div>
+  <div class="cell"><span>Tempo</span>15 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Guia Prático v3.2.2 — Bloco D</div>
+</div>
+<h1>Bloco D: serviços de transporte</h1>
+<p class="obj">Escriturar e ler CT-e e CT-e OS na EFD, do lado do transportador e do tomador.</p>
+<div class="content">
+<h3>D100 — documento de transporte</h3>
+<p>Usado para CT-e (57), CT-e OS (67) e outros modelos de conhecimento. Campos análogos ao C100: IND_OPER, IND_EMIT, COD_PART, COD_MOD, COD_SIT, SER, NUM_DOC, CHV_CTE, DT_DOC, DT_A_P (data da aquisição ou prestação), TP_CT-e, VL_DOC, VL_BC_ICMS, VL_ICMS, além de municípios de origem e destino.</p>
+<h3>D190 — analítico</h3>
+<p>Mesma lógica do C190: agrupamento por CST_ICMS, CFOP e alíquota, com valores de operação, base e ICMS. Alimenta a apuração no Bloco E.</p>
+<h3>Quem escritura</h3>
+<ul>
+<li>O transportador escritura o CT-e como saída (IND_OPER=1, IND_EMIT=0), com débito do ICMS.</li>
+<li>O tomador contribuinte escritura o CT-e como aquisição de serviço (IND_OPER=0, IND_EMIT=1), com crédito quando cabível.</li>
+</ul>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Compare o universo de CT-e em que o contribuinte é tomador (base de DF-e) com os D100 de entrada: CT-e escriturado com crédito em que o tomador é outro, ou com frete CIF pago pelo remetente, é crédito indevido.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Guia Prático da EFD v3.2.2 — Bloco D: registros D100 e D190</li><li>LC nº 87/1996, art. 20 (crédito do serviço tomado)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual registro recebe o CT-e na EFD?</summary><p>D100, com o analítico no D190.</p></details><details class="q"><summary><span class="qn">2</span>Como o tomador escritura o CT-e?</summary><p>Como entrada de serviço de terceiros (IND_OPER=0, IND_EMIT=1).</p></details><details class="q"><summary><span class="qn">3</span>O D190 alimenta qual bloco?</summary><p>O Bloco E (apuração).</p></details></section>
+<button class="done-btn" type="button" data-id="m6-l3">Marcar lição como concluída</button>
+<nav class="pager"><a href="m6-l2.html" class="prev"><small>Anterior</small>6.2 Bloco C: C100, C170 e C190</a><a href="m6-l4.html" class="next"><small>Próxima</small>6.4 Bloco E: apuração do ICMS, ST, DIFAL e IPI</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

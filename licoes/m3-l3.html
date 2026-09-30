@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>3.3 CSOSN: o Simples Nacional no documento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m3-l3">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 3</span>Tabelas nacionais: CFOP, CST, CSOSN e cBenef</div>
+  <div class="cell"><span>Lição</span>3.3</div>
+  <div class="cell"><span>Tempo</span>20 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 03/2010; LC 123/2006, art. 23</div>
+</div>
+<h1>CSOSN: o Simples Nacional no documento</h1>
+<p class="obj">Aplicar a tabela CSOSN e entender quando o optante pode transferir crédito de ICMS.</p>
+<div class="content">
+<p>Para emitentes com CRT 1, o CST da Tabela B é substituído pelo <strong>CSOSN</strong> (Código de Situação da Operação no Simples Nacional), incluído no Convênio s/nº de 1970 pelo Ajuste SINIEF 03/2010. A origem (Tabela A) continua sendo informada.</p>
+<div class="tbl"><table>
+<tr><td>101</td><td>Tributada com permissão de crédito</td></tr>
+<tr><td>102</td><td>Tributada sem permissão de crédito</td></tr>
+<tr><td>103</td><td>Isenção para faixa de receita bruta</td></tr>
+<tr><td>201</td><td>Tributada com permissão de crédito e com cobrança por ST</td></tr>
+<tr><td>202</td><td>Tributada sem permissão de crédito e com cobrança por ST</td></tr>
+<tr><td>203</td><td>Isenção para faixa de receita bruta e com cobrança por ST</td></tr>
+<tr><td>300</td><td>Imune</td></tr>
+<tr><td>400</td><td>Não tributada</td></tr>
+<tr><td>500</td><td>ICMS cobrado anteriormente por ST ou por antecipação</td></tr>
+<tr><td>900</td><td>Outros</td></tr>
+</table></div>
+<h3>Crédito ao adquirente</h3>
+<p>Pelo art. 23 da LC 123/2006, o adquirente não optante pode se creditar do ICMS pago pelo optante apenas quando a mercadoria for destinada a comercialização ou industrialização, e somente no montante informado no documento. No XML isso aparece em <code>pCredSN</code> e <code>vCredICMSSN</code> (CSOSN 101, 201 e, conforme regra, 900).</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>O adquirente em regime normal que se credita de alíquota cheia sobre compra de optante, sem vCredICMSSN no XML, está se creditando de imposto não destacado. É um dos créditos indevidos mais frequentes em EFD.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Convênio s/nº de 15/12/1970, com redação do Ajuste SINIEF 03/2010 (tabela CSOSN)</li><li>LC nº 123/2006, art. 23</li><li>MOC NF-e 7.0 — subgrupos ICMSSN101 a ICMSSN900</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual CSOSN permite crédito ao adquirente?</summary><p>101 e 201 (e 900, quando houver valor de crédito informado).</p></details><details class="q"><summary><span class="qn">2</span>Onde está o valor que o adquirente pode creditar?</summary><p>No campo vCredICMSSN, com percentual em pCredSN, e no texto das informações complementares.</p></details><details class="q"><summary><span class="qn">3</span>Uma NF-e com CRT 3 pode trazer CSOSN?</summary><p>Não. Regime normal usa CST; CSOSN é exclusivo do Simples Nacional.</p></details></section>
+<button class="done-btn" type="button" data-id="m3-l3">Marcar lição como concluída</button>
+<nav class="pager"><a href="m3-l2.html" class="prev"><small>Anterior</small>3.2 CST do ICMS e do IPI</a><a href="m3-l4.html" class="next"><small>Próxima</small>3.4 cBenef: o código do benefício fiscal</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

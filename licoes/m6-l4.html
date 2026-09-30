@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>6.4 Bloco E: apuração do ICMS, ST, DIFAL e IPI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m6-l4">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 6</span>EFD ICMS/IPI (Guia Prático 3.2.2)</div>
+  <div class="cell"><span>Lição</span>6.4</div>
+  <div class="cell"><span>Tempo</span>25 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Guia Prático v3.2.2 — Bloco E</div>
+</div>
+<h1>Bloco E: apuração do ICMS, ST, DIFAL e IPI</h1>
+<p class="obj">Reconstruir a apuração do E110 e entender os ajustes do E111.</p>
+<div class="content">
+<h3>E110 — apuração do ICMS próprio</h3>
+<p>O saldo é obtido assim:</p>
+<pre>VL_SLD_APURADO = (VL_TOT_DEBITOS + VL_AJ_DEBITOS + VL_TOT_AJ_DEBITOS + VL_ESTORNOS_CRED)
+               − (VL_TOT_CREDITOS + VL_AJ_CREDITOS + VL_TOT_AJ_CREDITOS + VL_ESTORNOS_DEB + VL_SLD_CREDOR_ANT)
+
+VL_ICMS_RECOLHER = VL_SLD_APURADO − VL_TOT_DED</pre>
+<p>Se o resultado é negativo, surge VL_SLD_CREDOR_TRANSPORTAR. VL_TOT_DEBITOS e VL_TOT_CREDITOS vêm dos registros analíticos (C190, D190 e outros) conforme o primeiro dígito do CFOP.</p>
+<h3>E111 — ajustes da apuração</h3>
+<p>Código de 8 caracteres da Tabela 5.1.1 da UF. O 3º caractere indica o tributo (0 ICMS próprio, 1 ICMS-ST, entre outros) e o 4º o tipo de ajuste: 0 outros débitos; 1 estorno de créditos; 2 outros créditos; 3 estorno de débitos; 4 deduções; 5 débitos especiais. Os registros filhos E112 e E113 identificam o processo ou os documentos que dão lastro ao ajuste.</p>
+<h3>Demais apurações</h3>
+<ul>
+<li>E116: obrigações a recolher (código de receita e vencimento).</li>
+<li>E200/E210: ICMS-ST por UF.</li>
+<li>E300/E310: DIFAL e FCP das operações interestaduais com consumidor final não contribuinte.</li>
+<li>E500/E520: apuração do IPI.</li>
+</ul>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>E111 com &#x27;outros créditos&#x27; (4º caractere 2) sem E112/E113 que o sustente é o primeiro lugar para procurar crédito sem lastro. Some os ajustes por código e peça a base legal e os documentos de cada um.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Guia Prático da EFD v3.2.2 — Bloco E: E100, E110, E111, E112, E113, E116, E200/E210, E300/E310, E500/E520</li><li>Tabela 5.1.1 da UF (códigos de ajuste da apuração)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Como se calcula o VL_ICMS_RECOLHER no E110?</summary><p>VL_SLD_APURADO menos VL_TOT_DED.</p></details><details class="q"><summary><span class="qn">2</span>O que indica o 4º caractere 2 em um código de ajuste do E111?</summary><p>Outros créditos.</p></details><details class="q"><summary><span class="qn">3</span>Em qual registro se apura o DIFAL devido à UF de destino?</summary><p>E300/E310.</p></details></section>
+<button class="done-btn" type="button" data-id="m6-l4">Marcar lição como concluída</button>
+<nav class="pager"><a href="m6-l3.html" class="prev"><small>Anterior</small>6.3 Bloco D: serviços de transporte</a><a href="m6-l5.html" class="next"><small>Próxima</small>6.5 Blocos G, H, K e 1</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

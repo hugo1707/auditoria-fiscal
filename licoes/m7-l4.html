@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>7.4 Estoques: o levantamento quantitativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+
+<article class="lesson" data-id="m7-l4">
+<div class="form">
+  <div class="cell c-mod"><span>Módulo 7</span>Cruzamentos entre DF-e e EFD</div>
+  <div class="cell"><span>Lição</span>7.4</div>
+  <div class="cell"><span>Tempo</span>25 min</div>
+  <div class="cell c-norma"><span>Norma principal</span>Guia v3.2.2 — 0200, 0220, C170, H010, K200</div>
+</div>
+<h1>Estoques: o levantamento quantitativo</h1>
+<p class="obj">Montar a equação de estoque por item com fontes da EFD e dos XML.</p>
+<div class="content">
+<h3>A equação</h3>
+<pre>Estoque inicial + Entradas − Saídas = Estoque final (calculado)
+Diferença = Estoque final inventariado − Estoque final calculado</pre>
+<ul>
+<li><strong>Estoque inicial e final</strong>: H010 dos inventários de abertura e encerramento (ou K200, se houver Bloco K).</li>
+<li><strong>Entradas</strong>: C170 das entradas.</li>
+<li><strong>Saídas</strong>: itens dos XML de NF-e e NFC-e emitidas (lembre que o C170 de emissão própria em regra não existe).</li>
+<li><strong>Conversão</strong>: normalize tudo à unidade de estoque com o 0220 e os campos de unidade do XML.</li>
+</ul>
+<h3>Leitura</h3>
+<p>Saídas calculadas maiores que as documentadas (estoque final inventariado menor que o calculado) indicam <strong>saídas sem documento</strong>. Estoque inventariado maior que o calculado indica <strong>entradas sem documento</strong>. A consequência jurídica depende da legislação da UF, que define a presunção e a base de cálculo.</p>
+<h3>Cuidados</h3>
+<p>Agrupe itens equivalentes com códigos diferentes, trate perdas documentadas, devoluções e remessas, e use o mesmo critério de unidade em todas as fontes.</p>
+</div>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>A maior parte das impugnações contra levantamentos quantitativos vence por erro de unidade ou de agrupamento de itens. Valide uma amostra de itens manualmente antes de rodar o universo.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Guia Prático da EFD v3.2.2 — 0200, 0220, C170, H005/H010, K200</li><li>MOC NF-e 7.0 — grupo I (uCom/qCom, uTrib/qTrib)</li><li>Legislação do ICMS da UF — presunções e levantamento quantitativo de estoques</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
+<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual a fonte das saídas no levantamento, se o C170 de emissão própria não existe?</summary><p>Os itens dos XML das NF-e e NFC-e emitidas.</p></details><details class="q"><summary><span class="qn">2</span>Estoque inventariado menor que o calculado indica o quê?</summary><p>Saídas sem documento fiscal.</p></details><details class="q"><summary><span class="qn">3</span>Qual registro permite converter unidades para a de estoque?</summary><p>O 0220.</p></details></section>
+<button class="done-btn" type="button" data-id="m7-l4">Marcar lição como concluída</button>
+<nav class="pager"><a href="m7-l3.html" class="prev"><small>Anterior</small>7.3 CT-e e MDF-e × NF-e × EFD</a><a href="m8-l1.html" class="next"><small>Próxima</small>8.1 Omissão de receitas</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
