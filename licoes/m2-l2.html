@@ -4,45 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>2.2 Identificação da operação e das partes</title>
+<title>2.2 Quem é obrigado: obrigatoriedade, dispensa e adesão facultativa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m2-l2">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
-  <div class="cell"><span>Lição</span>2.2</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 — grupos B, C e E</div>
-</div>
-<h1>Identificação da operação e das partes</h1>
-<p class="obj">Ler os campos que classificam a operação (tipo, finalidade, destino, consumidor final) e identificam emitente e destinatário.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 2</span>EFD ICMS/IPI — Ajuste SINIEF 02/09</div><div class="cell"><span>Lição</span>2.2</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 02/09, cláusula 3ª</div></div>
+<h1>Quem é obrigado: obrigatoriedade, dispensa e adesão facultativa</h1>
+<p class="obj">Aplicar a regra geral de obrigatoriedade e as três exceções (dispensa, indicação, adesão facultativa), incluindo o efeito de fusão, incorporação e cisão.</p>
 <div class="content">
-<h3>Grupo B — ide</h3>
-<div class="tbl"><table>
-<tr><th>Campo</th><th>Valores</th></tr>
-<tr><td>tpNF</td><td>0 entrada; 1 saída</td></tr>
-<tr><td>idDest</td><td>1 interna; 2 interestadual; 3 exterior</td></tr>
-<tr><td>finNFe</td><td>1 normal; 2 complementar; 3 ajuste; 4 devolução</td></tr>
-<tr><td>indFinal</td><td>0 normal; 1 consumidor final</td></tr>
-<tr><td>indPres</td><td>0 não se aplica; 1 presencial; 2 internet; 3 teleatendimento; 4 entrega em domicílio (NFC-e); 5 presencial fora do estabelecimento; 9 outros</td></tr>
-<tr><td>NFref</td><td>Documentos referenciados (obrigatório em devolução e complementar)</td></tr>
-</table></div>
-<h3>Grupo C — emit</h3>
-<p>CNPJ, IE, endereço e o <strong>CRT</strong> (Código de Regime Tributário): 1 Simples Nacional; 2 Simples Nacional com excesso de sublimite; 3 Regime Normal. Notas Técnicas posteriores ao MOC 7.0 incluíram código específico para o MEI — confira a NT vigente. O CRT determina se o item usa <em>CST</em> (regime normal) ou <em>CSOSN</em> (Simples).</p>
-<h3>Grupo E — dest</h3>
-<p>Identificação do destinatário e <strong>indIEDest</strong>: 1 contribuinte do ICMS; 2 contribuinte isento de inscrição; 9 não contribuinte. A combinação <code>idDest=2</code> + <code>indIEDest=9</code> caracteriza operação interestadual com consumidor final não contribuinte — hipótese do DIFAL da EC 87/2015.</p>
+<h3>A regra e o instrumento</h3>
+<p>A EFD é <strong>obrigatória para todos os contribuintes do ICMS e/ou do IPI</strong>, e a obrigatoriedade se aplica a <strong>todos os estabelecimentos</strong> do contribuinte situados no âmbito da unidade federada. A lógica é simples: não faria sentido um contribuinte entregar EFD de uma filial e deixar outra fora.</p>
+<p>O Ajuste, porém, abre uma válvula: as administrações tributárias das UFs e a RFB podem, <strong>mediante Protocolo ICMS</strong> (não "Convênio", não "decreto", não "lei"), fazer uma das duas coisas abaixo.</p>
+
+<div class="vs dois">
+<div><h4>Dispensar</h4><p>Dispensar a EFD para <strong>alguns contribuintes, um conjunto de contribuintes ou setores econômicos</strong>. Quem não foi dispensado continua obrigado, automaticamente.</p></div>
+<div><h4>Indicar</h4><p><strong>Indicar quem é obrigado</strong> (alguns contribuintes ou setores) e tornar a utilização <strong>facultativa aos demais</strong>.</p></div>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Combinações incoerentes são indícios rápidos: CRT 3 com CSOSN; finNFe=4 sem NFref; idDest=1 com destinatário de outra UF; indFinal=1 em venda para revendedor. Filtre a base por essas combinações antes de olhar item a item.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — Anexo I, grupo B (ide), grupo C (emit), grupo E (dest)</li><li>Notas Técnicas posteriores sobre CRT</li><li>EC nº 87/2015 e LC nº 190/2022 (DIFAL)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual combinação de campos indica venda interestadual a consumidor final não contribuinte?</summary><p>idDest = 2 e indIEDest = 9 (com indFinal = 1).</p></details><details class="q"><summary><span class="qn">2</span>O que o CRT define no preenchimento do item?</summary><p>Se o grupo de ICMS usa CST (regime normal, CRT 3) ou CSOSN (Simples Nacional, CRT 1 ou 2).</p></details><details class="q"><summary><span class="qn">3</span>Em que situações o grupo NFref é necessário?</summary><p>Em NF-e de devolução, complementar e de ajuste, entre outras que referenciam documento anterior.</p></details></section>
+<p>Repare no desenho: dispensar é <em>excluir</em> alguns; indicar é <em>incluir</em> alguns. Ambos são possíveis. Dizer que "não é possível indicar apenas alguns contribuintes" é um erro: é exatamente o que a norma permite.</p>
+
+<h3>Adesão facultativa: quem não é obrigado pode entrar, mas não sai</h3>
+<p>O contribuinte que <strong>não esteja obrigado</strong> pode <strong>optar</strong> por usar a EFD. A opção é <strong>irretratável</strong>: tendo entrado, não pode voltar atrás e deixar de usar. Não há "requerimento de saída". O desenho evita que o contribuinte entre e saia conforme lhe convenha, quebrando a série histórica que a fiscalização usa.</p>
+
+<h3>Dispensa não é irrevogável</h3>
+<p>A dispensa dada por Protocolo <strong>não</strong> é irretratável. A administração pode retomar a obrigatoriedade. A irretratabilidade é característica da <em>opção do contribuinte</em>, não da dispensa do fisco. A confusão entre as duas é a pegadinha mais usada.</p>
+
+<h3>Reorganização societária</h3>
+<p>Em caso de <strong>fusão, incorporação ou cisão</strong>, a obrigatoriedade da EFD <strong>se estende</strong> à empresa incorporadora, cindida ou resultante da cisão ou fusão. A obrigação segue o patrimônio e a atividade; a reorganização não é rota de fuga.</p>
+
+<h3>A EFD e o Bloco K: obrigatoriedade escalonada</h3>
+<p>Para o <strong>Bloco K</strong> (controle da produção e do estoque) a obrigatoriedade foi escalonada no tempo por <strong>faturamento</strong> e por <strong>atividade industrial (CNAE)</strong>. "Faturamento", para esse fim, é a receita bruta de venda de mercadorias de <strong>todos os estabelecimentos da empresa no território nacional</strong>, industriais ou não, excluídas as vendas canceladas, as devoluções de vendas e os descontos incondicionais concedidos. O exercício de referência é o <strong>segundo exercício anterior</strong> ao do início da obrigação. Os anos exatos de cada faixa estão no cronograma do Ajuste e mudam por alteração; confira na versão vigente.</p>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>Resolva cada hipótese, indicando a regra aplicada.</p>
+<ol>
+<li>O Protocolo ICMS 99/xx dispensa a EFD para os contribuintes do setor X. Uma empresa do setor Y, de pequeno porte, pergunta se continua obrigada.</li>
+<li>Uma empresa dispensada pelo Protocolo resolve voltar a escriturar pela EFD "por conveniência" e depois quer parar de novo.</li>
+<li>A Companhia A, obrigada à EFD, é incorporada pela Companhia B, que não era obrigada.</li>
+<li>Uma UF pretende obrigar somente os contribuintes do setor Z e deixar facultativo para os demais.</li>
+</ol>
+<div class="res">
+<p><strong>1.</strong> Continua <em>obrigada</em>. Dispensa de um setor torna "automaticamente" obrigatória a EFD para os demais, porque a regra geral é a obrigatoriedade.</p>
+<p><strong>2.</strong> Ao voltar por <em>opção</em>, a adesão é <strong>irretratável</strong>: não poderá deixar de usar depois.</p>
+<p><strong>3.</strong> A obrigatoriedade <strong>se estende</strong> à incorporadora. Companhia B passa a entregar a EFD.</p>
+<p><strong>4.</strong> Pode, via Protocolo ICMS: é a hipótese de <em>indicação</em>. A utilização fica facultativa aos demais, sujeita à irretratabilidade de quem optar.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"Mediante Convênio"</strong> ou outro instrumento: o texto fala em <strong>Protocolo ICMS</strong>.</li><li><strong>"Não é possível indicar só alguns."</strong> É possível.</li><li><strong>"Dispensa irretratável/irrevogável."</strong> Irretratável é a <em>opção</em> do contribuinte.</li><li><strong>"Quem optou pode voltar atrás por requerimento."</strong> Não.</li><li><strong>"Fusão, incorporação ou cisão não estende a obrigatoriedade."</strong> Estende.</li><li><strong>"Obrigatória por princípio da impessoalidade, sem possibilidade de dispensa."</strong> A norma prevê dispensa; a justificativa "impessoalidade" é fabricada.</li><li><strong>Obrigatoriedade só para o estabelecimento que apura:</strong> aplica-se a <em>todos</em> os estabelecimentos na UF.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>É um dos temas favoritos de Certo/Errado: muitos itens consecutivos variam uma só palavra do mesmo trecho (dispensa/indicação, retratável/irretratável, convênio/protocolo, alguns/todos).</li><li>Estilo múltipla escolha: cinco alternativas sobre o mesmo parágrafo, com uma única correta; o truque é ler a palavra-chave que muda.</li><li>Itens sobre faturamento do Bloco K apresentam a definição legal completa e testam "exercício de referência".</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Obrigatoriedade é pressuposto da autuação por omissão de entrega. Antes de lavrar, confirme no cadastro e na legislação (Protocolo, perfil, CNAE, faturamento) que o contribuinte estava obrigado naquele período e se algum ato de dispensa o alcançava.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 02/09, cláusula terceira: obrigatoriedade, dispensa e indicação por Protocolo ICMS, adesão facultativa e irretratável, fusão/incorporação/cisão, escalonamento do Bloco K e definição de faturamento</li><li>Protocolos ICMS vigentes na UF do contribuinte e legislação estadual (RICMS)</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei a regra geral e os dois usos do Protocolo ICMS (dispensar e indicar).</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei que a adesão facultativa é irretratável e que a dispensa não o é.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei o efeito de fusão, incorporação e cisão.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei a definição de faturamento do Bloco K e qual o exercício de referência.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m2-l2">Marcar lição como concluída</button>
-<nav class="pager"><a href="m2-l1.html" class="prev"><small>Anterior</small>2.1 Ciclo de vida e chave de acesso</a><a href="m2-l3.html" class="next"><small>Próxima</small>2.3 Itens, totais, transporte e pagamento</a></nav>
+<nav class="pager"><a href="m2-l1.html" class="prev"><small>Anterior</small>2.1 O que é a EFD e o que ela escritura</a><a href="m2-l3.html" class="next"><small>Próxima</small>2.3 Conteúdo, perfil e estabelecimentos: o que entra em cada arquivo</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

@@ -4,48 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>2.4 A tributação no item</title>
+<title>2.4 Geração, validação, recepção e recibo: o que a recepção não significa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m2-l4">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
-  <div class="cell"><span>Lição</span>2.4</div>
-  <div class="cell"><span>Tempo</span>25 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 — grupos M, N, NA, O, Q, S</div>
-</div>
-<h1>A tributação no item</h1>
-<p class="obj">Ler os grupos de ICMS, ICMS-ST, FCP, DIFAL, IPI, PIS e COFINS do item.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 2</span>EFD ICMS/IPI — Ajuste SINIEF 02/09</div><div class="cell"><span>Lição</span>2.4</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 02/09, cláusulas 8ª a 11ª</div></div>
+<h1>Geração, validação, recepção e recibo: o que a recepção não significa</h1>
+<p class="obj">Acompanhar o arquivo da geração ao recibo, dizer o que o PVA verifica e o que não verifica, e interpretar o efeito jurídico da recepção.</p>
 <div class="content">
-<h3>Grupo N — ICMS</h3>
-<p>O XML tem um subgrupo para cada situação tributária (ICMS00, ICMS10, ICMS20, ICMS30, ICMS40, ICMS51, ICMS60, ICMS70, ICMS90, ICMSPart, ICMSST e os ICMSSN do Simples). Campos principais:</p>
+<h3>O caminho do arquivo</h3>
+<ol>
+<li><strong>Geração.</strong> O sistema do contribuinte gera o arquivo no leiaute do Ato COTEPE.</li>
+<li><strong>Validação.</strong> O arquivo é submetido ao <strong>PVA-EFD</strong> (Programa de Validação e Assinatura), software disponibilizado na internet nos sites das administrações das UFs e da RFB. A validação é de <em>consistência de leiaute</em> e ocorre <strong>antes do envio</strong>, não depois.</li>
+<li><strong>Assinatura.</strong> O próprio PVA assina digitalmente, com o certificado do contribuinte ou de seu representante legal.</li>
+<li><strong>Transmissão.</strong> O arquivo é enviado ao ambiente nacional do SPED.</li>
+<li><strong>Verificações na recepção.</strong> O sistema repete e completa as verificações.</li>
+<li><strong>Resultado.</strong> Ou a <strong>falha/recusa</strong>, com a causa informada, ou a <strong>regular recepção</strong>, com <strong>recibo de entrega</strong>.</li>
+</ol>
+
+<h3>O que as verificações mínimas cobrem</h3>
+<div class="tbl"><table>
+<tr><th>Verifica</th><th>Não verifica</th></tr>
+<tr><td><ul><li>dados cadastrais do declarante;</li><li>autoria, autenticidade e validade da assinatura digital;</li><li>integridade do arquivo;</li><li>existência de arquivo já recepcionado para o mesmo período de referência.</li></ul></td><td><ul><li><strong>veracidade</strong> das informações tributárias apresentadas;</li><li>correção da apuração do imposto.</li></ul></td></tr>
+</table></div>
+<p>A divisão tem um motivo: o PVA é uma máquina de conferir <em>forma</em> (o arquivo é do declarante? está íntegro? já foi enviado?). Julgar se o valor do crédito está certo é tarefa da fiscalização.</p>
+
+<h3>Recibo, escrituração e homologação</h3>
 <ul>
-<li><code>orig</code> e <code>CST</code> (ou <code>CSOSN</code>).</li>
-<li><code>modBC</code>: 0 MVA; 1 pauta; 2 preço tabelado máximo; 3 valor da operação.</li>
-<li><code>vBC, pRedBC, pICMS, vICMS</code>.</li>
-<li><code>vICMSDeson</code> e <code>motDesICMS</code>: valor e motivo da desoneração.</li>
-<li>ST: <code>modBCST, pMVAST, pRedBCST, vBCST, pICMSST, vICMSST</code>.</li>
-<li>ST retida anteriormente (CST 60 / CSOSN 500): <code>vBCSTRet, vICMSSTRet</code> e correlatos.</li>
-<li>FCP: <code>vBCFCP, pFCP, vFCP</code> e equivalentes na ST.</li>
+<li>Se há falha ou recusa, a administração comunica a causa; <strong>não há recibo</strong>. O recibo só vem com a <em>regular recepção</em>. Não existe "recusa com recibo", nem recibo "gerado antes do aceite".</li>
+<li>Os livros <strong>consideram-se escriturados no momento em que é emitido o recibo de entrega</strong>. É esse o marco para saber se a escrituração foi feita no prazo.</li>
+<li>A recepção do arquivo <strong>não implica</strong> a homologação da apuração do imposto, nem o <strong>reconhecimento da veracidade e legitimidade</strong> das informações prestadas. Receber é um ato de protocolo, não de aprovação. A fiscalização continua livre para auditar e lançar.</li>
 </ul>
-<h3>Grupo NA — ICMSUFDest</h3>
-<p>Usado na venda interestadual a consumidor final não contribuinte: base e alíquota interna da UF de destino, alíquota interestadual e valor devido ao destino (vICMSUFDest).</p>
-<h3>IPI, PIS e COFINS</h3>
-<p>Grupos O, Q e S, cada um com CST próprio. O valor do IPI integra a base do ICMS quando a operação é destinada a consumidor final ou uso e consumo.</p>
-<h3>Reforma Tributária</h3>
-<p>Notas Técnicas da Reforma do Consumo (a partir da NT 2025.002) incluíram grupos de IBS e CBS no item. Eles convivem com o ICMS no período de transição e não substituem os campos acima.</p>
+
+<h3>Um quadro para fixar a diferença</h3>
+<div class="vs dois">
+<div><h4>Autorização de uso da NF-e</h4><p>Confere a forma pelo MOC. <strong>Não convalida</strong> as informações tributárias.</p></div>
+<div><h4>Recepção da EFD</h4><p>Confere a forma pelo PVA. <strong>Não homologa</strong> a apuração nem reconhece a veracidade.</p></div>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Três verificações rápidas no item: (1) vICMSDeson sempre acompanha motDesICMS e, onde exigido, cBenef; (2) pICMS coerente com idDest e com a alíquota interna/interestadual; (3) CST 60 só faz sentido para quem recebeu a mercadoria com ST já retida — um substituto usando 60 está deixando de reter.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — Anexo I, grupo N (ICMS) e subgrupos, grupo NA (ICMSUFDest), grupos O, Q, S</li><li>EC nº 87/2015 e LC nº 190/2022 (DIFAL)</li><li>NT 2025.002 e seguintes (IBS/CBS)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Em quais campos o XML informa a desoneração do ICMS?</summary><p>vICMSDeson (valor) e motDesICMS (motivo), nos grupos que admitem desoneração.</p></details><details class="q"><summary><span class="qn">2</span>Para que serve o grupo ICMSUFDest?</summary><p>Para informar o DIFAL devido à UF de destino em operação interestadual com consumidor final não contribuinte.</p></details><details class="q"><summary><span class="qn">3</span>Um item com CST 60 deve ter vICMS destacado?</summary><p>Não. CST 60 indica ICMS cobrado anteriormente por ST; informam-se os valores de ST retida anteriormente, não débito próprio.</p></details></section>
+<p>É o mesmo princípio em dois documentos. Se você o guardar uma vez, resolve duas questões.</p>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>A Mercadinho Bom Preço transmite a EFD de agosto; o PVA acusa "erros" e a empresa ignora e envia assim mesmo. Em outro episódio, um contribuinte enviou a EFD de agosto duas vezes. Em um terceiro, o contribuinte entregou a EFD, recebeu o recibo e, dois anos depois, foi autuado por crédito indevido, e alega que "o fisco recebeu a escrituração sem objeção, logo homologou". O que a norma diz em cada caso?</p>
+<div class="res">
+<p><strong>Erros do PVA.</strong> A validação ocorre <em>antes</em> do envio; o contribuinte deveria corrigir os erros no próprio PVA. Se o arquivo foi recusado na recepção, não há recibo e, sem recibo, <strong>o livro não se considera escriturado</strong>.</p>
+<p><strong>Envio duplicado.</strong> A "existência de arquivo já recepcionado para o mesmo período" é uma verificação de recepção: o segundo envio, se não for retificação, é recusado.</p>
+<p><strong>A alegação de homologação.</strong> Não procede. A recepção não implica homologação da apuração nem reconhecimento da veracidade das informações. O recibo marca a escrituração, não a aprovação do conteúdo.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"O PVA verifica a veracidade das informações tributárias."</strong> Nunca.</li><li><strong>"A validação é feita depois do envio ao SPED."</strong> É antes.</li><li><strong>"Recusa na recepção, hipótese em que será emitido recibo."</strong> Recibo é da regular recepção.</li><li><strong>"Regular recepção, hipótese em que a causa será informada."</strong> A causa se informa na falha ou na recusa.</li><li><strong>"Livros escriturados com a transmissão"</strong> ou com a validação: é com a <strong>emissão do recibo</strong>.</li><li><strong>"O recibo pode ser gerado antes do aceite."</strong> Não.</li><li><strong>"A recepção homologa a apuração."</strong> Não.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Dois tipos de item convivem: o da lista de verificações (qual alternativa <em>não</em> é uma verificação obrigatória, e a resposta é a veracidade) e o do efeito da recepção (homologação, reconhecimento da veracidade, momento da escrituração).</li><li>Certo/Errado com troca de ordem: "a validação deve ser efetuada após o envio" ou "automaticamente expedida comunicação de falha, recusa ou recepção" (esse último é certo).</li><li>O recibo de entrega com número de identificação é cobrado em item específico.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Um arquivo recepcionado não prova nada sobre o seu conteúdo. Mas o contrário também vale: a data do recibo estabelece o dia em que a escrituração passou a existir, útil para provar atraso, e a existência de recibos para períodos sucessivos mostra a regularidade de entrega.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 02/09, cláusula oitava a décima primeira: geração, validação pelo PVA-EFD, assinatura, transmissão, recepção, recibo e efeitos</li><li>Ato COTEPE: especificações do PVA-EFD</li><li>Portal do SPED (RFB): download do PVA-EFD e do leiaute</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei descrever a ordem geração, validação, assinatura, transmissão, recepção e recibo.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei listar o que o PVA verifica e dizer o que ele não verifica.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei o que marca o momento da escrituração e o que a recepção não implica.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei comparar o efeito da autorização da NF-e com o da recepção da EFD.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m2-l4">Marcar lição como concluída</button>
-<nav class="pager"><a href="m2-l3.html" class="prev"><small>Anterior</small>2.3 Itens, totais, transporte e pagamento</a><a href="m2-l5.html" class="next"><small>Próxima</small>2.5 Eventos: cancelamento, CC-e, inutilização e manifestação</a></nav>
+<nav class="pager"><a href="m2-l3.html" class="prev"><small>Anterior</small>2.3 Conteúdo, perfil e estabelecimentos: o que entra em cada arquivo</a><a href="m2-l5.html" class="next"><small>Próxima</small>2.5 Prazo de entrega e retificação da EFD</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

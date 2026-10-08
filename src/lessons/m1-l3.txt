@@ -1,0 +1,82 @@
+title: Transmissão e autorização de uso: rejeição e concessão
+min: 30
+norma: Ajuste SINIEF 07/05, cláusulas 4ª a 7ª
+obj: Acompanhar a NF-e da transmissão ao resultado da análise, classificar cada defeito como causa de rejeição e dizer o que a autorização de uso significa e o que não significa.
+
+=== content
+<h3>A sequência</h3>
+<ol>
+<li><strong>Transmissão.</strong> O emitente envia o arquivo pela internet, com protocolo de segurança ou criptografia, usando o software que ele desenvolveu ou adquiriu. <strong>Transmitir já é pedir</strong> a autorização de uso.</li>
+<li><strong>Análise.</strong> A administração tributária da UF do contribuinte confere, no mínimo: regularidade fiscal do emitente, credenciamento para emitir, autoria e integridade da assinatura, leiaute do arquivo e numeração (duplicidade).</li>
+<li><strong>Resultado.</strong> O emitente é cientificado do resultado: o arquivo é <strong>rejeitado</strong> ou a autorização de uso é <strong>concedida</strong>.</li>
+<li><strong>Uso.</strong> Só depois da concessão o arquivo pode ser utilizado como documento fiscal. Até lá é um arquivo, não uma nota.</li>
+</ol>
+
+<h3>Rejeição: o que a causa</h3>
+<p>O arquivo é rejeitado quando a análise encontra defeito. A norma enumera as hipóteses; reconheça-as por famílias:</p>
+<div class="tbl"><table>
+<tr><th>Família</th><th>Exemplos</th></tr>
+<tr><td>Falha técnica de entrada</td><td>falha na recepção ou no processamento do arquivo</td></tr>
+<tr><td>Falha de autoria ou integridade</td><td>assinatura inválida, certificado que não corresponde ao emitente</td></tr>
+<tr><td>Falha no cadastro</td><td>emitente não credenciado para emitir NF-e</td></tr>
+<tr><td>Falha na numeração</td><td>duplicidade de número da NF-e; falha na leitura do número</td></tr>
+<tr><td>Falha de preenchimento ou leiaute</td><td>campo obrigatório vazio, estrutura fora do MOC</td></tr>
+<tr><td>Irregularidade fiscal</td><td>do <strong>emitente</strong>; e do <strong>destinatário</strong>, <em>a critério de cada UF</em></td></tr>
+</table></div>
+<p>Em caso de rejeição, o interessado pode <strong>transmitir de novo</strong> o arquivo corrigido (a norma permite expressamente a nova transmissão nas hipóteses de falha de recepção ou processamento, de autoria ou integridade e de leitura do número).</p>
+<p>"Irregularidade fiscal" tem definição: considera-se irregular a situação do contribuinte, emitente ou destinatário, que, nos termos da legislação estadual, esteja <strong>impedido de praticar operações na condição de contribuinte do ICMS</strong>.</p>
+
+<div class="nota"><p><strong>Atenção à data da prova</strong></p>
+<p>Até 31/07/2024 a norma tinha uma <em>terceira</em> resposta: a <strong>denegação</strong> da autorização de uso, para irregularidade fiscal de emitente ou destinatário. O documento denegado consumia o número e não podia ser usado. Na redação consolidada hoje, a irregularidade fiscal passa a ser <strong>hipótese de rejeição</strong> e o resultado possível se limita a duas formas: rejeição ou concessão. Materiais, provas e comentários anteriores a agosto de 2024 trazem a regra antiga ("denegação por irregularidade"). Quando o enunciado trouxer a data ou disser "de acordo com a redação atual", responda pela nova; se a questão é antiga, entenda como a banca raciocinava.</p></div>
+
+<h3>O que a autorização significa</h3>
+<ul>
+<li><strong>Identifica de forma única</strong> a NF-e (chave + protocolo).</li>
+<li>É o resultado da aplicação das <strong>regras formais</strong> do MOC. Confere forma, não mérito.</li>
+<li><strong>Não implica convalidação</strong> das informações tributárias. Se a nota diz alíquota 0% para uma operação tributada, a autorização não torna isso correto.</li>
+<li>Depois de concedida, a NF-e <strong>não pode ser alterada</strong>. Erros são tratados por Carta de Correção (quando cabível), cancelamento ou nova nota (lição 1.7).</li>
+</ul>
+
+=== caso
+<p>A cada defeito abaixo, diga o resultado e o que o emitente faz em seguida.</p>
+<ol>
+<li>O emitente transmite uma NF-e com número que já foi autorizado na mesma série.</li>
+<li>Uma NF-e é transmitida com a assinatura de um certificado cujo CNPJ é de outra empresa.</li>
+<li>O destinatário teve a inscrição suspensa pela UF; o emitente transmite a venda a ele.</li>
+<li>A NF-e é autorizada, mas a alíquota informada está menor que a devida.</li>
+</ol>
+<div class="res">
+<p><strong>1. Rejeição</strong> (duplicidade de número). O emitente gera novo arquivo com número livre e retransmite.</p>
+<p><strong>2. Rejeição</strong> (falha de autoria). Corrige o certificado e retransmite.</p>
+<p><strong>3.</strong> Pela redação atual, <strong>rejeição</strong> por irregularidade fiscal do destinatário, <em>se a UF assim definir</em>. Pela regra anterior a 08/2024 seria denegação. O emitente não pode fazer circular a mercadoria como se houvesse NF-e válida.</p>
+<p><strong>4. Concessão.</strong> A autorização não convalida a informação tributária. A alíquota errada é matéria de auditoria depois, com lançamento do imposto e multa.</p>
+<p>Observe que o item 4 é o contraste: a autorização não responde sobre a correção tributária.</p>
+</div>
+
+=== armadilhas
+- <strong>"Falha na recepção/processamento → denegação."</strong> Falha técnica, de autoria, de integridade ou de numeração é sempre rejeição.
+- <strong>"Duplicidade de número → concessão."</strong> Duplicidade é rejeição, não concessão.
+- <strong>"Autorização convalida as informações tributárias."</strong> Nunca: confere forma.
+- <strong>"A NF-e autorizada pode ser alterada."</strong> Não; só eventos.
+- <strong>Quem analisa:</strong> administração tributária da UF do contribuinte; a análise inclui credenciamento e regularidade fiscal.
+- <strong>Resultado só em "três formas"</strong> (rejeição, denegação, concessão) é a redação antiga.
+
+=== bancas
+- Quando a banca usa o texto atual do Ajuste, "irregularidade fiscal do destinatário → rejeição" é item <em>certo</em> e os que falam em denegação como resultado possível são errados. Já bancas que reaproveitam enunciados antigos mantêm o raciocínio com três resultados. A data do edital e da questão resolve a dúvida.
+- Estilo classificar casos: uma lista de defeitos (falha de leitura do número, duplicidade, irregularidade do destinatário, remetente não credenciado, falha de autoria) e alternativas com sequências de "rejeição/denegação/concessão". Resolva caso a caso, pela data da questão.
+- Estilo "qual afirmativa descreve a autorização de uso": confere regras formais do MOC, não convalida informações tributárias, identifica de forma única.
+
+=== auditor
+Na base do fisco, a diferença entre "autorizada" e "correta" é a razão de existir da auditoria de NF-e. Tudo que passou da crítica formal mas não deveria ter passado (alíquota, CST, CFOP incompatível, destinatário errado) cabe a você achar depois.
+
+=== base
+- Ajuste SINIEF 07/05, cláusula quarta (uso como documento fiscal só após transmissão e autorização)
+- Ajuste SINIEF 07/05, cláusula quinta (transmissão via internet) e sexta (análise mínima)
+- Ajuste SINIEF 07/05, cláusula sétima (rejeição, concessão; irregularidade fiscal; alterações a partir de 08/2024)
+- MOC NF-e: tabela de rejeições (códigos <code>cStat</code>)
+
+=== dominio
+- Sei descrever a sequência transmissão, análise, resultado, uso.
+- Sei classificar um defeito (numeração, autoria, cadastro, leiaute, irregularidade) como causa de rejeição.
+- Sei explicar o que muda com a extinção da denegação e saber dizer qual redação a questão cobra.
+- Sei dizer o que a autorização de uso garante e o que não garante.

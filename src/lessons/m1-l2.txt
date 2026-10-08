@@ -1,0 +1,76 @@
+title: Requisitos de emissão: leiaute, numeração, série, assinatura e campos
+min: 25
+norma: Ajuste SINIEF 07/05, cláusula 3ª
+obj: Listar o que a norma exige para que um arquivo seja uma NF-e (formato, numeração, chave, assinatura, identificação de mercadorias e partes) e separar o que é regra do Ajuste do que é detalhe do MOC.
+
+=== content
+<p>A cláusula 3ª é uma lista de requisitos que o arquivo precisa cumprir. Em vez de decorá-la como lista, agrupe em cinco perguntas.</p>
+
+<h3>1. Em que forma?</h3>
+<ul>
+<li><strong>Leiaute</strong> estabelecido no <strong>MOC</strong> (Manual de Orientação do Contribuinte), aprovado por Ato COTEPE.</li>
+<li><strong>Padrão XML</strong>: nada de CSV, TXT ou PDF como arquivo da NF-e.</li>
+<li>Gerada por <strong>software desenvolvido ou adquirido pelo contribuinte</strong>. A emissão por sistema fornecido pela administração é o caso excepcional da NF-e avulsa.</li>
+</ul>
+
+<h3>2. Como é numerada?</h3>
+<ul>
+<li><strong>Sequencial de 1 a 999.999.999</strong>, por <strong>estabelecimento</strong> e por <strong>série</strong>, e reiniciada ao atingir o limite.</li>
+<li><strong>Série</strong>: algarismos arábicos em ordem crescente; a série única é representada pelo número <strong>zero</strong>; <strong>subsérie é vedada</strong>.</li>
+<li>A UF <strong>pode restringir</strong> a quantidade de séries. O contribuinte não escolhe livremente.</li>
+</ul>
+<p>Se a sequência quebrar (um número pulado), a solução é a inutilização (lição 1.7).</p>
+
+<h3>3. Como se identifica?</h3>
+<p>Pela <strong>chave de acesso</strong> (lição 0.2): código numérico <em>gerado pelo emitente</em>, CNPJ/CPF do emitente, número e série da NF-e (mais UF, mês, modelo, forma de emissão e DV). Não existe "código numérico do receptor".</p>
+
+<h3>4. Quem garante a autoria?</h3>
+<p>Assinatura digital do <strong>emitente</strong>, com certificado emitido por entidade credenciada pela <strong>ICP-Brasil</strong> (e não "credenciada pela administração tributária"), contendo o CNPJ ou CPF de qualquer dos estabelecimentos do contribuinte. Serve para garantir a <strong>autoria</strong> e a integridade do documento digital.</p>
+
+<h3>5. Que informações obrigatórias o fisco pede?</h3>
+<div class="tbl"><table>
+<tr><th>Informação</th><th>Ideia</th><th>Detalhe que costuma cair</th></tr>
+<tr><td>NCM</td><td>classificação da mercadoria na Nomenclatura Comum do Mercosul</td><td>obrigatória, em especial nas operações de estabelecimento industrial ou equiparado; é <em>classificação</em>, não identificação interna (para isso há <code>cProd</code>, de livre escolha do emitente)</td></tr>
+<tr><td>CEST</td><td>Código Especificador da Substituição Tributária (7 dígitos)</td><td>obrigatório para mercadorias listadas em convênio específico, <strong>mesmo que a operação não esteja sujeita</strong> à substituição ou à antecipação</td></tr>
+<tr><td>GTIN</td><td>código de barras do produto</td><td>validado no <strong>Cadastro Centralizado de GTIN</strong>, hospedado na SEFAZ Virtual do RS</td></tr>
+<tr><td>CRT</td><td>código do regime tributário do emitente</td><td>diz se é Simples, regime normal etc.</td></tr>
+<tr><td>Intermediador</td><td>CNPJ do agente que intermediou a venda</td><td>quando a transação ocorre em ambiente virtual ou presencial com intermediador</td></tr>
+<tr><td>Local de entrega/retirada</td><td>endereço diferente do destinatário</td><td>só se preenche quando <strong>for diferente</strong>; se for o mesmo endereço, os grupos não são preenchidos</td></tr>
+</table></div>
+<p>O <strong>MEI</strong>, em regra, é dispensado de informar GTIN, CEST e NCM: seria desproporcional exigir o mesmo do microempreendedor e da indústria.</p>
+
+=== caso
+<p>Uma distribuidora de ração pretende emitir a série 1 da NF-e para o depósito A e para o depósito B usando uma única contagem de números, "para facilitar". Também quer criar a subsérie 1-A para vendas pela internet, e colocar no lugar do CNPJ do certificado digital o do sócio. Aponte o que a norma impede.</p>
+<div class="res">
+<p><strong>Contagem única.</strong> A numeração é por <strong>estabelecimento e por série</strong>. A e B têm sequências independentes, ainda que usem a mesma série. A chave inclui o CNPJ do emitente, de modo que dois estabelecimentos nunca colidem na chave.</p>
+<p><strong>Subsérie.</strong> Vedada. O que a empresa pode fazer, se a UF permitir, é usar a série 2 para a internet. A UF pode restringir a quantidade de séries.</p>
+<p><strong>Certificado do sócio.</strong> A assinatura precisa conter o CNPJ ou CPF de <em>qualquer dos estabelecimentos do contribuinte</em>. O certificado de pessoa física do sócio, com o CPF dele, não satisfaz. A NF-e seria rejeitada na análise de autoria (lição 1.3).</p>
+</div>
+
+=== armadilhas
+- <strong>Código numérico "gerado pelo receptor"</strong>: quem gera é o emitente.
+- <strong>Certificação "pela administração tributária"</strong>: a certificação é ICP-Brasil.
+- <strong>Software "disponibilizado pela administração"</strong> como regra: é a exceção da avulsa. Regra: desenvolvido ou adquirido pelo contribuinte.
+- <strong>"O Fisco não pode restringir séries."</strong> Pode.
+- <strong>Subséries.</strong> Vedadas; série única é o zero.
+- <strong>Local de entrega igual ao do destinatário.</strong> A pegadinha é dizer que deve ser preenchido e constar no DANFE. Não deve.
+- <strong>CEST só em operação sujeita a ST.</strong> A norma o exige para as mercadorias listadas, independentemente de a operação estar sujeita.
+
+=== bancas
+- Itens que reproduzem a cláusula e trocam um detalhe técnico: limite da numeração (999.999.999), forma da série única, quem gera o código numérico, quem certifica a assinatura.
+- Pedem para marcar como correto o item que lista corretamente os requisitos; os distratores trocam XML por outro formato ou "receptor" por "emitente".
+- Em estilo analítico (afirmativas I, II, III), aparecem NCM, CEST e GTIN com a regra do MEI ou com o cadastro centralizado.
+
+=== auditor
+Os requisitos de emissão viram regras de crítica automática no ambiente de autorização: um número duplicado ou uma assinatura inválida nem chega a virar documento. Para o auditor, o interesse está no que passa na crítica e ainda assim é irregular: NCM errada, CEST ausente, local de entrega que esconde o destino real da mercadoria.
+
+=== base
+- Ajuste SINIEF 07/05, cláusula terceira: leiaute no MOC, XML, numeração, série, código numérico, assinatura digital, NCM, CEST, GTIN, CRT, intermediador
+- MOC NF-e: regras de validação de numeração, série e campos obrigatórios
+- Cadastro Centralizado de GTIN (CCG), mantido na SEFAZ Virtual do RS
+
+=== dominio
+- Sei reproduzir os limites da numeração (1 a 999.999.999) e as regras de série (zero, sem subsérie, UF pode restringir).
+- Sei dizer quem gera o código numérico e quem certifica a assinatura.
+- Sei diferenciar NCM, CEST e GTIN e dizer quando cada um é exigido.
+- Sei o que fazer com os grupos de local de entrega/retirada quando o endereço coincide com o do destinatário.

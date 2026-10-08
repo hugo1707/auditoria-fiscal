@@ -4,46 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>1.3 Documentos fiscais eletrônicos: o modelo nacional</title>
+<title>1.3 Transmissão e autorização de uso: rejeição e concessão</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m1-l3">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 1</span>Sistema Público de Escrituração Digital</div>
-  <div class="cell"><span>Lição</span>1.3</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>Ajustes SINIEF 07/05, 09/07, 21/10, 19/16</div>
-</div>
-<h1>Documentos fiscais eletrônicos: o modelo nacional</h1>
-<p class="obj">Reconhecer os modelos de documento, o papel da autorização de uso e o vocabulário comum aos manuais (MOC).</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 1</span>NF-e e DANFE — Ajuste SINIEF 07/05</div><div class="cell"><span>Lição</span>1.3</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 07/05, cláusulas 4ª a 7ª</div></div>
+<h1>Transmissão e autorização de uso: rejeição e concessão</h1>
+<p class="obj">Acompanhar a NF-e da transmissão ao resultado da análise, classificar cada defeito como causa de rejeição e dizer o que a autorização de uso significa e o que não significa.</p>
 <div class="content">
-<p>Todos os documentos fiscais eletrônicos seguem a mesma arquitetura: o emitente gera um arquivo XML, assina digitalmente, transmite à SEFAZ autorizadora e só depois da <strong>Autorização de Uso</strong> o documento passa a ter validade jurídica. Os documentos auxiliares (DANFE, DACTE, DAMDFE) são apenas representações gráficas simplificadas.</p>
+<h3>A sequência</h3>
+<ol>
+<li><strong>Transmissão.</strong> O emitente envia o arquivo pela internet, com protocolo de segurança ou criptografia, usando o software que ele desenvolveu ou adquiriu. <strong>Transmitir já é pedir</strong> a autorização de uso.</li>
+<li><strong>Análise.</strong> A administração tributária da UF do contribuinte confere, no mínimo: regularidade fiscal do emitente, credenciamento para emitir, autoria e integridade da assinatura, leiaute do arquivo e numeração (duplicidade).</li>
+<li><strong>Resultado.</strong> O emitente é cientificado do resultado: o arquivo é <strong>rejeitado</strong> ou a autorização de uso é <strong>concedida</strong>.</li>
+<li><strong>Uso.</strong> Só depois da concessão o arquivo pode ser utilizado como documento fiscal. Até lá é um arquivo, não uma nota.</li>
+</ol>
+
+<h3>Rejeição: o que a causa</h3>
+<p>O arquivo é rejeitado quando a análise encontra defeito. A norma enumera as hipóteses; reconheça-as por famílias:</p>
 <div class="tbl"><table>
-<tr><th>Documento</th><th>Modelo</th><th>Norma de instituição</th><th>Manual</th></tr>
-<tr><td>NF-e</td><td>55</td><td>Ajuste SINIEF 07/2005</td><td>MOC NF-e/NFC-e 7.0</td></tr>
-<tr><td>NFC-e</td><td>65</td><td>Ajuste SINIEF 19/2016</td><td>MOC NF-e/NFC-e 7.0</td></tr>
-<tr><td>CT-e</td><td>57</td><td>Ajuste SINIEF 09/2007</td><td>MOC CT-e 4.00</td></tr>
-<tr><td>CT-e OS</td><td>67</td><td>Ajuste SINIEF 09/2007</td><td>MOC CT-e 4.00</td></tr>
-<tr><td>MDF-e</td><td>58</td><td>Ajuste SINIEF 21/2010</td><td>MOC MDF-e 3.0b</td></tr>
+<tr><th>Família</th><th>Exemplos</th></tr>
+<tr><td>Falha técnica de entrada</td><td>falha na recepção ou no processamento do arquivo</td></tr>
+<tr><td>Falha de autoria ou integridade</td><td>assinatura inválida, certificado que não corresponde ao emitente</td></tr>
+<tr><td>Falha no cadastro</td><td>emitente não credenciado para emitir NF-e</td></tr>
+<tr><td>Falha na numeração</td><td>duplicidade de número da NF-e; falha na leitura do número</td></tr>
+<tr><td>Falha de preenchimento ou leiaute</td><td>campo obrigatório vazio, estrutura fora do MOC</td></tr>
+<tr><td>Irregularidade fiscal</td><td>do <strong>emitente</strong>; e do <strong>destinatário</strong>, <em>a critério de cada UF</em></td></tr>
 </table></div>
-<h3>Autorizadores</h3>
-<p>Algumas UFs mantêm ambiente próprio; as demais usam as SEFAZ Virtuais (SVRS, SVAN). O Ambiente Nacional recebe cópia dos documentos e distribui eventos, o que permite a qualquer fisco interessado consultar um documento emitido em outra UF.</p>
-<h3>Como o leiaute muda</h3>
-<p>O MOC traz a estrutura base (leiaute, regras de validação, webservices). Entre uma versão e outra do MOC, as alterações entram por <strong>Notas Técnicas</strong> (NT), numeradas por ano (ex.: NT 2019.001). Ao estudar um campo, sempre confirme se alguma NT posterior alterou sua regra.</p>
-<h3>Situações do documento</h3>
-<p>Autorizado, cancelado, denegado ou número inutilizado. Um documento rejeitado <em>não existe</em> juridicamente; um denegado existe, tem o número consumido, mas não pode acobertar a operação.</p>
+<p>Em caso de rejeição, o interessado pode <strong>transmitir de novo</strong> o arquivo corrigido (a norma permite expressamente a nova transmissão nas hipóteses de falha de recepção ou processamento, de autoria ou integridade e de leitura do número).</p>
+<p>"Irregularidade fiscal" tem definição: considera-se irregular a situação do contribuinte, emitente ou destinatário, que, nos termos da legislação estadual, esteja <strong>impedido de praticar operações na condição de contribuinte do ICMS</strong>.</p>
+
+<div class="nota"><p><strong>Atenção à data da prova</strong></p>
+<p>Até 31/07/2024 a norma tinha uma <em>terceira</em> resposta: a <strong>denegação</strong> da autorização de uso, para irregularidade fiscal de emitente ou destinatário. O documento denegado consumia o número e não podia ser usado. Na redação consolidada hoje, a irregularidade fiscal passa a ser <strong>hipótese de rejeição</strong> e o resultado possível se limita a duas formas: rejeição ou concessão. Materiais, provas e comentários anteriores a agosto de 2024 trazem a regra antiga ("denegação por irregularidade"). Quando o enunciado trouxer a data ou disser "de acordo com a redação atual", responda pela nova; se a questão é antiga, entenda como a banca raciocinava.</p></div>
+
+<h3>O que a autorização significa</h3>
+<ul>
+<li><strong>Identifica de forma única</strong> a NF-e (chave + protocolo).</li>
+<li>É o resultado da aplicação das <strong>regras formais</strong> do MOC. Confere forma, não mérito.</li>
+<li><strong>Não implica convalidação</strong> das informações tributárias. Se a nota diz alíquota 0% para uma operação tributada, a autorização não torna isso correto.</li>
+<li>Depois de concedida, a NF-e <strong>não pode ser alterada</strong>. Erros são tratados por Carta de Correção (quando cabível), cancelamento ou nova nota (lição 1.7).</li>
+</ul>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Nunca trabalhe com o DANFE ou uma planilha do contribuinte como fonte primária. A fonte é o XML autorizado, com seus eventos, obtido na base do fisco.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/2005 (NF-e)</li><li>Ajuste SINIEF 19/2016 (NFC-e)</li><li>Ajuste SINIEF 09/2007 (CT-e e CT-e OS)</li><li>Ajuste SINIEF 21/2010 (MDF-e)</li><li>Portal Nacional da NF-e — nfe.fazenda.gov.br (MOC e Notas Técnicas)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>A partir de quando a NF-e tem validade jurídica?</summary><p>A partir da concessão da Autorização de Uso pela SEFAZ autorizadora.</p></details><details class="q"><summary><span class="qn">2</span>Qual a diferença entre NF-e rejeitada e NF-e denegada?</summary><p>A rejeitada não gera documento nem consome número. A denegada consome o número e fica registrada, mas não pode acobertar a circulação.</p></details><details class="q"><summary><span class="qn">3</span>Como o leiaute evolui entre versões do MOC?</summary><p>Por meio de Notas Técnicas publicadas no portal nacional.</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>A cada defeito abaixo, diga o resultado e o que o emitente faz em seguida.</p>
+<ol>
+<li>O emitente transmite uma NF-e com número que já foi autorizado na mesma série.</li>
+<li>Uma NF-e é transmitida com a assinatura de um certificado cujo CNPJ é de outra empresa.</li>
+<li>O destinatário teve a inscrição suspensa pela UF; o emitente transmite a venda a ele.</li>
+<li>A NF-e é autorizada, mas a alíquota informada está menor que a devida.</li>
+</ol>
+<div class="res">
+<p><strong>1. Rejeição</strong> (duplicidade de número). O emitente gera novo arquivo com número livre e retransmite.</p>
+<p><strong>2. Rejeição</strong> (falha de autoria). Corrige o certificado e retransmite.</p>
+<p><strong>3.</strong> Pela redação atual, <strong>rejeição</strong> por irregularidade fiscal do destinatário, <em>se a UF assim definir</em>. Pela regra anterior a 08/2024 seria denegação. O emitente não pode fazer circular a mercadoria como se houvesse NF-e válida.</p>
+<p><strong>4. Concessão.</strong> A autorização não convalida a informação tributária. A alíquota errada é matéria de auditoria depois, com lançamento do imposto e multa.</p>
+<p>Observe que o item 4 é o contraste: a autorização não responde sobre a correção tributária.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"Falha na recepção/processamento → denegação."</strong> Falha técnica, de autoria, de integridade ou de numeração é sempre rejeição.</li><li><strong>"Duplicidade de número → concessão."</strong> Duplicidade é rejeição, não concessão.</li><li><strong>"Autorização convalida as informações tributárias."</strong> Nunca: confere forma.</li><li><strong>"A NF-e autorizada pode ser alterada."</strong> Não; só eventos.</li><li><strong>Quem analisa:</strong> administração tributária da UF do contribuinte; a análise inclui credenciamento e regularidade fiscal.</li><li><strong>Resultado só em "três formas"</strong> (rejeição, denegação, concessão) é a redação antiga.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Quando a banca usa o texto atual do Ajuste, "irregularidade fiscal do destinatário → rejeição" é item <em>certo</em> e os que falam em denegação como resultado possível são errados. Já bancas que reaproveitam enunciados antigos mantêm o raciocínio com três resultados. A data do edital e da questão resolve a dúvida.</li><li>Estilo classificar casos: uma lista de defeitos (falha de leitura do número, duplicidade, irregularidade do destinatário, remetente não credenciado, falha de autoria) e alternativas com sequências de "rejeição/denegação/concessão". Resolva caso a caso, pela data da questão.</li><li>Estilo "qual afirmativa descreve a autorização de uso": confere regras formais do MOC, não convalida informações tributárias, identifica de forma única.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Na base do fisco, a diferença entre "autorizada" e "correta" é a razão de existir da auditoria de NF-e. Tudo que passou da crítica formal mas não deveria ter passado (alíquota, CST, CFOP incompatível, destinatário errado) cabe a você achar depois.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05, cláusula quarta (uso como documento fiscal só após transmissão e autorização)</li><li>Ajuste SINIEF 07/05, cláusula quinta (transmissão via internet) e sexta (análise mínima)</li><li>Ajuste SINIEF 07/05, cláusula sétima (rejeição, concessão; irregularidade fiscal; alterações a partir de 08/2024)</li><li>MOC NF-e: tabela de rejeições (códigos <code>cStat</code>)</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei descrever a sequência transmissão, análise, resultado, uso.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei classificar um defeito (numeração, autoria, cadastro, leiaute, irregularidade) como causa de rejeição.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei explicar o que muda com a extinção da denegação e saber dizer qual redação a questão cobra.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei dizer o que a autorização de uso garante e o que não garante.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m1-l3">Marcar lição como concluída</button>
-<nav class="pager"><a href="m1-l2.html" class="prev"><small>Anterior</small>1.2 A EFD ICMS/IPI dentro do SPED</a><a href="m2-l1.html" class="next"><small>Próxima</small>2.1 Ciclo de vida e chave de acesso</a></nav>
+<nav class="pager"><a href="m1-l2.html" class="prev"><small>Anterior</small>1.2 Requisitos de emissão: leiaute, numeração, série, assinatura e campos</a><a href="m1-l4.html" class="next"><small>Próxima</small>1.4 Para onde a NF-e vai depois de autorizada</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

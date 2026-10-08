@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>1.6 Contingência: SVC, EPEC e FS-DA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+<article class="lesson" data-id="m1-l6">
+<div class="form"><div class="cell c-mod"><span>Módulo 1</span>NF-e e DANFE — Ajuste SINIEF 07/05</div><div class="cell"><span>Lição</span>1.6</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 07/05, cláusula 11</div></div>
+<h1>Contingência: SVC, EPEC e FS-DA</h1>
+<p class="obj">Explicar quando o contribuinte pode operar em contingência, descrever as três alternativas (SVC, EPEC, FS-DA), o momento em que a NF-e se considera emitida e o que fazer com notas que ficaram pendentes.</p>
+<div class="content">
+<h3>Quando existe contingência</h3>
+<p>A contingência é a saída para quando <strong>problemas técnicos</strong> impedem transmitir a NF-e para a UF do emitente <strong>ou obter resposta</strong> à solicitação de autorização. A mercadoria não deve parar por causa disso. O contribuinte gera arquivos indicando esse tipo de emissão (no <code>tpEmis</code> da chave, valor diferente de 1) e escolhe uma entre três alternativas.</p>
+
+<h3>As três alternativas</h3>
+<div class="tbl"><table>
+<tr><th>Alternativa</th><th>O que é</th><th>DANFE</th><th>Quando a NF-e se considera emitida</th></tr>
+<tr><td><strong>SVC</strong><br>Sefaz Virtual de Contingência</td><td>A NF-e é transmitida a um <em>ambiente virtual</em>. A UF do emitente pode autorizá-la <strong>usando a infraestrutura da RFB ou de outra UF</strong>.</td><td>impresso normalmente, com a autorização obtida</td><td>com a autorização do ambiente de contingência</td></tr>
+<tr><td><strong>EPEC</strong><br>Evento Prévio de Emissão em Contingência</td><td>Em vez da nota inteira, transmite-se um <em>evento</em> com os dados mínimos, recebido pela RFB. <strong>Presumem-se emitidas</strong> as NF-e citadas no EPEC quando regularmente recebido.</td><td>impresso em <strong>no mínimo duas vias</strong></td><td>no momento da <strong>regular recepção do EPEC</strong> pela RFB</td></tr>
+<tr><td><strong>FS-DA</strong><br>Formulário de Segurança para Impressão de DANFE</td><td>O DANFE é impresso em formulário de segurança, sem autorização prévia.</td><td>no mínimo <strong>duas vias</strong> (a norma exige que o formulário seja usado em pelo menos duas)</td><td>no momento da <strong>impressão</strong> do DANFE em contingência</td></tr>
+</table></div>
+<p>Em EPEC e FS-DA, a NF-e é emitida <strong>com condição resolutória</strong>: vale desde logo, mas o efeito se desfaz se a autorização de uso depois não vier. É o que dá segurança ao trânsito sem dispensar o controle posterior.</p>
+
+<h3>Depois que a falha passa</h3>
+<ul>
+<li>Cessados os problemas, o emitente deve <strong>transmitir</strong> à administração as NF-e geradas em contingência. Para SVC e EPEC, o limite é de <strong>168 horas</strong> (7 dias) da emissão da NF-e. Releia no texto consolidado o prazo do FS-DA.</li>
+<li>Se a NF-e enviada por EPEC ou FS-DA for <strong>rejeitada</strong>, o contribuinte gera de novo o arquivo <strong>com a mesma numeração e série</strong>, sana a irregularidade, solicita a autorização, imprime o DANFE da nota autorizada e providencia, junto ao destinatário, a entrega da NF-e autorizada e do novo DANFE.</li>
+<li>O EPEC em si é analisado e pode ser <strong>rejeitado</strong> pelas mesmas famílias de falhas (recepção, autoria, credenciamento, duplicidade, leiaute).</li>
+</ul>
+
+<h3>A NF-e que ficou "pendente" na hora da falha</h3>
+<p>Se a transmissão foi feita <em>antes</em> da contingência e ficou sem retorno, o contribuinte pode ter emitido outra nota para a mesma operação. Quando o retorno vem, três situações:</p>
+<ul>
+<li>veio <strong>autorizada</strong> e a operação <strong>não se efetivou</strong>, ou foi <strong>acobertada por outra NF-e emitida em contingência</strong>: o emitente deve solicitar o <strong>cancelamento</strong> — com prazo de <strong>168 horas</strong>, bem maior do que o ordinário;</li>
+<li>a operação aconteceu com a própria nota: nada a fazer;</li>
+<li>a nota <strong>não foi nem autorizada nem negada</strong>: não há documento a cancelar. Cancelamento pressupõe NF-e autorizada; o número sem uso segue a lógica da inutilização (lição 1.7; confira a redação do Ajuste para esse caso).</li>
+</ul>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>Numa sexta-feira à tarde a SEFAZ de Sergipe sai do ar. Uma indústria precisa despachar 10 caminhões. A empresa tem certificado em dia, não tem formulário de segurança e já enviou as 10 NF-e, sem receber resposta. Qual caminho e que obrigações a seguem?</p>
+<div class="res">
+<ul>
+<li><strong>Alternativa:</strong> SVC ou EPEC (a empresa não tem FS-DA). Com o SVC, o ambiente virtual autoriza as notas, e o DANFE é impresso com a autorização. Com o EPEC, o evento é enviado à RFB, as notas se presumem emitidas na recepção do evento, e o DANFE sai em <strong>no mínimo duas vias</strong>.</li>
+<li><strong>As 10 NF-e já transmitidas.</strong> Ficaram pendentes. Se uma delas vier depois, autorizada, e a operação tiver sido acobertada por outra NF-e emitida em contingência, o emitente <strong>cancela</strong> em até 168 horas.</li>
+<li><strong>Após a falha.</strong> Cessado o problema, as notas de contingência são transmitidas no limite de 168 horas da emissão.</li>
+<li><strong>Se alguma for rejeitada.</strong> Gera de novo com <em>mesmo número e série</em>, corrige e solicita a autorização.</li>
+</ul>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>EPEC com "única via".</strong> É no mínimo duas.</li><li><strong>"Na SVC ou no EPEC o prazo é de 24 horas."</strong> É 168 horas.</li><li><strong>Atribuir ao EPEC a autorização "por outra UF/RFB".</strong> Essa é a descrição do SVC.</li><li><strong>Momento da emissão no FS-DA:</strong> a impressão do DANFE; no EPEC, a recepção do evento.</li><li><strong>Pendente que retorna autorizada e não efetivada:</strong> cancelamento, não inutilização.</li><li><strong>Reemitir rejeitada com numeração nova:</strong> a norma pede a mesma numeração e série.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Este é um tema de "alternativa incorreta": quatro afirmações verdadeiras e uma com número, prazo ou mecanismo trocado entre as três alternativas.</li><li>Em Certo/Errado vêm itens curtos sobre cada alternativa: "SVC", "EPEC", "FS-DA", pedindo reconhecer a definição, o momento da emissão e o número de vias.</li><li>Casos de NF-e "transmitida antes da contingência e pendente de retorno": a banca varia o desfecho (autorizada, acobertada por outra, sem resposta) para checar se você escolhe cancelamento ou inutilização.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Contingência é terreno fértil para fraude de data e para notas "fantasma". Confira se há NF-e em contingência (<code>tpEmis</code> ≠ 1) que nunca foi regularizada, se o prazo de 168 horas foi cumprido e se o número aparece depois duplicado.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05, cláusula décima primeira: SVC, EPEC, FS-DA; presunção de emissão; condição resolutória; prazos de transmissão; rejeição na contingência</li><li>Ajuste SINIEF 07/05, cláusula décima segunda-A: cancelamento de NF-e pendente de retorno (168 horas)</li><li>MOC NF-e: tipos de emissão (<code>tpEmis</code>) e contingência</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei explicar quando se pode operar em contingência e quais são as três alternativas.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei dizer, para cada alternativa, a regra do DANFE e o momento em que a NF-e se considera emitida.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei os prazos (168 horas) e o que fazer com NF-e rejeitada em contingência.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei decidir entre cancelamento e inutilização para NF-e pendente de retorno.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
+<button class="done-btn" type="button" data-id="m1-l6">Marcar lição como concluída</button>
+<nav class="pager"><a href="m1-l5.html" class="prev"><small>Anterior</small>1.5 DANFE: finalidade, impressão e dispensas</a><a href="m1-l7.html" class="next"><small>Próxima</small>1.7 Cancelamento, inutilização, CC-e e registro de saída</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

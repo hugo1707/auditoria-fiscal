@@ -4,46 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>4.2 Tipos de CT-e, tipos de serviço e ICMS no transporte</title>
+<title>4.2 Divergências típicas e o que cada uma indica</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m4-l2">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 4</span>CT-e e CT-e OS (MOC 4.00)</div>
-  <div class="cell"><span>Lição</span>4.2</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>MOC CT-e 4.00 — grupos ide e imp</div>
-</div>
-<h1>Tipos de CT-e, tipos de serviço e ICMS no transporte</h1>
-<p class="obj">Classificar o CT-e pelo tipo e pelo serviço e ler o grupo de ICMS da prestação.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 4</span>Auditoria com os arquivos</div><div class="cell"><span>Lição</span>4.2</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajustes SINIEF 07/05 e 02/09 · legislação do ICMS da UF (para a infração e a penalidade)</div></div>
+<h1>Divergências típicas e o que cada uma indica</h1>
+<p class="obj">Relacionar cada divergência a uma hipótese de infração, identificar a prova necessária e separar o que a norma de documento permite concluir do que depende da lei material.</p>
 <div class="content">
-<h3>tpCTe</h3>
-<p>0 normal; 1 complementar de valores; 3 substituto. Na versão 4.00 não há mais o CT-e de anulação (veja a próxima lição).</p>
-<h3>tpServ</h3>
-<p>0 normal; 1 subcontratação; 2 redespacho; 3 redespacho intermediário; 4 serviço vinculado a multimodal. Em subcontratação e redespacho, o CT-e referencia o documento anterior da cadeia.</p>
-<h3>Grupo imp — ICMS da prestação</h3>
+<p>Uma divergência é um <em>sintoma</em>. A infração é a <em>conclusão</em> que você tira dela depois de provar. As normas que estudamos (Ajustes SINIEF) dizem como os documentos e a escrituração devem ser; quem define o que é infração, a base de cálculo da multa e as presunções é a <strong>lei do ICMS de cada UF</strong>. Esta lição mapeia os sintomas às hipóteses mais comuns, sem inventar a lei material.</p>
+
 <div class="tbl"><table>
-<tr><td>ICMS00</td><td>Tributação normal</td></tr>
-<tr><td>ICMS20</td><td>Com redução de base de cálculo</td></tr>
-<tr><td>ICMS45</td><td>Isento (40), não tributado (41) ou diferido (51)</td></tr>
-<tr><td>ICMS60</td><td>Cobrado por substituição tributária (responsabilidade atribuída ao tomador)</td></tr>
-<tr><td>ICMS90</td><td>Outros</td></tr>
-<tr><td>ICMSOutraUF</td><td>ICMS devido a UF diversa da de origem</td></tr>
-<tr><td>ICMSSN</td><td>Emitente do Simples Nacional</td></tr>
+<tr><th>Sintoma</th><th>Hipótese</th><th>O que provar</th></tr>
+<tr><td>NF-e de <strong>saída autorizada, não escriturada</strong> pelo emitente</td><td>omissão de escrituração de saída; possível falta de débito</td><td>que a nota circulou (MDF-e, registro de passagem, manifestação do destinatário) e que não foi cancelada</td></tr>
+<tr><td>NF-e de <strong>entrada autorizada, não escriturada</strong> pelo destinatário</td><td>omissão de entrada; em alguns Estados, presunção de saídas anteriores sem documento, na forma da lei estadual</td><td>que a mercadoria entrou (pagamento, estoque, transporte) e a previsão legal da presunção</td></tr>
+<tr><td>Escriturada, <strong>sem XML autorizado</strong></td><td>documento inexistente, não autorizado ou inidôneo; crédito sem suporte</td><td>consulta na SEFAZ e a ausência de autorização; idoneidade (lição 1.9)</td></tr>
+<tr><td>Nota <strong>cancelada</strong> com crédito aproveitado</td><td>crédito indevido</td><td>evento de cancelamento e data; prova de que a operação não se realizou ou o contrário</td></tr>
+<tr><td><strong>ICMS escriturado maior</strong> que o destacado</td><td>crédito a maior</td><td>o XML e o C170; o documento é a medida do crédito</td></tr>
+<tr><td><strong>ICMS escriturado menor</strong> na saída</td><td>débito a menor</td><td>idem</td></tr>
+<tr><td><strong>CFOP/CST incompatíveis</strong> com a operação</td><td>erro de enquadramento ou manobra para reduzir imposto</td><td>a natureza real da operação (contrato, destino, mercadoria)</td></tr>
+<tr><td><strong>NCM, CEST e ST</strong> incoerentes</td><td>tributação indevida por substituição tributária (ou falta dela)</td><td>a lista de mercadorias e o convênio</td></tr>
+<tr><td>Frete (D100) <strong>sem CT-e</strong> ou CT-e que aponta NF-e inexistente</td><td>crédito de frete sem suporte</td><td>chave do CT-e, transportador, MDF-e</td></tr>
+<tr><td>Inventário (H) diferente do levantamento</td><td>omissão de entradas ou de saídas</td><td>levantamento quantitativo (lição 4.3)</td></tr>
+<tr><td>EFD entregue <strong>fora do prazo</strong> ou não entregue</td><td>descumprimento de obrigação acessória</td><td>o recibo e a data; a obrigatoriedade no período (lição 2.2)</td></tr>
 </table></div>
-<p>A regra material de responsabilidade (quando o tomador deve reter e recolher) está na legislação de cada UF e em convênios; o XML apenas reflete a opção feita.</p>
+
+<h3>O que as normas estudadas já resolvem</h3>
+<ul>
+<li><strong>Autorização não convalida.</strong> A nota estar autorizada não impede o lançamento sobre o conteúdo tributário (lição 1.3).</li>
+<li><strong>Recepção da EFD não homologa.</strong> O recibo não encerra a discussão sobre o crédito (lição 2.4).</li>
+<li><strong>Idoneidade pela utilização.</strong> Mesmo autorizada, a nota usada com simulação ou fraude não é idônea (lição 1.9).</li>
+<li><strong>Retificação sob ação fiscal não tem efeito.</strong> O contribuinte não pode apagar o achado reescrevendo o arquivo (lição 2.5).</li>
+<li><strong>Compartilhamento entre UFs.</strong> A operação interestadual é vista dos dois lados (lição 2.6).</li>
+</ul>
+
+<h3>O que elas não resolvem</h3>
+<p>Quanto vale a multa? O ICMS é exigido do remetente, do destinatário ou dos dois? Quando a presunção de omissão se aplica? O estorno do crédito é exigido por inteiro ou proporcionalmente? Tudo isso depende da <strong>lei e do regulamento da UF</strong> (e, em parte, da Lei Complementar 87/96). Um erro frequente de iniciante é estender para a prova de documento uma regra que só existe na lei material.</p>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>CT-e com ICMS60 tira o débito do transportador e o coloca no tomador. Se o tomador é contribuinte da sua UF, verifique se ele recolheu esse imposto — é comum ninguém recolher.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>MOC CT-e 4.00 — leiaute, grupo ide (tpCTe, tpServ) e grupo imp (ICMS)</li><li>LC nº 87/1996, arts. 11, II e 12, V (local e fato gerador na prestação de transporte)</li><li>Legislação da UF sobre substituição tributária no transporte</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Quais valores de tpCTe existem na versão 4.00?</summary><p>0 normal, 1 complementar e 3 substituto.</p></details><details class="q"><summary><span class="qn">2</span>O que é redespacho?</summary><p>Quando o transportador contratado repassa a outro transportador parte do trajeto, que emite CT-e com tpServ de redespacho referenciando o anterior.</p></details><details class="q"><summary><span class="qn">3</span>Qual grupo de ICMS é usado para prestação isenta?</summary><p>ICMS45 (isento, não tributado ou diferido).</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>No levantamento da Comercial Exemplo, o auditor encontra duas coisas: (A) uma NF-e de venda de R$ 12.000, emitida pela Comercial, autorizada, <strong>sem</strong> escrituração no <code>C100</code>; (B) uma NF-e de compra de R$ 8.000, da qual a Comercial é destinatária, autorizada, com evento de <em>Desconhecimento da Operação</em> registrado pela própria Comercial, e <strong>não escriturada</strong>. O que pode e o que não pode afirmar?</p>
+<div class="res">
+<p><strong>(A)</strong> Nota emitida pela própria Comercial, autorizada, e não escriturada: divergência de família A, lado da <em>saída</em>. O que o auditor pode afirmar com a prova de documento: a nota existe e foi autorizada. Para concluir <em>omissão de débito</em>, ele ainda precisa mostrar que a operação ocorreu (cancelamento ausente, mercadoria circulou, o destinatário recebeu) e que o imposto não foi recolhido por outra via. Só então a lei estadual define infração e multa.</p>
+<p><strong>(B)</strong> A Comercial registrou o Desconhecimento: disse que <em>não solicitou</em> a operação. Isso <strong>explica</strong> a ausência de escrituração e desloca o foco: quem emitiu pode ter usado o CNPJ da Comercial indevidamente. Nesse cenário, não é correto cobrar da Comercial uma omissão de entrada. O auditor deve verificar a veracidade do desconhecimento (houve pagamento? entrega? transporte para o endereço dela?) e, se for falso, reverter a conclusão.</p>
+<p>A moral: o mesmo sintoma (nota autorizada, não escriturada) levou a duas conclusões opostas dependendo do evento associado.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>Concluir pela infração a partir do sintoma.</strong> A divergência abre a investigação; a prova a fecha.</li><li><strong>"A nota está autorizada, logo a operação é válida."</strong> A autorização confere forma.</li><li><strong>"A EFD foi recebida, logo a apuração foi homologada."</strong> Não foi.</li><li><strong>Ignorar eventos</strong> de manifestação, cancelamento e passagem.</li><li><strong>Atribuir à norma de documento a presunção ou a multa.</strong> Elas estão na lei do Estado.</li><li><strong>Aceitar a retificação feita durante a ação fiscal</strong> como se apagasse o achado.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Em questões de auditoria, é comum um enunciado com um achado e quatro ou cinco consequências; a correta é a que ressalva o que depende de lei material ou de prova.</li><li>Provas que cobram "deveres do auditor" costumam afirmar que ele verifica a consistência das informações e a conformidade com a legislação, garantindo que não haja omissões ou subfaturamento. O item é considerado certo na linha geral.</li><li>Alternativas que dizem que a recepção da EFD ou a autorização da NF-e "impedem" a autuação são sempre erradas.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Registre cada divergência com: chave, família (A, B ou C), valores dos dois lados, evento associado e a hipótese. Esse registro é o que sustenta, mais tarde, o relatório e a defesa. Não descarte a hipótese de erro honesto do contribuinte: ela precisa ser testada e, se confirmada, vira orientação em vez de autuação.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05: autorização sem convalidação; idoneidade; eventos</li><li>Ajuste SINIEF 02/09: recepção da EFD sem homologação; retificação; compartilhamento</li><li>Lei Complementar 87/96 e legislação do ICMS da UF: infrações, penalidades, presunções e estorno de crédito</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei relacionar as divergências mais comuns às hipóteses e às provas.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei listar o que as normas estudadas já resolvem e o que fica para a lei material.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei por que o evento associado pode mudar a conclusão sobre o mesmo sintoma.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei registrar uma divergência de forma que sustente o relatório.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m4-l2">Marcar lição como concluída</button>
-<nav class="pager"><a href="m4-l1.html" class="prev"><small>Anterior</small>4.1 CT-e e CT-e OS: modelos, modais e participantes</a><a href="m4-l3.html" class="next"><small>Próxima</small>4.3 Eventos, correção e substituição do CT-e</a></nav>
+<nav class="pager"><a href="m4-l1.html" class="prev"><small>Anterior</small>4.1 A lógica do cruzamento entre NF-e e EFD</a><a href="m4-l3.html" class="next"><small>Próxima</small>4.3 Roteiro de auditoria e levantamento quantitativo de estoque</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

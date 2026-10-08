@@ -4,45 +4,77 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>4.1 CT-e e CT-e OS: modelos, modais e participantes</title>
+<title>4.1 A lógica do cruzamento entre NF-e e EFD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m4-l1">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 4</span>CT-e e CT-e OS (MOC 4.00)</div>
-  <div class="cell"><span>Lição</span>4.1</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 09/2007; MOC CT-e 4.00</div>
-</div>
-<h1>CT-e e CT-e OS: modelos, modais e participantes</h1>
-<p class="obj">Distinguir CT-e e CT-e OS e identificar cada participante da prestação, com atenção ao tomador.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 4</span>Auditoria com os arquivos</div><div class="cell"><span>Lição</span>4.1</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajustes SINIEF 07/05 e 02/09 · Guia Prático da EFD ICMS/IPI (registros C100, C170, C190, D100)</div></div>
+<h1>A lógica do cruzamento entre NF-e e EFD</h1>
+<p class="obj">Montar o cruzamento NF-e × EFD pela chave, classificar as diferenças em três famílias e conferir as relações internas da própria escrituração.</p>
 <div class="content">
-<p>O <strong>Ajuste SINIEF 09/2007</strong> instituiu o CT-e (modelo 57), usado na prestação de serviço de transporte de cargas, e o CT-e OS (modelo 67), para outros serviços de transporte, como transporte de pessoas, de valores e de excesso de bagagem. A representação gráfica é o DACTE (ou DACTE OS).</p>
-<h3>Modais (campo modal)</h3>
-<p>01 rodoviário; 02 aéreo; 03 aquaviário; 04 ferroviário; 05 dutoviário; 06 multimodal.</p>
-<h3>Participantes</h3>
+<p>Tudo o que você viu até aqui converge numa operação: pôr lado a lado o <strong>que foi autorizado</strong> (XML) e o <strong>que foi escriturado</strong> (EFD) e olhar o que não bate. O método é sempre o mesmo.</p>
+
+<h3>Passo 1: a chave como elo</h3>
+<p>No lado do XML, a chave de acesso é <code>chNFe</code>. No lado da EFD, está no campo <code>CHV_NFE</code> do <code>C100</code>. Como a chave identifica de forma única a nota, o cruzamento é uma junção por chave. Se você juntar por número e série, vai gerar falsas diferenças (números repetem entre estabelecimentos; séries mudam).</p>
+
+<h3>Passo 2: três famílias de diferença</h3>
 <div class="tbl"><table>
-<tr><td>Remetente</td><td>Quem envia a carga (normalmente o emitente da NF-e)</td></tr>
-<tr><td>Expedidor</td><td>Quem entrega a carga ao transportador, quando não é o remetente</td></tr>
-<tr><td>Recebedor</td><td>Quem recebe a carga do transportador, quando não é o destinatário</td></tr>
-<tr><td>Destinatário</td><td>Destinatário final da carga</td></tr>
-<tr><td>Tomador</td><td>Quem contrata e paga o serviço</td></tr>
+<tr><th>Família</th><th>Em palavras</th><th>Hipóteses a investigar</th></tr>
+<tr><td><strong>A. Está no XML e não está na EFD</strong></td><td>nota autorizada, destinada ao contribuinte (ou emitida por ele), mas sem escrituração</td><td>entrada não escriturada · saída não escriturada · nota emitida para outro estabelecimento do mesmo grupo · escrituração em outro período</td></tr>
+<tr><td><strong>B. Está na EFD e não está no XML</strong></td><td>escrituração de nota que não consta como autorizada</td><td>documento inexistente ou não autorizado · erro de digitação da chave · nota de outro modelo (papel)</td></tr>
+<tr><td><strong>C. Está nos dois, mas diferente</strong></td><td>mesma chave, campos divergentes</td><td>valor · ICMS · CFOP · data · situação (cancelada no XML, regular na EFD)</td></tr>
 </table></div>
-<p>O tomador é indicado em <code>toma3</code> (0 remetente, 1 expedidor, 2 recebedor, 3 destinatário) ou em <code>toma4</code> (4 outros, com identificação completa).</p>
-<h3>Vínculo com a carga</h3>
-<p>No CT-e normal, o grupo de documentos (<code>infDoc</code>) relaciona as chaves das NF-e transportadas. É esse elo que permite cruzar frete, mercadoria e manifesto.</p>
+<p>Cada família leva a uma conclusão diferente e a uma prova diferente. Misturá-las é o erro mais comum do iniciante.</p>
+
+<h3>Passo 3: o que comparar na família C</h3>
+<ul>
+<li><strong>Valor do documento:</strong> <code>vNF</code> do XML × <code>VL_DOC</code> do <code>C100</code>.</li>
+<li><strong>ICMS:</strong> <code>vICMS</code> do total × <code>VL_ICMS</code>. A diferença é potencial crédito (na entrada) ou débito (na saída) a maior ou a menor.</li>
+<li><strong>Situação:</strong> a nota teve <em>evento de cancelamento</em>, mas na EFD está com <code>COD_SIT</code> 00 (regular). Os valores principais do campo: 00 regular · 02 cancelado · 04 denegado · 05 numeração inutilizada.</li>
+<li><strong>CFOP:</strong> o 5xxx do XML deve virar 1xxx na EFD do comprador; 6xxx vira 2xxx; 7xxx vira 3xxx. Natureza incompatível indica erro ou manobra.</li>
+<li><strong>Datas:</strong> emissão (<code>DT_DOC</code>) e entrada ou saída (<code>DT_E_S</code>); o período da EFD é o da escrituração.</li>
+</ul>
+
+<h3>Passo 4: relações internas da EFD</h3>
+<p>Antes mesmo de olhar o XML, a EFD tem de ser coerente consigo mesma:</p>
+<ul>
+<li>a soma dos itens (<code>C170</code>) deve fechar com o cabeçalho (<code>C100</code>);</li>
+<li>o resumo (<code>C190</code>, por CST/CFOP/alíquota) deve fechar com os itens;</li>
+<li>o débito e o crédito apurados no Bloco E (<code>E110</code>) devem refletir os <code>C190</code> do período, mais os ajustes declarados em <code>E111</code>;</li>
+<li>o frete do <code>D100</code> deve ter correspondente no CT-e, que por sua vez lista as NF-e transportadas.</li>
+</ul>
+<p>Uma diferença interna (item × cabeçalho) já é achado, sem precisar de XML.</p>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Só o tomador contribuinte pode se creditar do ICMS do frete, e apenas quando o frete compõe o custo da sua operação tributada. Confira se quem escriturou o CT-e com crédito é, de fato, o tomador informado no XML.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 09/2007 — cláusula primeira (CT-e e CT-e OS)</li><li>MOC CT-e 4.00 — leiaute: ide (modal, toma3/toma4), rem, exped, receb, dest, infCTeNorm/infDoc</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual o modelo do CT-e OS e para que serve?</summary><p>Modelo 67; serviços de transporte de pessoas, valores e excesso de bagagem.</p></details><details class="q"><summary><span class="qn">2</span>O que significa toma3 = 3?</summary><p>O tomador do serviço é o destinatário.</p></details><details class="q"><summary><span class="qn">3</span>Como o CT-e se liga às mercadorias transportadas?</summary><p>Pelas chaves das NF-e informadas no grupo de documentos (infDoc).</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>Em setembro/2026, a Comercial Exemplo (lição 0.3) escriturou entradas. A base de XML autorizados com ela como destinatária e a lista de <code>C100</code> estão abaixo. Chaves abreviadas pelos quatro últimos dígitos.</p>
+<div class="tbl"><table>
+<tr><th>Chave</th><th>XML: vNF</th><th>XML: ICMS</th><th>XML: eventos</th><th>EFD: VL_DOC</th><th>EFD: ICMS</th><th>EFD: COD_SIT</th></tr>
+<tr><td>…0001</td><td>1.000,00</td><td>180,00</td><td>—</td><td>1.000,00</td><td>180,00</td><td>00</td></tr>
+<tr><td>…0002</td><td>2.400,00</td><td>432,00</td><td>—</td><td>2.400,00</td><td>460,00</td><td>00</td></tr>
+<tr><td>…0003</td><td>800,00</td><td>144,00</td><td>cancelamento (16/09)</td><td>800,00</td><td>144,00</td><td>00</td></tr>
+<tr><td>…0004</td><td>5.000,00</td><td>900,00</td><td>—</td><td colspan="3"><em>não escriturada</em></td></tr>
+<tr><td>…0005</td><td colspan="3"><em>não consta no XML</em></td><td>500,00</td><td>90,00</td><td>00</td></tr>
+</table></div>
+<div class="res">
+<p><strong>…0001.</strong> Bate. Sem achado.</p>
+<p><strong>…0002 (família C).</strong> Valor igual, mas ICMS escriturado R$ 460,00 contra R$ 432,00 do XML. Diferença de <strong>R$ 28,00 de crédito a maior</strong>, a investigar (erro de digitação? alíquota aplicada de forma diferente?).</p>
+<p><strong>…0003 (família C, situação).</strong> A nota foi <strong>cancelada</strong> em 16/09 e a EFD a mantém como regular. O crédito de R$ 144,00 provém de documento cancelado: <strong>crédito indevido</strong>, salvo prova de que o cancelamento foi irregular ou posterior ao fato.</p>
+<p><strong>…0004 (família A).</strong> NF-e de R$ 5.000,00 autorizada contra a Comercial e <strong>não escriturada</strong>. Hipóteses: entrada não registrada (e portanto crédito de R$ 900,00 não aproveitado, mas também compra fora da contabilidade); nota recusada pelo recebedor; operação cancelada fora do sistema. Pede-se confirmação: intimação do contribuinte, consulta aos eventos de manifestação.</p>
+<p><strong>…0005 (família B).</strong> Escriturada, mas sem XML. <strong>Documento não autorizado</strong> ou chave errada; crédito de R$ 90,00 sem suporte.</p>
+<p><strong>Resumo provisório.</strong> Crédito escriturado nas linhas 0001, 0002, 0003, 0005: 180 + 460 + 144 + 90 = 874. Suportado por XML autorizado e não cancelado: 180 + 432 = 612. Diferença <strong>R$ 262,00</strong> (28 + 144 + 90) a questionar, e uma entrada de R$ 5.000,00 a esclarecer. Note que cada R$ tem origem numa família diferente.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>Cruzar por número e série</strong> em vez de chave.</li><li><strong>Ler "não escriturada" como prova de sonegação.</strong> É uma diferença a ser explicada; a prova vem depois.</li><li><strong>Ignorar eventos.</strong> A nota pode estar autorizada e depois cancelada, ou ter CC-e. Sempre associe os eventos à chave.</li><li><strong>Ignorar a perspectiva do CFOP.</strong> 5102 no XML e 1102 na EFD é correspondência certa; 5102 nos dois lados é problema.</li><li><strong>Comparar valor da nota com soma de itens.</strong> Frete, seguro, desconto e outras despesas explicam diferenças legítimas.</li><li><strong>Período.</strong> Nota emitida em setembro e escriturada em outubro pode ser extemporânea, não omissa.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>A cobrança direta do cruzamento aparece em questões de auditoria que dão um conjunto de dados (documentos autorizados, registros da EFD) e pedem classificar o achado ou o cálculo da diferença.</li><li>Questões conceituais afirmam que a EFD "dispensa" o detalhamento das notas porque há apuração no Bloco E, ou que a NF-e traz os tributos só no total: ambos errados, e a lição 0.1 e esta mostram por quê.</li><li>Itens de "dever do auditor": verificar consistência, conformidade com a legislação e a inexistência de omissões, subfaturamento ou outras irregularidades.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>O cruzamento só funciona se as duas bases forem confiáveis. Antes de qualquer conclusão, valide: todas as chaves têm 44 dígitos e DV correto? há duplicidade? o período de cada base é o mesmo? as notas canceladas e denegadas foram tratadas? Um terço dos "achados" de um cruzamento mal montado desaparece nessa limpeza.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05: autorização de uso, eventos, idoneidade (lições 1.3, 1.8 e 1.9)</li><li>Ajuste SINIEF 02/09: EFD como escrituração completa; compartilhamento (lições 2.1 a 2.6)</li><li>Guia Prático da EFD ICMS/IPI: registros C100 (campos CHV_NFE, COD_SIT, VL_DOC, VL_ICMS), C170, C190, E110, E111, D100</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei montar o cruzamento por chave e classificar a diferença em A, B ou C.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei o que comparar em cada nota (valor, ICMS, situação, CFOP, datas) e por que a perspectiva do CFOP muda.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei as relações internas que a EFD precisa satisfazer entre C170, C190 e E110.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei por que uma diferença é um achado a explicar e não uma conclusão.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m4-l1">Marcar lição como concluída</button>
-<nav class="pager"><a href="m3-l4.html" class="prev"><small>Anterior</small>3.4 cBenef: o código do benefício fiscal</a><a href="m4-l2.html" class="next"><small>Próxima</small>4.2 Tipos de CT-e, tipos de serviço e ICMS no transporte</a></nav>
+<nav class="pager"><a href="m3-l3.html" class="prev"><small>Anterior</small>3.3 MDF-e: o manifesto da carga e a prova de circulação</a><a href="m4-l2.html" class="next"><small>Próxima</small>4.2 Divergências típicas e o que cada uma indica</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

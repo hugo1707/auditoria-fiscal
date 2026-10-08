@@ -1,32 +1,64 @@
 (function(){
-  var KEY = "af-dfe-efd-done";
-  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
-  function save(d){ try { localStorage.setItem(KEY, JSON.stringify(d)); } catch(e){} }
-  var done = load();
+  // Tudo fica no localStorage deste navegador. Três chaves:
+  //   done  -> { idDaLicao: timestamp }
+  //   notes -> { idDaLicao: "texto" }
+  //   check -> { idDaLicao: { indice: true } }
+  var KEYS = { done: "af2-done", notes: "af2-notes", check: "af2-check" };
+  function load(k){ try { return JSON.parse(localStorage.getItem(KEYS[k])) || {}; } catch(e){ return {}; } }
+  function save(k, d){ try { localStorage.setItem(KEYS[k], JSON.stringify(d)); return true; } catch(e){ return false; } }
+  var done = load("done"), notes = load("notes"), check = load("check");
   var L = window.LESSONS || [];
 
-  // mark links
+  // links com marca de concluída (índice e cronograma)
   document.querySelectorAll("a[data-id]").forEach(function(a){
     if (done[a.dataset.id]) a.classList.add("is-done");
   });
 
-  // lesson button
-  var btn = document.querySelector(".done-btn");
-  function paint(){
-    if (!btn) return;
-    var on = !!done[btn.dataset.id];
-    btn.classList.toggle("is-done", on);
-    btn.textContent = on ? "Lição concluída — toque para desfazer" : "Marcar lição como concluída";
-  }
-  if (btn){
+  var art = document.querySelector("article.lesson");
+  if (art){
+    var id = art.dataset.id;
+
+    // botão de concluir
+    var btn = art.querySelector(".done-btn");
+    function paint(){
+      var on = !!done[id];
+      btn.classList.toggle("is-done", on);
+      btn.textContent = on ? "Lição concluída — toque para desfazer" : "Marcar lição como concluída";
+    }
     paint();
     btn.addEventListener("click", function(){
-      if (done[btn.dataset.id]) delete done[btn.dataset.id]; else done[btn.dataset.id] = Date.now();
-      save(done); paint();
+      if (done[id]) delete done[id]; else done[id] = Date.now();
+      save("done", done); paint();
+    });
+
+    // anotações
+    var note = document.getElementById("note");
+    if (note){
+      note.value = notes[id] || "";
+      var t;
+      note.addEventListener("input", function(){
+        clearTimeout(t);
+        t = setTimeout(function(){
+          if (note.value.trim()) notes[id] = note.value; else delete notes[id];
+          save("notes", notes);
+        }, 300);
+      });
+    }
+
+    // lista de domínio
+    var mine = check[id] || {};
+    art.querySelectorAll("input[data-check]").forEach(function(c){
+      c.checked = !!mine[c.dataset.check];
+      c.addEventListener("change", function(){
+        var cur = check[id] || {};
+        if (c.checked) cur[c.dataset.check] = true; else delete cur[c.dataset.check];
+        if (Object.keys(cur).length) check[id] = cur; else delete check[id];
+        save("check", check);
+      });
     });
   }
 
-  // home progress
+  // progresso na página inicial
   var fill = document.getElementById("pfill");
   var txt = document.getElementById("ptext");
   var cont = document.getElementById("continue");
@@ -44,5 +76,40 @@
       cont.textContent = "Continuar: " + next.code + " " + next.title;
       cont.href = "licoes/" + next.id + ".html";
     }
+  }
+
+  // cópia de segurança (só na página inicial)
+  var exp = document.getElementById("exp"), imp = document.getElementById("imp"), rst = document.getElementById("rst");
+  var msg = document.getElementById("bmsg");
+  function say(s){ if (msg) msg.textContent = s; }
+  if (exp){
+    exp.addEventListener("click", function(){
+      var blob = new Blob([JSON.stringify({ v: 2, done: done, notes: notes, check: check }, null, 1)], { type: "application/json" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "auditoria-fiscal-progresso.json";
+      document.body.appendChild(a); a.click(); a.remove();
+      say("Cópia exportada.");
+    });
+    imp.addEventListener("change", function(){
+      var f = imp.files && imp.files[0];
+      if (!f) return;
+      var r = new FileReader();
+      r.onload = function(){
+        try {
+          var d = JSON.parse(r.result);
+          if (!d || d.v !== 2) throw new Error("formato");
+          save("done", d.done || {}); save("notes", d.notes || {}); save("check", d.check || {});
+          say("Cópia importada. Recarregando…");
+          setTimeout(function(){ location.reload(); }, 400);
+        } catch(e){ say("Arquivo inválido: use uma cópia exportada por esta página."); }
+      };
+      r.readAsText(f);
+    });
+    rst.addEventListener("click", function(){
+      if (!confirm("Apagar progresso, anotações e marcações deste navegador?")) return;
+      try { localStorage.removeItem(KEYS.done); localStorage.removeItem(KEYS.notes); localStorage.removeItem(KEYS.check); } catch(e){}
+      location.reload();
+    });
   }
 })();

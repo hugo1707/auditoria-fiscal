@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>0.1 A NF-e é um arquivo XML</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+<article class="lesson" data-id="m0-l1">
+<div class="form"><div class="cell c-mod"><span>Módulo 0</span>Os arquivos por dentro</div><div class="cell"><span>Lição</span>0.1</div><div class="cell"><span>Tempo</span>25 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 07/05, cláusula 3ª (padrão XML) · MOC NF-e, leiaute do arquivo</div></div>
+<h1>A NF-e é um arquivo XML</h1>
+<p class="obj">Abrir um XML de NF-e, reconhecer seus grupos e extrair dele quem vendeu o quê, para quem e com que imposto.</p>
+<div class="content">
+<p>Quando se diz "nota fiscal eletrônica", muita gente imagina o PDF com código de barras. Esse papel não é a nota. A <strong>NF-e é um arquivo de texto</strong> escrito em <strong>XML</strong>: uma linguagem em que cada informação fica entre duas marcas, como <code>&lt;vNF&gt;1000.00&lt;/vNF&gt;</code>. As marcas se aninham, formando grupos dentro de grupos. Se você abrir o arquivo no Bloco de Notas, vai ler tudo.</p>
+<p>Abaixo está uma NF-e fictícia, <strong>abreviada</strong> (o arquivo real tem centenas de linhas). Os trechos destacados são os que usaremos nas lições seguintes.</p>
+
+<pre class="code" data-lang="xml"><code>&lt;nfeProc versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe"&gt;
+  &lt;NFe&gt;
+    &lt;infNFe versao="4.00" Id="NFe<mark>28260912345678000195550010000045211837492617</mark>"&gt;
+      &lt;ide&gt;
+        &lt;cUF&gt;28&lt;/cUF&gt;
+        &lt;cNF&gt;83749261&lt;/cNF&gt;
+        &lt;natOp&gt;Venda de mercadoria&lt;/natOp&gt;
+        &lt;mod&gt;55&lt;/mod&gt;
+        &lt;serie&gt;1&lt;/serie&gt;
+        &lt;nNF&gt;4521&lt;/nNF&gt;
+        &lt;dhEmi&gt;2026-09-14T10:32:00-03:00&lt;/dhEmi&gt;
+        &lt;tpNF&gt;1&lt;/tpNF&gt;
+        &lt;idDest&gt;1&lt;/idDest&gt;
+        &lt;tpEmis&gt;1&lt;/tpEmis&gt;
+        &lt;cDV&gt;7&lt;/cDV&gt;
+        &lt;tpAmb&gt;1&lt;/tpAmb&gt;
+        &lt;finNFe&gt;1&lt;/finNFe&gt;
+      &lt;/ide&gt;
+      &lt;emit&gt;
+        &lt;CNPJ&gt;12345678000195&lt;/CNPJ&gt;
+        &lt;xNome&gt;DISTRIBUIDORA EXEMPLO S/A&lt;/xNome&gt;
+        &lt;IE&gt;271000019&lt;/IE&gt;
+        &lt;CRT&gt;3&lt;/CRT&gt;
+      &lt;/emit&gt;
+      &lt;dest&gt;
+        &lt;CNPJ&gt;11222333000181&lt;/CNPJ&gt;
+        &lt;xNome&gt;COMERCIAL EXEMPLO LTDA&lt;/xNome&gt;
+        &lt;indIEDest&gt;1&lt;/indIEDest&gt;
+        &lt;IE&gt;271234567&lt;/IE&gt;
+      &lt;/dest&gt;
+      &lt;det nItem="1"&gt;
+        &lt;prod&gt;
+          &lt;cProd&gt;DET-500&lt;/cProd&gt;
+          &lt;xProd&gt;Detergente liquido 500 ml&lt;/xProd&gt;
+          &lt;NCM&gt;34022000&lt;/NCM&gt;
+          &lt;CFOP&gt;<mark>5102</mark>&lt;/CFOP&gt;
+          &lt;uCom&gt;UN&lt;/uCom&gt;
+          &lt;qCom&gt;100.0000&lt;/qCom&gt;
+          &lt;vUnCom&gt;10.0000000000&lt;/vUnCom&gt;
+          &lt;vProd&gt;1000.00&lt;/vProd&gt;
+        &lt;/prod&gt;
+        &lt;imposto&gt;
+          &lt;ICMS&gt;
+            &lt;ICMS00&gt;
+              &lt;orig&gt;0&lt;/orig&gt;
+              &lt;CST&gt;00&lt;/CST&gt;
+              &lt;modBC&gt;3&lt;/modBC&gt;
+              &lt;vBC&gt;1000.00&lt;/vBC&gt;
+              &lt;pICMS&gt;18.0000&lt;/pICMS&gt;
+              &lt;vICMS&gt;180.00&lt;/vICMS&gt;
+            &lt;/ICMS00&gt;
+          &lt;/ICMS&gt;
+          &lt;!-- PIS e COFINS omitidos --&gt;
+        &lt;/imposto&gt;
+      &lt;/det&gt;
+      &lt;total&gt;
+        &lt;ICMSTot&gt;
+          &lt;vBC&gt;1000.00&lt;/vBC&gt;
+          &lt;vICMS&gt;180.00&lt;/vICMS&gt;
+          &lt;vProd&gt;1000.00&lt;/vProd&gt;
+          &lt;vNF&gt;<mark>1000.00</mark>&lt;/vNF&gt;
+        &lt;/ICMSTot&gt;
+      &lt;/total&gt;
+      &lt;transp&gt;&lt;modFrete&gt;9&lt;/modFrete&gt;&lt;/transp&gt;
+      &lt;pag&gt;&lt;detPag&gt;&lt;tPag&gt;15&lt;/tPag&gt;&lt;vPag&gt;1000.00&lt;/vPag&gt;&lt;/detPag&gt;&lt;/pag&gt;
+      &lt;infAdic&gt;&lt;infCpl&gt;Pedido 8812&lt;/infCpl&gt;&lt;/infAdic&gt;
+    &lt;/infNFe&gt;
+    &lt;Signature xmlns="http://www.w3.org/2000/09/xmldsig#"&gt; ... &lt;/Signature&gt;
+  &lt;/NFe&gt;
+  &lt;protNFe versao="4.00"&gt;
+    &lt;infProt&gt;
+      &lt;chNFe&gt;28260912345678000195550010000045211837492617&lt;/chNFe&gt;
+      &lt;dhRecbto&gt;2026-09-14T10:32:41-03:00&lt;/dhRecbto&gt;
+      &lt;nProt&gt;328260000123456&lt;/nProt&gt;
+      &lt;cStat&gt;<mark>100</mark>&lt;/cStat&gt;
+      &lt;xMotivo&gt;Autorizado o uso da NF-e&lt;/xMotivo&gt;
+    &lt;/infProt&gt;
+  &lt;/protNFe&gt;
+&lt;/nfeProc&gt;</code></pre>
+
+<p>Os valores, CNPJ e protocolo são inventados; a estrutura e os nomes das marcas seguem o leiaute 4.00. A alíquota de 18% também é fictícia. (A partir de 2026 o leiaute passa a ter grupos novos ligados à reforma tributária; eles se somam a esta estrutura, não a substituem.)</p>
+
+<h3>Como ler o arquivo</h3>
+<p>O XML tem duas metades: o documento que o emitente <em>assina</em> (<code>NFe</code>) e o <strong>protocolo</strong> que a SEFAZ devolve (<code>protNFe</code>). Juntos formam o arquivo de distribuição, <code>nfeProc</code>. Dentro de <code>infNFe</code>, cada grupo responde a uma pergunta:</p>
+<div class="tbl"><table>
+<tr><th>Grupo</th><th>Responde</th><th>Exemplo no arquivo</th></tr>
+<tr><td><code>ide</code></td><td>Que documento é este?</td><td>modelo 55, série 1, número 4521, emitido em 14/09/2026, saída (<code>tpNF</code>=1), operação interna (<code>idDest</code>=1)</td></tr>
+<tr><td><code>emit</code></td><td>Quem emitiu?</td><td>CNPJ, razão social, IE, regime (<code>CRT</code> 3 = regime normal)</td></tr>
+<tr><td><code>dest</code></td><td>Para quem?</td><td>CNPJ, IE, e se é contribuinte (<code>indIEDest</code>=1)</td></tr>
+<tr><td><code>det</code></td><td>O que foi vendido, item a item?</td><td>produto, NCM, <strong>CFOP</strong>, quantidade, valor e o <strong>imposto do item</strong></td></tr>
+<tr><td><code>total</code></td><td>Quanto, no conjunto?</td><td>soma dos itens: base, ICMS, valor da nota</td></tr>
+<tr><td><code>transp</code></td><td>Quem leva? (frete)</td><td><code>modFrete</code>=9: sem ocorrência de transporte</td></tr>
+<tr><td><code>pag</code></td><td>Como será pago?</td><td>forma e valor</td></tr>
+<tr><td><code>infAdic</code></td><td>Observações livres</td><td>texto complementar; <em>não</em> é onde ficam os dados fiscais</td></tr>
+<tr><td><code>protNFe</code></td><td>Foi autorizada?</td><td>número do protocolo e <code>cStat</code> 100 (autorizado o uso)</td></tr>
+</table></div>
+<p>Repare numa regra de estrutura que importa muito: o <strong>imposto está dentro de cada item</strong> (<code>det</code> → <code>imposto</code>). O grupo <code>total</code> apenas soma. Quem audita parte do item; o total é consequência.</p>
+
+<h3>Três pontos que o arquivo deixa claros</h3>
+<ul>
+<li><strong>Identidade.</strong> O atributo <code>Id</code> de <code>infNFe</code> é a palavra <code>NFe</code> seguida da <strong>chave de acesso</strong> (44 dígitos). Veremos na próxima lição que a chave repete dados que também estão em <code>ide</code> e <code>emit</code>.</li>
+<li><strong>Assinatura.</strong> O bloco <code>Signature</code> prova quem emitiu e que o conteúdo não foi alterado depois. Mexer em um único dígito do XML invalida a assinatura.</li>
+<li><strong>Autorização é um acréscimo.</strong> Sem <code>protNFe</code> com <code>cStat</code> 100 você tem um arquivo bem formado, mas não um documento fiscal utilizável. A norma diz isso expressamente (lição 1.3).</li>
+</ul>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>Um colega entrega só o arquivo acima e pergunta: <em>"isso foi uma compra ou uma venda? Quanto de ICMS está destacado e a nota vale?"</em></p>
+<div class="res">
+<p><strong>Quem é quem.</strong> O <code>emit</code> é a Distribuidora; o <code>dest</code> é a Comercial. O <code>tpNF</code>=1 e o CFOP <code>5102</code> mostram que, para <em>quem emitiu</em>, é uma <strong>saída</strong> (venda de mercadoria adquirida de terceiros, dentro do estado: o 5 inicial indica operação interna, e <code>idDest</code>=1 confirma). Para a Comercial, a mesma nota é uma <strong>entrada</strong>.</p>
+<p><strong>O imposto.</strong> Está em <code>det</code>/<code>imposto</code>: R$ 180,00 (18% sobre R$ 1.000,00), e o <code>total</code> repete R$ 180,00 porque há um único item.</p>
+<p><strong>Vale?</strong> Há <code>protNFe</code> com <code>cStat</code> 100 e protocolo <code>328260000123456</code>: uso autorizado. Se o <code>protNFe</code> faltasse, a resposta seria "ainda não é documento fiscal", por mais bem preenchido que estivesse o resto.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>Total x item.</strong> Afirmar que os tributos ficam no grupo de totais, "sem detalhamento por item", inverte a estrutura: o detalhamento é no item; o total soma.</li><li><strong>Dados fiscais em <code>infAdic</code>.</strong> Informações adicionais são texto livre complementar. Os dados que o fisco processa estão nos grupos estruturados.</li><li><strong>Perspectiva da operação.</strong> <code>tpNF</code>=1 (saída) vale para o emitente. O destinatário escritura a mesma nota como entrada.</li><li><strong>XML não é DANFE.</strong> O PDF com código de barras é só uma representação impressa (próxima lição).</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Pergunta sobre <strong>em que grupo mora uma informação</strong> (identificação da operação, emitente, destinatário, produtos, tributos, totais) e sobre o que <em>não</em> pertence a cada grupo.</li><li>Item que compara NF-e e EFD: a NF-e é um documento estruturado em grupos de XML; a EFD, uma escrituração organizada em blocos e registros. As alternativas erradas atribuem "estrutura livre" ou "campos definidos por cada UF" a qualquer um dos dois.</li><li>Afirmações absolutas ("sem distinção", "restritos ao Bloco C", "dispensando a escrituração detalhada") quase sempre denunciam a alternativa errada.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Antes de qualquer cruzamento, abra um XML de verdade. Quem conhece a posição de cada informação desconfia na hora de um relatório que mistura valor da nota (<code>vNF</code>) com soma dos itens (<code>vProd</code>): são grandezas diferentes, e a diferença (frete, desconto, impostos que compõem o valor) costuma ser a origem das "divergências" que não são divergências.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05, cláusula terceira: o arquivo digital da NF-e é elaborado em padrão XML, conforme o leiaute do MOC</li><li>Manual de Orientação do Contribuinte (MOC) da NF-e, Anexo I: grupos A (infNFe), B (ide), C (emit), E (dest), H (det), I (prod), N (ICMS), W (total), X (transp), Y (pag), Z (infAdic)</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei abrir um XML de NF-e e dizer quem emitiu, para quem, o valor e o imposto de cada item.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei explicar por que o imposto está no item e o total apenas soma.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei diferenciar o documento assinado (<code>NFe</code>) do protocolo (<code>protNFe</code>) e dizer o que falta a um XML sem protocolo.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei que a mesma nota é saída para o emitente e entrada para o destinatário.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
+<button class="done-btn" type="button" data-id="m0-l1">Marcar lição como concluída</button>
+<nav class="pager"><span></span><a href="m0-l2.html" class="next"><small>Próxima</small>0.2 DANFE, chave de acesso e protocolo</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

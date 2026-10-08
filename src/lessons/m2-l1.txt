@@ -1,0 +1,66 @@
+title: O que é a EFD e o que ela escritura
+min: 25
+norma: Ajuste SINIEF 02/09, cláusulas 1ª e 2ª
+obj: Definir a EFD, dizer para quais impostos ela existe, quais livros ela substitui e como cada livro aparece nos blocos do arquivo.
+
+=== content
+<h3>Conceito</h3>
+<p>A <strong>Escrituração Fiscal Digital (EFD)</strong> é um <strong>arquivo digital</strong> que reúne a escrituração de documentos fiscais e de outras informações de interesse dos fiscos das UFs e da Receita Federal, além dos <strong>registros de apuração</strong> de impostos referentes às operações e prestações do contribuinte. Quatro palavras do conceito sustentam as questões:</p>
+<ul>
+<li><strong>Digital.</strong> Não existe EFD em papel. Ela é gerada em arquivo, <strong>assinada digitalmente</strong> pelo contribuinte ou seu representante legal (certificado ICP-Brasil) e <strong>transmitida pela internet</strong> ao ambiente do SPED.</li>
+<li><strong>Escrituração de documentos.</strong> Documentos de entrada e de saída, como as NF-e que você viu no módulo 1.</li>
+<li><strong>Apuração.</strong> A EFD também apura o imposto do período.</li>
+<li><strong>Para determinados impostos.</strong> A EFD é para os contribuintes do <strong>ICMS e/ou do IPI</strong>. Não é para o Imposto de Renda, nem para o IOF, nem para o ISS.</li>
+</ul>
+
+<h3>Que livros ela substitui</h3>
+<p>Quem está obrigado utiliza a EFD para a escrituração destes livros:</p>
+<div class="tbl"><table>
+<tr><th>Livro</th><th>Onde aparece no arquivo</th></tr>
+<tr><td>Registro de Entradas</td><td>Blocos C (mercadorias) e D (transporte)</td></tr>
+<tr><td>Registro de Saídas</td><td>Blocos C e D</td></tr>
+<tr><td>Registro de Apuração do ICMS</td><td>Bloco E (<code>E100</code> a <code>E250</code>)</td></tr>
+<tr><td>Registro de Apuração do IPI</td><td>Bloco E (<code>E500</code> em diante)</td></tr>
+<tr><td>Documento Controle de Crédito de ICMS do Ativo Permanente (CIAP)</td><td>Bloco G</td></tr>
+<tr><td>Registro de Inventário</td><td>Bloco H</td></tr>
+<tr><td>Registro de Controle da Produção e do Estoque (livro modelo 3)</td><td>Bloco K</td></tr>
+</table></div>
+<p>Consequência jurídica: o contribuinte obrigado à EFD <strong>não pode mais apresentar</strong> o Livro de Entradas ou o de Saídas em meio físico. A escrituração em papel deixa de ter valor como escrituração.</p>
+<p>Atenção aos nomes: é o Livro de Apuração do <strong>ICMS</strong> e do <strong>IPI</strong> que está na EFD, e não o "Livro de Apuração do ISS". O CIAP é do <strong>ICMS</strong>. Alternativas de prova costumam trocar um desses nomes para fabricar o erro.</p>
+
+<h3>Leiaute único</h3>
+<p>O leiaute do arquivo é definido em <strong>Ato COTEPE</strong> e vale para todo o país. Os campos, registros e blocos não variam por UF. Quem varia, em certos pontos, são prazos e obrigações acessórias definidos por cada Estado (lições 2.2 e 2.5).</p>
+
+=== caso
+<p>Uma indústria de calçados em Sergipe pergunta: "Se eu entrego a EFD completa, posso continuar escriturando o Livro de Saídas num sistema paralelo, imprimindo-o e guardando em pasta, para o caso de a fiscalização pedir?"</p>
+<div class="res">
+<p>Pelo Ajuste, quem está obrigado à EFD <strong>não pode mais apresentar</strong> os livros de Entradas e de Saídas em meio físico: a escrituração desses livros é a da EFD. O que a empresa pode manter, por conveniência, são relatórios gerenciais, mas eles não substituem nem concorrem com a escrituração oficial.</p>
+<p>E o controle da produção da fábrica? Passa a ser feito no <strong>Bloco K</strong> (lição 2.6), que substitui o livro modelo 3. Mas atenção: a escrituração só <em>parcial</em> do Bloco K, no período do cronograma, <strong>não desobriga</strong> o livro modelo 3.</p>
+</div>
+
+=== armadilhas
+- <strong>"A EFD pode ser em meio físico ou digital."</strong> Só digital.
+- <strong>"Para os contribuintes do IR, do IPI e/ou do IOF…"</strong> É ICMS e/ou IPI.
+- <strong>"EFD substitui o livro de apuração do ISS."</strong> O ISS é municipal e não é objeto da EFD ICMS/IPI.
+- <strong>"Assinatura certificada pela Receita Federal"</strong> (ou "pela administração"). A assinatura é certificada pela ICP-Brasil.
+- <strong>Meio físico.</strong> "Livro em meio físico, para uso de determinados tipos de impostos" mistura dois erros. O correto é "meio digital".
+- <strong>"EFD é para qualquer imposto."</strong> Não; para determinados impostos.
+
+=== bancas
+- É o tema de abertura típico das provas sobre o Ajuste: a banca coloca a definição da EFD em cinco alternativas, trocando "digital" por "físico", "ICMS/IPI" por outros tributos e "ICP-Brasil" por outro certificador.
+- Questões de lista de livros: uma alternativa certa traz Entradas, Saídas, Inventário e Controle da Produção e do Estoque; as erradas trocam por Apuração do ISS ou documentos de controle de crédito de IPI.
+- Em Certo/Errado: "o contribuinte obrigado à EFD não poderá mais apresentar o livro de Entradas ou de Saídas em meio físico" é certo.
+
+=== auditor
+Antes de analisar qualquer escrituração, confirme o que o contribuinte estava obrigado a entregar naquele período: obrigado à EFD, perfil e blocos exigidos (G, H, K). Ausência de arquivo ou de bloco obrigatório é infração por si só, independentemente do conteúdo.
+
+=== base
+- Ajuste SINIEF 02/09, cláusula primeira (instituição da EFD; arquivo digital; assinatura digital e transmissão ao SPED)
+- Ajuste SINIEF 02/09, cláusula segunda (livros escriturados na EFD)
+- Guia Prático da EFD ICMS/IPI: blocos e registros correspondentes a cada livro
+
+=== dominio
+- Sei dizer o que é a EFD e para quais impostos ela existe.
+- Sei listar os livros escriturados na EFD e o bloco de cada um.
+- Sei explicar por que o contribuinte obrigado não pode mais apresentar livro físico de Entradas ou Saídas.
+- Sei que o leiaute é nacional, definido em Ato COTEPE.

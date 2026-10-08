@@ -1,0 +1,73 @@
+title: Idoneidade, guarda, consulta e o quadro de prazos da NF-e
+min: 25
+norma: Ajuste SINIEF 07/05, cláusulas 4ª (§§), 10ª e 15ª
+obj: Distinguir regularidade formal de idoneidade, explicar os deveres de guarda e verificação do destinatário e fechar o módulo com o quadro de prazos da NF-e e a lógica de cada um.
+
+=== content
+<h3>Autorizada não é o mesmo que idônea</h3>
+<p>A lição 1.3 mostrou que a autorização confere a <em>forma</em>. A norma acrescenta uma regra para o <em>fundo</em>: a NF-e emitida ou utilizada com <strong>dolo, fraude, simulação ou erro</strong> que possibilite, <strong>mesmo que a terceiro</strong>, o <strong>não pagamento do imposto</strong> ou qualquer outra <strong>vantagem indevida</strong> <strong>não é considerada documento fiscal idôneo</strong>, <em>ainda que formalmente regular</em>. A regra atinge também o respectivo <strong>DANFE</strong>.</p>
+<p>Quatro consequências práticas:</p>
+<ul>
+<li>A <strong>regularidade formal</strong> (autorizada, assinada, no leiaute) não salva a nota. O que decide é a utilização.</li>
+<li>A <strong>circulação física</strong> da mercadoria também não convalida irregularidade formal. A mercadoria existir não torna válido um documento que não é.</li>
+<li>Um XML <strong>sem autorização</strong> não é documento fiscal, ainda que exista e esteja bem preenchido.</li>
+<li>A expressão "mesmo que a terceiro" é decisiva: não importa que o <em>emitente</em> tenha pago o imposto; se o documento permitiu a outro (o destinatário, por exemplo) uma vantagem indevida, a idoneidade se perde.</li>
+</ul>
+
+<h3>Os deveres do destinatário</h3>
+<p>O destinatário <strong>não é mero espectador</strong>. Cabe a ele verificar a <strong>validade e a autenticidade</strong> da NF-e e a existência de autorização de uso, <em>antes</em> de dar a operação por regular e de aproveitar o crédito. Quem escritura sem conferir arrisca-se a receber a glosa do crédito de uma nota inidônea.</p>
+
+<h3>Guarda e consulta</h3>
+<ul>
+<li>O emitente e o destinatário devem <strong>guardar o arquivo digital</strong> da NF-e pelo prazo estabelecido na legislação tributária (o prazo decadencial), em ambiente que preserve a integridade. O destinatário <em>não credenciado</em> pode guardar o DANFE em vez do arquivo.</li>
+<li>A administração disponibiliza a <strong>consulta</strong> da NF-e em site da internet pelo prazo mínimo de <strong>180 dias</strong>.</li>
+<li>Passado esse prazo, a consulta pode ser <strong>substituída</strong> pela prestação de <strong>informações parciais</strong> que identifiquem a nota (número, data de emissão, CPF ou CNPJ do emitente e do destinatário, valor e situação), disponíveis pelo <strong>prazo decadencial</strong>.</li>
+</ul>
+
+<h3>Quadro de prazos da NF-e (para revisão)</h3>
+<p>Cada número tem uma razão. Entender a razão ajuda a não trocar.</p>
+<div class="tbl"><table>
+<tr><th>Assunto</th><th>Prazo</th><th>Por quê</th></tr>
+<tr><td>Cancelamento comum</td><td>24 horas da concessão; sem circulação</td><td>janela curta: depois disso a operação costuma já ter efeito</td></tr>
+<tr><td>Cancelamento de NF-e pendente de retorno (contingência)</td><td>168 horas</td><td>a incerteza do sistema justifica prazo maior</td></tr>
+<tr><td>Transmissão de NF-e emitida em contingência (SVC, EPEC)</td><td>168 horas da emissão</td><td>idem: tempo para regularizar após a falha</td></tr>
+<tr><td>Inutilização de números</td><td>até o 10º dia do mês subsequente</td><td>fechar a numeração do mês antes da escrituração</td></tr>
+<tr><td>Presunção de operação ocorrida</td><td>90 dias da autorização sem manifestação</td><td>silêncio do destinatário vale como confirmação</td></tr>
+<tr><td>Consulta pública</td><td>mínimo de 180 dias</td><td>tempo para o destinatário conferir</td></tr>
+<tr><td>Informações parciais</td><td>prazo decadencial</td><td>5 anos para lançar: o fisco precisa do registro até lá</td></tr>
+</table></div>
+
+=== caso
+<p>A Comercial Beta comprou grãos de uma empresa de fachada. As NF-e estavam autorizadas, o ICMS estava destacado, a mercadoria chegou ao depósito (há fotos do descarregamento) e a Beta apropriou o crédito. Na auditoria, constatou-se que a fornecedora não tinha estoque, não recolheu o imposto e foi criada para emitir notas. A Beta diz: <em>"as notas estão autorizadas e a mercadoria entrou, o crédito é legítimo."</em></p>
+<div class="res">
+<p>Os dois argumentos esbarram na norma. <strong>Autorizadas</strong>: a autorização não convalida o conteúdo tributário nem a idoneidade; confere apenas a forma. <strong>A mercadoria entrou</strong>: a circulação física não convalida irregularidade do documento.</p>
+<p>O ponto de ataque é a idoneidade: se as notas foram emitidas com <em>simulação ou fraude</em> que possibilitou o não pagamento do imposto pela fornecedora, não são documentos idôneos, mesmo formalmente regulares, e o crédito da Beta fica exposto. O que a Beta pode tentar provar é a boa-fé e a efetividade da operação; isso se discute no plano do direito material, que depende de lei estadual e de jurisprudência, e não da regra de documento.</p>
+<p>Observe o dever da Beta de <em>verificar</em> a nota: a regularidade cadastral e o histórico do fornecedor são parte do que um adquirente diligente examina.</p>
+</div>
+
+=== armadilhas
+- <strong>"Desde que formalmente regular, é idônea."</strong> A norma diz o oposto: <em>ainda que</em> formalmente regular, não é idônea se há dolo, fraude, simulação ou erro com vantagem indevida.
+- <strong>"A autorização convalida as informações tributárias."</strong> Nunca.
+- <strong>Consulta por "120 dias".</strong> O mínimo é 180.
+- <strong>"O destinatário não tem responsabilidade de verificar."</strong> Tem.
+- <strong>"Circulação da mercadoria basta para convalidar."</strong> Não.
+- <strong>XML sem autorização como documento fiscal idôneo.</strong> Nem documento fiscal é.
+
+=== bancas
+- Costuma vir como "assinale a alternativa correta" com cinco afirmações sobre autorização, idoneidade e responsabilidade; a certa quase sempre é a que diz que o arquivo só vale como documento fiscal <em>após a autorização</em>.
+- Em Certo/Errado, a pegadinha é a palavra "desde que formalmente regular".
+- Aparecem também números isolados (180 dias, informações parciais) para ver se você sabe o que substitui a consulta e por quanto tempo.
+
+=== auditor
+A distinção entre regularidade formal e idoneidade é a ponte entre auditoria de documento e auditoria de operação. Ela autoriza o fisco a desconsiderar notas autorizadas quando provas de outra natureza (inexistência da emitente, ausência de capacidade operacional, pagamento em dinheiro, estoque que não existia) mostram simulação.
+
+=== base
+- Ajuste SINIEF 07/05, cláusula quarta, §§ (idoneidade; dolo, fraude, simulação ou erro; abrangência do DANFE)
+- Ajuste SINIEF 07/05, cláusula décima (guarda; verificação de validade e autorização pelo destinatário)
+- Ajuste SINIEF 07/05, cláusula décima quinta (consulta mínima de 180 dias; informações parciais)
+
+=== dominio
+- Sei explicar por que uma NF-e autorizada pode não ser idônea.
+- Sei os deveres de guarda e verificação do destinatário.
+- Sei o prazo de consulta e o que o substitui depois dele.
+- Consigo refazer o quadro de prazos da NF-e e dar a razão de cada um.

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>0.2 DANFE, chave de acesso e protocolo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+<article class="lesson" data-id="m0-l2">
+<div class="form"><div class="cell c-mod"><span>Módulo 0</span>Os arquivos por dentro</div><div class="cell"><span>Lição</span>0.2</div><div class="cell"><span>Tempo</span>25 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 07/05, cláusulas 3ª e 9ª · MOC NF-e (chave de acesso, DANFE)</div></div>
+<h1>DANFE, chave de acesso e protocolo</h1>
+<p class="obj">Separar a NF-e (o arquivo) do DANFE (o papel), decompor a chave de 44 dígitos e calcular o dígito verificador.</p>
+<div class="content">
+<h3>O DANFE não é a nota</h3>
+<p>O <strong>DANFE</strong> (Documento Auxiliar da NF-e) é uma <em>representação gráfica</em> do XML. Existe para duas coisas: <strong>acompanhar a mercadoria em trânsito</strong> e <strong>facilitar a consulta</strong> da NF-e na internet. Ele não tem valor jurídico próprio: a validade vem do XML assinado e autorizado. Por isso, um DANFE só pode circular depois da autorização de uso (salvo contingência, lição 1.6).</p>
+<p>O que o DANFE traz impresso, extraído do XML:</p>
+<pre class="code" data-lang=""><code>DANFE - Documento Auxiliar da Nota Fiscal Eletrônica
+0 - ENTRADA   <mark>1 - SAÍDA</mark>      Nº 000.004.521    Série 001
+Chave de acesso:
+<mark>2826 0912 3456 7800 0195 5500 1000 0045 2118 3749 2617</mark>
+(código de barras da chave)
+Protocolo de autorização de uso:
+<mark>328260000123456</mark> - 14/09/2026 10:32:41
+Natureza da operação: Venda de mercadoria
+Emitente: DISTRIBUIDORA EXEMPLO S/A   CNPJ 12.345.678/0001-95
+Destinatário: COMERCIAL EXEMPLO LTDA  CNPJ 11.222.333/0001-81
+...</code></pre>
+<p>Tudo ali é cópia de campos do XML. O DANFE <strong>não pode</strong> conter dado que não exista no XML, exceto nas hipóteses que o MOC prevê. O código de barras codifica a chave: ao lê-lo, qualquer fiscal consulta a nota no portal e confere o impresso contra o original.</p>
+
+<h3>A chave de acesso: 44 dígitos que contam uma história</h3>
+<p>A chave é montada pelo <strong>emitente</strong> antes de transmitir a nota. Cada trecho tem posição fixa:</p>
+<div class="tbl"><table>
+<tr><th>Posições</th><th>Campo</th><th>Conteúdo</th><th>Na nossa chave</th></tr>
+<tr><td>1–2</td><td><code>cUF</code></td><td>código IBGE da UF do emitente</td><td>28 (Sergipe)</td></tr>
+<tr><td>3–6</td><td><code>AAMM</code></td><td>ano e mês de emissão</td><td>2609 (set/2026)</td></tr>
+<tr><td>7–20</td><td>CNPJ/CPF</td><td>do emitente</td><td>12345678000195</td></tr>
+<tr><td>21–22</td><td><code>mod</code></td><td>modelo: 55 (NF-e) ou 65 (NFC-e)</td><td>55</td></tr>
+<tr><td>23–25</td><td><code>serie</code></td><td>série</td><td>001</td></tr>
+<tr><td>26–34</td><td><code>nNF</code></td><td>número da nota (até 9 dígitos)</td><td>000004521</td></tr>
+<tr><td>35</td><td><code>tpEmis</code></td><td>forma de emissão (1 = normal; outros valores = contingência)</td><td>1</td></tr>
+<tr><td>36–43</td><td><code>cNF</code></td><td>código numérico, gerado pelo emitente</td><td>83749261</td></tr>
+<tr><td>44</td><td><code>cDV</code></td><td>dígito verificador</td><td>7</td></tr>
+</table></div>
+<p>Dois efeitos práticos. Primeiro, a chave diz, sem abrir o XML, <strong>de onde veio, quando, de quem, qual modelo e se foi em contingência</strong>. Segundo, ela é o <strong>identificador único</strong> da nota: número e série se repetem entre estabelecimentos e ao longo do tempo, a chave não. O <code>cNF</code> existe para tornar a chave imprevisível; quem o gera é o emitente, não o destinatário nem a SEFAZ.</p>
+
+<h3>O dígito verificador (módulo 11)</h3>
+<p>O <code>cDV</code> permite detectar erro de digitação. Cálculo sobre os 43 primeiros dígitos:</p>
+<ol>
+<li>Multiplique os dígitos <strong>da direita para a esquerda</strong> por pesos que vão de 2 a 9 e recomeçam em 2 quando passam de 9.</li>
+<li>Some tudo. Na nossa chave a soma é 818.</li>
+<li>Divida por 11 e olhe o resto: 818 ÷ 11 deixa resto 4.</li>
+<li>DV = 11 − resto = <strong>7</strong>. Se o resto for 0 ou 1, o DV é 0.</li>
+</ol>
+<p>A cópia de um DANFE adulterado quase sempre falha aqui, ou falha na consistência entre a chave e o resto do documento.</p>
+
+<h3>O protocolo</h3>
+<p>O <strong>número do protocolo</strong> (<code>nProt</code>) é o comprovante de que a SEFAZ concedeu a autorização de uso. Ele aparece no XML (<code>protNFe</code>) e no DANFE. Chave identifica a nota; protocolo identifica a <em>autorização</em> dela.</p>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>Numa fiscalização de trânsito, o motorista apresenta um DANFE em que o emitente é <em>"Atacado Modelo Ltda, CNPJ 98.765.432/0001-10"</em>, mas a chave impressa é <code>2826 0912 3456 7800 0195 5500 1000 0045 2118 3749 2617</code>. O fiscal deve desconfiar? Por quê?</p>
+<div class="res">
+<p>Sim. O CNPJ ocupa as posições 7 a 20 da chave, e ali está 12345678000195, que não é o CNPJ impresso como emitente. A chave pertence a outra empresa. As hipóteses são DANFE adulterado ou montado sobre uma chave real alheia. O procedimento é consultar a chave no portal: a resposta mostrará quem foi realmente o emitente, o valor e a situação da nota, e o fiscal compara com o papel.</p>
+<p>Repare que o raciocínio não dependeu de decorar a regra "CNPJ nas posições 7 a 20", e sim de saber <em>o que a chave carrega</em>: emitente, modelo, UF, mês. Quem entende o conteúdo reconstrói a posição.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"O DANFE tem validade jurídica"</strong>: não. A validade é do XML assinado e autorizado.</li><li><strong>Código numérico gerado pelo "receptor/destinatário"</strong>: quem o gera é o emitente.</li><li><strong>UF da chave</strong> é a do <em>emitente</em>, não a do destinatário nem a do destino da mercadoria.</li><li><strong>Chave ≠ protocolo.</strong> Uma identifica o documento; a outra, o ato de autorização.</li><li><strong>Modelo na chave:</strong> 55 e 65 usam a mesma estrutura de 44 dígitos; a diferença é o campo <code>mod</code>.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Itens que dizem que o DANFE "contém a chave de segurança a ser gravada na NF-e pela administração" ou que é gerado "anteriormente à emissão" invertem a ordem: primeiro vem o XML, depois a representação impressa.</li><li>Pedem a composição da chave por campos (CNPJ do emitente, número, série, código numérico) ou troquem quem gera o código numérico.</li><li>Podem perguntar a quantidade de dígitos, o módulo do verificador ou onde está o modelo, mas a versão mais frequente mistura os conceitos de DANFE, chave e protocolo.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>A chave de acesso é a única coluna que você deve usar para ligar bases (XML, relatório da SEFAZ, EFD). Número e série colidem entre filiais; CNPJ do destinatário muda de formato. Uma tabela cruzada pela chave não erra de nota.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05, cláusula terceira: o arquivo digital deve ser identificado por chave de acesso composta de código numérico gerado pelo emitente, CNPJ ou CPF do emitente, número e série da NF-e</li><li>Ajuste SINIEF 07/05, cláusula nona: DANFE (finalidade, impressão e condições de circulação)</li><li>MOC NF-e: composição da chave de acesso e cálculo do dígito verificador (módulo 11)</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei dizer para que serve o DANFE e por que ele não substitui o XML.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei escrever de memória a composição da chave (UF, AAMM, CNPJ, modelo, série, número, tpEmis, cNF, DV) e quem gera cada parte.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei calcular o dígito verificador pelo módulo 11.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei diferenciar chave de acesso de protocolo de autorização.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
+<button class="done-btn" type="button" data-id="m0-l2">Marcar lição como concluída</button>
+<nav class="pager"><a href="m0-l1.html" class="prev"><small>Anterior</small>0.1 A NF-e é um arquivo XML</a><a href="m0-l3.html" class="next"><small>Próxima</small>0.3 A EFD é um arquivo de texto</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

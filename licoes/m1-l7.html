@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>1.7 Cancelamento, inutilização, CC-e e registro de saída</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+<article class="lesson" data-id="m1-l7">
+<div class="form"><div class="cell c-mod"><span>Módulo 1</span>NF-e e DANFE — Ajuste SINIEF 07/05</div><div class="cell"><span>Lição</span>1.7</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 07/05, cláusulas 12ª a 14-A</div></div>
+<h1>Cancelamento, inutilização, CC-e e registro de saída</h1>
+<p class="obj">Escolher o instrumento certo para cada problema pós-autorização (cancelar, inutilizar, corrigir, complementar) e aplicar os prazos e as vedações.</p>
+<div class="content">
+<p>Depois da autorização a NF-e <strong>não pode ser alterada</strong>. Quando algo precisa mudar, existem quatro instrumentos, e cada um serve a um problema diferente. Todos são feitos por <strong>evento</strong>, com assinatura digital, transmitido à administração tributária da UF do emitente.</p>
+
+<div class="tbl"><table>
+<tr><th>Problema</th><th>Instrumento</th><th>Prazo / condição</th></tr>
+<tr><td>A nota foi autorizada, mas a operação <strong>não vai acontecer</strong> (ou foi emitida errada demais para corrigir)</td><td><strong>Cancelamento</strong></td><td>até <strong>24 horas</strong> contadas da <em>concessão</em> da Autorização de Uso, e <strong>desde que não tenha havido circulação</strong> da mercadoria, prestação do serviço ou vinculação à Duplicata Escritural</td></tr>
+<tr><td><strong>Número pulado</strong>: houve quebra na sequência da numeração</td><td><strong>Inutilização</strong> (Pedido de Inutilização de Número)</td><td>até o <strong>10º dia do mês subsequente</strong></td></tr>
+<tr><td>Erro <strong>em campo específico</strong>, sem efeito no imposto nem nas partes</td><td><strong>Carta de Correção Eletrônica (CC-e)</strong></td><td>após a autorização; sem prazo curto; vedações abaixo</td></tr>
+<tr><td>Data e hora da <strong>saída</strong> não constam do XML</td><td><strong>Registro de Saída</strong></td><td>no prazo do MOC</td></tr>
+</table></div>
+
+<h3>Cancelamento</h3>
+<p>As duas condições se somam: <strong>tempo</strong> (24 horas da concessão) e <strong>não circulação</strong>. Se a mercadoria saiu, cancelar seria apagar a prova de uma operação real; o caminho vira o da devolução, com a documentação própria. A UF pode admitir pedido <em>extemporâneo</em> em casos excepcionais, nos termos da sua legislação. Para a NF-e transmitida antes de contingência e que ficou pendente, o prazo é de <strong>168 horas</strong> (lição 1.6).</p>
+
+<h3>Inutilização</h3>
+<p>O objetivo é limpar buracos na sequência. O pedido deve ser feito até o <strong>décimo dia</strong> do mês seguinte. A UF do emitente transmite as inutilizações à RFB. Não confunda com cancelamento: <em>cancela-se</em> o que foi autorizado; <em>inutiliza-se</em> o número que nunca virou nota (ou que não será usado).</p>
+
+<h3>Carta de Correção Eletrônica</h3>
+<p>Serve para sanar erros em <strong>campos específicos</strong>. A norma lista o que <strong>não</strong> pode ser corrigido por CC-e:</p>
+<ul>
+<li>as <strong>variáveis que determinam o valor do imposto</strong>: base de cálculo, alíquota, diferença de preço, quantidade, valor da operação ou da prestação;</li>
+<li>dados cadastrais que impliquem <strong>mudança do remetente ou do destinatário</strong> (corrigir a grafia do nome pode; trocar quem é a parte, não);</li>
+<li>a <strong>data de emissão ou de saída</strong>;</li>
+<li>campos da NF-e de exportação informados na <strong>DU-E</strong>;</li>
+<li>a <strong>inclusão ou alteração de parcelas</strong> de vendas a prazo.</li>
+</ul>
+<p>A lógica: o que muda o imposto, a identidade das partes ou a história no tempo precisa de nova nota ou de cancelamento, porque a CC-e é um aviso sem efeito de lançamento. Se houver <strong>mais de uma CC-e</strong> para a mesma NF-e, a última deve <strong>consolidar</strong> as informações já retificadas nas anteriores.</p>
+
+<h3>Registro de Saída e a data de saída</h3>
+<p>Se o XML não traz data e hora de saída, a informação é registrada por evento próprio, o <strong>Registro de Saída</strong>, e não por CC-e (a data de saída é justamente um dos campos que a CC-e <em>não</em> pode corrigir). Se não houver nem data no XML nem Registro de Saída no prazo do MOC, a administração considera como data de saída a <strong>data de emissão</strong>.</p>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>Resolva cada situação com o instrumento certo.</p>
+<ol>
+<li>NF-e autorizada às 09h de segunda. Às 15h de terça o cliente cancela o pedido; a mercadoria nunca saiu do depósito.</li>
+<li>NF-e autorizada, mercadoria já despachada, e o emitente notou que o <em>CNPJ do destinatário</em> está errado (pertence a outra empresa).</li>
+<li>NF-e autorizada com a transportadora errada no grupo de transporte.</li>
+<li>A empresa emitiu as notas 1200 e 1202; a 1201 foi gerada em teste e nunca autorizada.</li>
+<li>A NF-e foi autorizada com a quantidade 100 no item; a venda foi de 10.</li>
+</ol>
+<div class="res">
+<p><strong>1.</strong> Passaram 30 horas. O prazo ordinário de 24 horas da concessão já venceu, embora a mercadoria não tenha circulado. A UF pode aceitar pedido extemporâneo em casos excepcionais; do contrário, resolve-se pela via da legislação estadual (nota de devolução ou equivalente). O ponto é que não é mais o cancelamento comum.</p>
+<p><strong>2.</strong> Não cabe CC-e: a correção mudaria o destinatário. Não cabe cancelamento: a mercadoria circulou. É caso de devolução/estorno e nova nota, conforme a legislação.</p>
+<p><strong>3.</strong> CC-e: o erro está em campo específico sem efeito no imposto nem nas partes.</p>
+<p><strong>4.</strong> Inutilização do número 1201, até o dia 10 do mês seguinte.</p>
+<p><strong>5.</strong> Não cabe CC-e (quantidade altera a base do imposto). Se dentro de 24 horas e sem circulação, cancelamento e nova nota; se a mercadoria saiu, tratamento fiscal da diferença na forma da legislação.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"24 horas após a <em>solicitação</em> da autorização."</strong> A contagem é da <em>concessão</em>.</li><li><strong>"25 horas" ou "30 horas" como prazo.</strong> O prazo ordinário é 24 horas.</li><li><strong>Inutilização "até o quinto dia".</strong> É o décimo dia do mês subsequente.</li><li><strong>Corrigir IE ou CNPJ do destinatário por CC-e.</strong> Muda a parte; não cabe.</li><li><strong>Data de saída por CC-e.</strong> Não cabe; use Registro de Saída (e, na falta, vale a data de emissão).</li><li><strong>Cancelamento com mercadoria já em trânsito.</strong> Requer não circulação.</li><li><strong>CC-e sucessivas "independentes".</strong> A última consolida as anteriores.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Casos práticos curtos com horários ("30 horas depois da emissão", "20 horas após a autorização") para ver se você aplica o limite de 24 horas e a condição de não circulação, inclusive a Duplicata Escritural.</li><li>Cenário de erro de cadastro do destinatário: a resposta certa é que a CC-e não pode mudar a parte.</li><li>Alternativas que usam o termo "quebra de sequência da numeração" para induzir a escolha de inutilização, e "campos específicos" para CC-e.</li><li>Itens de lista de vedações da CC-e, às vezes dando uma como permitida (parcelas de venda a prazo, DU-E, data de saída).</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Cancelamentos próximos ao limite de 24 horas, em notas de valor alto e mesmo destinatário, merecem atenção: podem esconder circulação real. CC-e em campos que mudam o efeito do imposto (CFOP, CST) não deveriam passar de "erro de digitação". E notas inutilizadas em série, sobretudo no fim do mês, sugerem emissão paralela.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05, cláusula décima segunda: cancelamento (24 horas; não circulação; duplicata escritural)</li><li>Ajuste SINIEF 07/05, cláusulas décima segunda-A, décima terceira e décima terceira-A: cancelamento em contingência, cancelamento e registro de saída por evento</li><li>Ajuste SINIEF 07/05, cláusula décima quarta: inutilização (décimo dia do mês subsequente)</li><li>Ajuste SINIEF 07/05, cláusula décima quarta-A: Carta de Correção Eletrônica e suas vedações</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei dizer, para cada problema pós-autorização, qual instrumento usar (cancelamento, inutilização, CC-e, Registro de Saída).</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei os prazos e condições do cancelamento e da inutilização.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei listar o que a CC-e não pode corrigir e por quê.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei o que acontece com a data de saída quando não há registro.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
+<button class="done-btn" type="button" data-id="m1-l7">Marcar lição como concluída</button>
+<nav class="pager"><a href="m1-l6.html" class="prev"><small>Anterior</small>1.6 Contingência: SVC, EPEC e FS-DA</a><a href="m1-l8.html" class="next"><small>Próxima</small>1.8 Eventos da NF-e: quem registra o quê</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

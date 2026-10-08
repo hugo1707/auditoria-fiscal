@@ -4,41 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>2.3 Itens, totais, transporte e pagamento</title>
+<title>2.3 Conteúdo, perfil e estabelecimentos: o que entra em cada arquivo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m2-l3">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
-  <div class="cell"><span>Lição</span>2.3</div>
-  <div class="cell"><span>Tempo</span>25 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 — grupos I, W, X, YA, Z</div>
-</div>
-<h1>Itens, totais, transporte e pagamento</h1>
-<p class="obj">Identificar os campos do item e do total que sustentam cruzamentos quantitativos e de valores.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 2</span>EFD ICMS/IPI — Ajuste SINIEF 02/09</div><div class="cell"><span>Lição</span>2.3</div><div class="cell"><span>Tempo</span>25 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 02/09, cláusulas 4ª a 7ª</div></div>
+<h1>Conteúdo, perfil e estabelecimentos: o que entra em cada arquivo</h1>
+<p class="obj">Dizer o que o arquivo precisa conter, sob qual enfoque, como o perfil é atribuído e quantos arquivos o contribuinte entrega, e por quanto tempo os guarda.</p>
 <div class="content">
-<h3>Grupo I — prod</h3>
-<p>cProd, cEAN, xProd, <strong>NCM</strong>, <strong>CEST</strong>, <strong>CFOP</strong>, e dois conjuntos de unidade: comercial (<code>uCom, qCom, vUnCom</code>) e tributável (<code>uTrib, qTrib, vUnTrib</code>). Seguem vProd, vFrete, vSeg, vDesc, vOutro e indTot (se o item compõe o total).</p>
-<h3>Grupo W — total (ICMSTot)</h3>
-<p>Soma dos itens: vBC, vICMS, vICMSDeson, vFCP, vBCST, vST, vProd, vFrete, vSeg, vDesc, vII, vIPI, vPIS, vCOFINS, vOutro e <strong>vNF</strong>. As regras de validação do MOC exigem que cada total seja igual à soma dos itens e que o vNF resulte da fórmula (produtos, menos descontos e ICMS desonerado quando deduzido, mais ST, frete, seguro, outras despesas, II e IPI).</p>
-<h3>Grupo X — transp</h3>
-<p><strong>modFrete</strong>: 0 por conta do remetente (CIF); 1 por conta do destinatário (FOB); 2 terceiros; 3 transporte próprio do remetente; 4 transporte próprio do destinatário; 9 sem ocorrência de transporte. Também traz transportadora, veículo e volumes.</p>
-<h3>Grupo YA — pag</h3>
-<p>Forma de pagamento (<code>tPag</code>: dinheiro, cartões, PIX etc.) e, para cartões, dados do credenciador. É a ponte com as informações das instituições de pagamento.</p>
-<h3>Grupo Z — infAdic</h3>
-<p>infAdFisco e infCpl: onde o emitente cita o dispositivo legal do benefício, da ST ou do diferimento.</p>
+<h3>A totalidade das informações</h3>
+<p>A EFD é composta pela <strong>totalidade das informações</strong> necessárias à apuração do período. Isso inclui, sem exceção, a <strong>descrição dos itens</strong> de mercadorias, produtos e serviços (o cadastro <code>0200</code> que você viu na lição 0.3). Um arquivo que traz o documento mas não a descrição do que foi movimentado está incompleto.</p>
+<p>Duas regras de conteúdo que aparecem juntas:</p>
+<ul>
+<li><strong>Enfoque do declarante.</strong> As informações são prestadas sob o enfoque <em>do declarante</em> (o contribuinte que escritura), e não sob o enfoque do fisco. Por isso a mesma NF-e é saída na EFD do vendedor e entrada na EFD do comprador.</li>
+<li><strong>Exceções à tributação devem aparecer.</strong> Qualquer situação de exceção na tributação do ICMS ou do IPI, como <strong>isenção, imunidade, não incidência, diferimento ou suspensão</strong> do recolhimento, deve ser informada no arquivo, <strong>indicando-se o respectivo dispositivo legal</strong>. Quem escritura uma saída sem imposto precisa dizer <em>por quê</em>.</li>
+</ul>
+
+<h3>Perfil do estabelecimento</h3>
+<p>Estabelecimentos podem ter <strong>perfis diferentes</strong> para efeito do leiaute (A, B ou C): o perfil define a profundidade das informações exigidas. Quem atribui o perfil é a <strong>administração tributária da UF</strong> onde o estabelecimento está localizado. Se a UF <strong>não atribuir</strong> perfil, o contribuinte deve obedecer ao leiaute do <strong>perfil "A"</strong>, o mais completo. A atribuição não cabe à Receita Federal.</p>
+<p>A razão do "A" como padrão: na dúvida, o contribuinte informa mais, e não menos.</p>
+
+<h3>Um arquivo por estabelecimento</h3>
+<p>Em regra, o contribuinte com mais de um estabelecimento (filial, sucursal, agência, depósito, fábrica…) entrega <strong>um arquivo individualizado por estabelecimento</strong>. Isso vale <em>mesmo que</em> a apuração dos impostos ou a escrituração contábil seja centralizada: centralizar a contabilidade não centraliza a EFD.</p>
+<p>A exceção é a <strong>inscrição centralizada</strong> prevista em Convênio, Protocolo ou Ajuste: nesse caso as informações dos estabelecimentos da mesma UF podem ser prestadas de forma centralizada.</p>
+<div class="tbl"><table>
+<tr><th>Situação</th><th>Arquivos</th></tr>
+<tr><td>Empresa com matriz e duas filiais, cada uma inscrita no ICMS; apuração e contabilidade centralizadas</td><td>3 arquivos (um por estabelecimento)</td></tr>
+<tr><td>Empresa com matriz e duas filiais com <strong>inscrição centralizada</strong> prevista em norma</td><td>informações podem ser prestadas de forma centralizada, nos termos da norma</td></tr>
+</table></div>
+
+<h3>Guarda</h3>
+<p>O contribuinte deve armazenar o arquivo digital da EFD pelo <strong>mesmo prazo estabelecido na legislação para a guarda dos documentos fiscais</strong> (o prazo decadencial). A EFD não tem prazo de guarda próprio e menor.</p>
+
+<h3>Obediência ao leiaute</h3>
+<p>O arquivo anexado a um processo de fiscalização <strong>respeita o leiaute</strong> definido em Ato COTEPE. Não há "características próprias de cada empresa" que justifiquem outra estrutura.</p>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Para levantamento quantitativo, use qTrib/uTrib ou normalize qCom/uCom com os fatores de conversão da EFD (registro 0220). O modFrete decide quem pode se creditar do ICMS do frete — guarde esse campo para o cruzamento com o CT-e.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — Anexo I, grupos I (prod), W (total), X (transp), YA (pag), Z (infAdic)</li><li>MOC 7.0 — regras de validação do grupo W (totais)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual a diferença entre unidade comercial e unidade tributável?</summary><p>A comercial é a usada na venda (ex.: caixa); a tributável é a unidade de referência para tributação (ex.: unidade, kg), com quantidade e valor unitário próprios.</p></details><details class="q"><summary><span class="qn">2</span>O que significa modFrete = 1?</summary><p>Frete por conta do destinatário (FOB).</p></details><details class="q"><summary><span class="qn">3</span>Onde o emitente deve indicar o fundamento legal de um benefício?</summary><p>Em informações adicionais (infAdFisco/infCpl) e, nas UFs que exigem, no campo cBenef do item.</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>A Rede Sol tem uma matriz em Aracaju (apuração centralizada, contabilidade centralizada) e duas filiais em Itabaiana e Lagarto, todas inscritas no ICMS de Sergipe. O contador propõe entregar um único arquivo "consolidado" porque a apuração é única. A SEFAZ ainda não atribuiu perfil a nenhum estabelecimento. O que está errado e o que a Rede Sol deve usar?</p>
+<div class="res">
+<p><strong>Um arquivo só?</strong> Não. Em regra, um arquivo por estabelecimento, <em>ainda que</em> a apuração e a contabilidade sejam centralizadas. A centralização da contabilidade não é a exceção; a exceção é a inscrição centralizada prevista em norma, e não consta do enunciado.</p>
+<p><strong>Perfil.</strong> Como a UF não atribuiu, aplica-se o perfil <strong>A</strong>.</p>
+<p><strong>No conteúdo.</strong> Cada arquivo traz a totalidade das informações do estabelecimento, incluindo descrição dos itens e, para as saídas isentas (ex.: uma operação com isenção por convênio), o <strong>dispositivo legal</strong> da isenção.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"Informações sob o enfoque do fisco."</strong> É do declarante.</li><li><strong>"A totalidade não inclui a descrição dos itens."</strong> Inclui.</li><li><strong>"Compete à RFB atribuir o perfil."</strong> Compete à UF.</li><li><strong>"Sem atribuição, perfil B (ou C, K, G)."</strong> O padrão é o <strong>A</strong>. Perfil "K" ou "G" nem existe como perfil.</li><li><strong>Contabilidade centralizada → arquivo único.</strong> Não: um por estabelecimento. A exceção é a inscrição centralizada.</li><li><strong>Exceções à tributação opcionais.</strong> São obrigatórias, com o dispositivo legal.</li><li><strong>Guarda "por menos tempo".</strong> Mesmo prazo dos documentos fiscais.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Itens de múltipla escolha com várias frases curtas: enfoque do fisco, descrição dos itens fora, centralização obrigatória em arquivo único. Todas erradas, e a única certa é a das exceções com dispositivo legal.</li><li>Em Certo/Errado o item é longo e cobra duas ideias (regra e exceção): a regra do arquivo individualizado e a exceção da inscrição centralizada. Vale ler o item como duas metades.</li><li>Questão curta de perfil: "quando a UF não atribui, qual o perfil?" com letras A, B, C, K e G.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Perfil e exceções são o terreno da auditoria de conteúdo. Saída sem imposto sem dispositivo legal na escrituração é um indício forte: ou a exceção não existe, ou o contribuinte não sabe justificar. E arquivo "consolidado" quando era devido um por estabelecimento é omissão de entrega de todos os estabelecimentos menos um.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 02/09, cláusulas quarta a sétima: totalidade das informações, enfoque do declarante, exceções à tributação, perfil, arquivo por estabelecimento, guarda</li><li>Ato COTEPE que aprova o leiaute e define os perfis (A, B e C)</li><li>Legislação estadual sobre atribuição de perfil</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei dizer o que a "totalidade das informações" inclui e sob qual enfoque são prestadas.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei como as situações de exceção à tributação devem ser informadas.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei quem atribui o perfil e qual vale na falta de atribuição.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei a regra do arquivo por estabelecimento, sua exceção e o prazo de guarda.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m2-l3">Marcar lição como concluída</button>
-<nav class="pager"><a href="m2-l2.html" class="prev"><small>Anterior</small>2.2 Identificação da operação e das partes</a><a href="m2-l4.html" class="next"><small>Próxima</small>2.4 A tributação no item</a></nav>
+<nav class="pager"><a href="m2-l2.html" class="prev"><small>Anterior</small>2.2 Quem é obrigado: obrigatoriedade, dispensa e adesão facultativa</a><a href="m2-l4.html" class="next"><small>Próxima</small>2.4 Geração, validação, recepção e recibo: o que a recepção não significa</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

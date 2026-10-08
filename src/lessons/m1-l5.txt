@@ -1,0 +1,64 @@
+title: DANFE: finalidade, impressão e dispensas
+min: 25
+norma: Ajuste SINIEF 07/05, cláusula 9ª
+obj: Explicar para que serve o DANFE, as regras de impressão (papel, vias, código de barras, carimbos), o DANFE simplificado e as hipóteses em que a impressão é dispensada.
+
+=== content
+<h3>Para que serve</h3>
+<p>O DANFE tem <strong>duas finalidades</strong>: acompanhar o <strong>trânsito</strong> das mercadorias acobertado por NF-e e <strong>facilitar a consulta</strong> da NF-e no site da administração (a consulta tem prazo mínimo de 180 dias; lição 1.9). Ele <em>não</em> é a nota, e por isso a norma amarra o seu uso à autorização: só pode ser usado para transitar <strong>depois da concessão da autorização de uso</strong>, ou na hipótese de operação em <strong>contingência</strong> (lição 1.6).</p>
+<p>Duas regras de conteúdo: o DANFE <strong>não pode conter informação que não exista no XML</strong> (exceto nas hipóteses que o MOC prevê), e a aposição de <strong>carimbos</strong> pelos postos fiscais é feita no <strong>verso</strong> (nunca no anverso, para não cobrir os dados da nota).</p>
+
+<h3>Como é impresso</h3>
+<div class="tbl"><table>
+<tr><th>Aspecto</th><th>Regra</th></tr>
+<tr><td>Papel</td><td>qualquer papel, <strong>exceto papel jornal</strong>; tamanho <strong>mínimo A4</strong> e <strong>máximo ofício 2</strong></td></tr>
+<tr><td>Forma</td><td>folhas soltas, FS-DA, formulário contínuo ou formulário pré-impresso</td></tr>
+<tr><td>Código de barras</td><td>obrigatório (codifica a chave de acesso)</td></tr>
+<tr><td>Vias</td><td>não se fala em "tantas vias quantas necessárias", nem em "duas vias, uma para o emitente e outra para o destinatário". O DANFE comum é impresso em <strong>uma única via</strong> (confira o parágrafo na redação consolidada); só nas contingências por <strong>EPEC</strong> e por <strong>FS-DA</strong> exigem-se <strong>no mínimo duas vias</strong></td></tr>
+</table></div>
+
+<h3>DANFE simplificado</h3>
+<p>Quando a venda ocorre <strong>fora do estabelecimento</strong> ou é <strong>venda a varejo a consumidor final por meio eletrônico, telemarketing ou processo semelhante</strong>, o DANFE pode ser impresso em tamanho <strong>inferior ao A4</strong>, em qualquer papel menos jornal. Passa a se chamar <strong>DANFE Simplificado</strong>. Na versão <em>etiqueta</em>, a UF pode, a seu critério, suprimir o valor total da NF-e.</p>
+
+<h3>Quando a impressão é dispensada</h3>
+<ul>
+<li>Pela UF, <strong>no trânsito de mercadorias em operações internas</strong> (a UF decide).</li>
+<li>No trânsito pelo <strong>modal ferroviário</strong>, quando há MDF-e emitido: a prova de circulação é eletrônica.</li>
+<li>Em <strong>venda dentro do estabelecimento</strong> em que o contribuinte opta por emitir a NF-e no momento da entrega: a impressão pode ser dispensada. <strong>Exceto</strong> nos casos de contingência ou quando o adquirente a solicitar.</li>
+</ul>
+<p>Quem recebe e <strong>não é contribuinte credenciado</strong> para emitir NF-e pode manter o DANFE em arquivo, e deve apresentá-lo à administração quando solicitado. O DANFE substitui, para ele, o arquivo XML que ele pode nem ter.</p>
+
+=== caso
+<p>Um caminhão de bebidas parte de Lagarto (SE) para Aracaju com três NF-e. O motorista não tem nenhum DANFE impresso, só o celular com o MDF-e, e a fiscalização de trânsito o pára. O Estado dispensa o DANFE em operações internas. O que o fiscal pode exigir?</p>
+<div class="res">
+<p>Em operação <strong>interna</strong>, a UF pode dispensar a impressão; se o Estado exerceu essa faculdade, não há infração por falta do papel. O que continua exigível é a <strong>existência da NF-e autorizada</strong>: o fiscal consulta cada chave no portal e confere que as notas estão autorizadas, que o motorista as transporta e que a carga corresponde.</p>
+<p>Se a operação fosse <strong>interestadual</strong>, a faculdade de dispensar por decisão da UF não vale do mesmo modo: a norma prevê a dispensa para as operações internas e para hipóteses específicas, como a do modal ferroviário com MDF-e (confira o texto consolidado e a legislação da UF). Em todo caso, dispensar o DANFE não dispensa a NF-e.</p>
+</div>
+
+=== armadilhas
+- <strong>"O DANFE é a nota"</strong> (o enunciado descreve o DANFE como documento emitido e armazenado eletronicamente, de existência digital): é a definição de NF-e. O DANFE é impresso.
+- <strong>"Duas vias" ou "tantas vias quantas necessárias" como regra geral.</strong> Duas vias é exigência do EPEC e do FS-DA.
+- <strong>"Carimbo no anverso."</strong> É no verso.
+- <strong>"A UF não pode dispensar o DANFE nas operações internas."</strong> Pode.
+- <strong>"No modal ferroviário não é possível dispensar."</strong> Com MDF-e emitido, dispensa-se.
+- <strong>"DANFE pode ter dados que não estão no XML."</strong> Só nas hipóteses do MOC.
+- <strong>Dispensa "inclusive em contingência ou quando o adquirente solicitar".</strong> É justamente onde a impressão <em>não</em> se dispensa.
+
+=== bancas
+- É o tema em que a banca mais gosta de copiar um parágrafo da cláusula 9ª inteiro e trocar um número ou um local (papel, A4, ofício 2, verso/anverso).
+- Em Certo/Errado, os itens verdadeiros descrevem a faculdade da UF ("poderá dispensar"); os falsos a transformam em proibição ou obrigação.
+- Questões que ligam DANFE a contingência perguntam o número de vias: único na regra, dois ou mais no EPEC e no FS-DA.
+
+=== auditor
+O DANFE é o objeto que a fiscalização de trânsito vê. A auditoria olha o XML. Divergência entre os dois (valor, destinatário, itens) indica papel adulterado ou nota diferente da transportada, e vale a pena levantá-la quando houver trânsito suspeito.
+
+=== base
+- Ajuste SINIEF 07/05, cláusula nona: finalidade, uso após autorização, impressão (papel, A4 a ofício 2, código de barras), DANFE simplificado, dispensas
+- MOC NF-e: leiaute do DANFE e do DANFE Simplificado – Etiqueta
+- Ajuste SINIEF 21/10: MDF-e como prova eletrônica de circulação (lição 3.3)
+
+=== dominio
+- Sei dizer as duas finalidades do DANFE e por que ele depende da autorização.
+- Sei as regras de impressão: papel, tamanho, código de barras, carimbo e número de vias.
+- Sei o que é DANFE simplificado e quando se usa.
+- Sei listar as hipóteses de dispensa e a exceção da venda dentro do estabelecimento.

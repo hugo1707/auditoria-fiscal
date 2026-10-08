@@ -1,0 +1,69 @@
+title: Quem é obrigado: obrigatoriedade, dispensa e adesão facultativa
+min: 30
+norma: Ajuste SINIEF 02/09, cláusula 3ª
+obj: Aplicar a regra geral de obrigatoriedade e as três exceções (dispensa, indicação, adesão facultativa), incluindo o efeito de fusão, incorporação e cisão.
+
+=== content
+<h3>A regra e o instrumento</h3>
+<p>A EFD é <strong>obrigatória para todos os contribuintes do ICMS e/ou do IPI</strong>, e a obrigatoriedade se aplica a <strong>todos os estabelecimentos</strong> do contribuinte situados no âmbito da unidade federada. A lógica é simples: não faria sentido um contribuinte entregar EFD de uma filial e deixar outra fora.</p>
+<p>O Ajuste, porém, abre uma válvula: as administrações tributárias das UFs e a RFB podem, <strong>mediante Protocolo ICMS</strong> (não "Convênio", não "decreto", não "lei"), fazer uma das duas coisas abaixo.</p>
+
+<div class="vs dois">
+<div><h4>Dispensar</h4><p>Dispensar a EFD para <strong>alguns contribuintes, um conjunto de contribuintes ou setores econômicos</strong>. Quem não foi dispensado continua obrigado, automaticamente.</p></div>
+<div><h4>Indicar</h4><p><strong>Indicar quem é obrigado</strong> (alguns contribuintes ou setores) e tornar a utilização <strong>facultativa aos demais</strong>.</p></div>
+</div>
+<p>Repare no desenho: dispensar é <em>excluir</em> alguns; indicar é <em>incluir</em> alguns. Ambos são possíveis. Dizer que "não é possível indicar apenas alguns contribuintes" é um erro: é exatamente o que a norma permite.</p>
+
+<h3>Adesão facultativa: quem não é obrigado pode entrar, mas não sai</h3>
+<p>O contribuinte que <strong>não esteja obrigado</strong> pode <strong>optar</strong> por usar a EFD. A opção é <strong>irretratável</strong>: tendo entrado, não pode voltar atrás e deixar de usar. Não há "requerimento de saída". O desenho evita que o contribuinte entre e saia conforme lhe convenha, quebrando a série histórica que a fiscalização usa.</p>
+
+<h3>Dispensa não é irrevogável</h3>
+<p>A dispensa dada por Protocolo <strong>não</strong> é irretratável. A administração pode retomar a obrigatoriedade. A irretratabilidade é característica da <em>opção do contribuinte</em>, não da dispensa do fisco. A confusão entre as duas é a pegadinha mais usada.</p>
+
+<h3>Reorganização societária</h3>
+<p>Em caso de <strong>fusão, incorporação ou cisão</strong>, a obrigatoriedade da EFD <strong>se estende</strong> à empresa incorporadora, cindida ou resultante da cisão ou fusão. A obrigação segue o patrimônio e a atividade; a reorganização não é rota de fuga.</p>
+
+<h3>A EFD e o Bloco K: obrigatoriedade escalonada</h3>
+<p>Para o <strong>Bloco K</strong> (controle da produção e do estoque) a obrigatoriedade foi escalonada no tempo por <strong>faturamento</strong> e por <strong>atividade industrial (CNAE)</strong>. "Faturamento", para esse fim, é a receita bruta de venda de mercadorias de <strong>todos os estabelecimentos da empresa no território nacional</strong>, industriais ou não, excluídas as vendas canceladas, as devoluções de vendas e os descontos incondicionais concedidos. O exercício de referência é o <strong>segundo exercício anterior</strong> ao do início da obrigação. Os anos exatos de cada faixa estão no cronograma do Ajuste e mudam por alteração; confira na versão vigente.</p>
+
+=== caso
+<p>Resolva cada hipótese, indicando a regra aplicada.</p>
+<ol>
+<li>O Protocolo ICMS 99/xx dispensa a EFD para os contribuintes do setor X. Uma empresa do setor Y, de pequeno porte, pergunta se continua obrigada.</li>
+<li>Uma empresa dispensada pelo Protocolo resolve voltar a escriturar pela EFD "por conveniência" e depois quer parar de novo.</li>
+<li>A Companhia A, obrigada à EFD, é incorporada pela Companhia B, que não era obrigada.</li>
+<li>Uma UF pretende obrigar somente os contribuintes do setor Z e deixar facultativo para os demais.</li>
+</ol>
+<div class="res">
+<p><strong>1.</strong> Continua <em>obrigada</em>. Dispensa de um setor torna "automaticamente" obrigatória a EFD para os demais, porque a regra geral é a obrigatoriedade.</p>
+<p><strong>2.</strong> Ao voltar por <em>opção</em>, a adesão é <strong>irretratável</strong>: não poderá deixar de usar depois.</p>
+<p><strong>3.</strong> A obrigatoriedade <strong>se estende</strong> à incorporadora. Companhia B passa a entregar a EFD.</p>
+<p><strong>4.</strong> Pode, via Protocolo ICMS: é a hipótese de <em>indicação</em>. A utilização fica facultativa aos demais, sujeita à irretratabilidade de quem optar.</p>
+</div>
+
+=== armadilhas
+- <strong>"Mediante Convênio"</strong> ou outro instrumento: o texto fala em <strong>Protocolo ICMS</strong>.
+- <strong>"Não é possível indicar só alguns."</strong> É possível.
+- <strong>"Dispensa irretratável/irrevogável."</strong> Irretratável é a <em>opção</em> do contribuinte.
+- <strong>"Quem optou pode voltar atrás por requerimento."</strong> Não.
+- <strong>"Fusão, incorporação ou cisão não estende a obrigatoriedade."</strong> Estende.
+- <strong>"Obrigatória por princípio da impessoalidade, sem possibilidade de dispensa."</strong> A norma prevê dispensa; a justificativa "impessoalidade" é fabricada.
+- <strong>Obrigatoriedade só para o estabelecimento que apura:</strong> aplica-se a <em>todos</em> os estabelecimentos na UF.
+
+=== bancas
+- É um dos temas favoritos de Certo/Errado: muitos itens consecutivos variam uma só palavra do mesmo trecho (dispensa/indicação, retratável/irretratável, convênio/protocolo, alguns/todos).
+- Estilo múltipla escolha: cinco alternativas sobre o mesmo parágrafo, com uma única correta; o truque é ler a palavra-chave que muda.
+- Itens sobre faturamento do Bloco K apresentam a definição legal completa e testam "exercício de referência".
+
+=== auditor
+Obrigatoriedade é pressuposto da autuação por omissão de entrega. Antes de lavrar, confirme no cadastro e na legislação (Protocolo, perfil, CNAE, faturamento) que o contribuinte estava obrigado naquele período e se algum ato de dispensa o alcançava.
+
+=== base
+- Ajuste SINIEF 02/09, cláusula terceira: obrigatoriedade, dispensa e indicação por Protocolo ICMS, adesão facultativa e irretratável, fusão/incorporação/cisão, escalonamento do Bloco K e definição de faturamento
+- Protocolos ICMS vigentes na UF do contribuinte e legislação estadual (RICMS)
+
+=== dominio
+- Sei a regra geral e os dois usos do Protocolo ICMS (dispensar e indicar).
+- Sei que a adesão facultativa é irretratável e que a dispensa não o é.
+- Sei o efeito de fusão, incorporação e cisão.
+- Sei a definição de faturamento do Bloco K e qual o exercício de referência.

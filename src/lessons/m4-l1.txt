@@ -1,0 +1,84 @@
+title: A lógica do cruzamento entre NF-e e EFD
+min: 30
+norma: Ajustes SINIEF 07/05 e 02/09 · Guia Prático da EFD ICMS/IPI (registros C100, C170, C190, D100)
+obj: Montar o cruzamento NF-e × EFD pela chave, classificar as diferenças em três famílias e conferir as relações internas da própria escrituração.
+
+=== content
+<p>Tudo o que você viu até aqui converge numa operação: pôr lado a lado o <strong>que foi autorizado</strong> (XML) e o <strong>que foi escriturado</strong> (EFD) e olhar o que não bate. O método é sempre o mesmo.</p>
+
+<h3>Passo 1: a chave como elo</h3>
+<p>No lado do XML, a chave de acesso é <code>chNFe</code>. No lado da EFD, está no campo <code>CHV_NFE</code> do <code>C100</code>. Como a chave identifica de forma única a nota, o cruzamento é uma junção por chave. Se você juntar por número e série, vai gerar falsas diferenças (números repetem entre estabelecimentos; séries mudam).</p>
+
+<h3>Passo 2: três famílias de diferença</h3>
+<div class="tbl"><table>
+<tr><th>Família</th><th>Em palavras</th><th>Hipóteses a investigar</th></tr>
+<tr><td><strong>A. Está no XML e não está na EFD</strong></td><td>nota autorizada, destinada ao contribuinte (ou emitida por ele), mas sem escrituração</td><td>entrada não escriturada · saída não escriturada · nota emitida para outro estabelecimento do mesmo grupo · escrituração em outro período</td></tr>
+<tr><td><strong>B. Está na EFD e não está no XML</strong></td><td>escrituração de nota que não consta como autorizada</td><td>documento inexistente ou não autorizado · erro de digitação da chave · nota de outro modelo (papel)</td></tr>
+<tr><td><strong>C. Está nos dois, mas diferente</strong></td><td>mesma chave, campos divergentes</td><td>valor · ICMS · CFOP · data · situação (cancelada no XML, regular na EFD)</td></tr>
+</table></div>
+<p>Cada família leva a uma conclusão diferente e a uma prova diferente. Misturá-las é o erro mais comum do iniciante.</p>
+
+<h3>Passo 3: o que comparar na família C</h3>
+<ul>
+<li><strong>Valor do documento:</strong> <code>vNF</code> do XML × <code>VL_DOC</code> do <code>C100</code>.</li>
+<li><strong>ICMS:</strong> <code>vICMS</code> do total × <code>VL_ICMS</code>. A diferença é potencial crédito (na entrada) ou débito (na saída) a maior ou a menor.</li>
+<li><strong>Situação:</strong> a nota teve <em>evento de cancelamento</em>, mas na EFD está com <code>COD_SIT</code> 00 (regular). Os valores principais do campo: 00 regular · 02 cancelado · 04 denegado · 05 numeração inutilizada.</li>
+<li><strong>CFOP:</strong> o 5xxx do XML deve virar 1xxx na EFD do comprador; 6xxx vira 2xxx; 7xxx vira 3xxx. Natureza incompatível indica erro ou manobra.</li>
+<li><strong>Datas:</strong> emissão (<code>DT_DOC</code>) e entrada ou saída (<code>DT_E_S</code>); o período da EFD é o da escrituração.</li>
+</ul>
+
+<h3>Passo 4: relações internas da EFD</h3>
+<p>Antes mesmo de olhar o XML, a EFD tem de ser coerente consigo mesma:</p>
+<ul>
+<li>a soma dos itens (<code>C170</code>) deve fechar com o cabeçalho (<code>C100</code>);</li>
+<li>o resumo (<code>C190</code>, por CST/CFOP/alíquota) deve fechar com os itens;</li>
+<li>o débito e o crédito apurados no Bloco E (<code>E110</code>) devem refletir os <code>C190</code> do período, mais os ajustes declarados em <code>E111</code>;</li>
+<li>o frete do <code>D100</code> deve ter correspondente no CT-e, que por sua vez lista as NF-e transportadas.</li>
+</ul>
+<p>Uma diferença interna (item × cabeçalho) já é achado, sem precisar de XML.</p>
+
+=== caso
+<p>Em setembro/2026, a Comercial Exemplo (lição 0.3) escriturou entradas. A base de XML autorizados com ela como destinatária e a lista de <code>C100</code> estão abaixo. Chaves abreviadas pelos quatro últimos dígitos.</p>
+<div class="tbl"><table>
+<tr><th>Chave</th><th>XML: vNF</th><th>XML: ICMS</th><th>XML: eventos</th><th>EFD: VL_DOC</th><th>EFD: ICMS</th><th>EFD: COD_SIT</th></tr>
+<tr><td>…0001</td><td>1.000,00</td><td>180,00</td><td>—</td><td>1.000,00</td><td>180,00</td><td>00</td></tr>
+<tr><td>…0002</td><td>2.400,00</td><td>432,00</td><td>—</td><td>2.400,00</td><td>460,00</td><td>00</td></tr>
+<tr><td>…0003</td><td>800,00</td><td>144,00</td><td>cancelamento (16/09)</td><td>800,00</td><td>144,00</td><td>00</td></tr>
+<tr><td>…0004</td><td>5.000,00</td><td>900,00</td><td>—</td><td colspan="3"><em>não escriturada</em></td></tr>
+<tr><td>…0005</td><td colspan="3"><em>não consta no XML</em></td><td>500,00</td><td>90,00</td><td>00</td></tr>
+</table></div>
+<div class="res">
+<p><strong>…0001.</strong> Bate. Sem achado.</p>
+<p><strong>…0002 (família C).</strong> Valor igual, mas ICMS escriturado R$ 460,00 contra R$ 432,00 do XML. Diferença de <strong>R$ 28,00 de crédito a maior</strong>, a investigar (erro de digitação? alíquota aplicada de forma diferente?).</p>
+<p><strong>…0003 (família C, situação).</strong> A nota foi <strong>cancelada</strong> em 16/09 e a EFD a mantém como regular. O crédito de R$ 144,00 provém de documento cancelado: <strong>crédito indevido</strong>, salvo prova de que o cancelamento foi irregular ou posterior ao fato.</p>
+<p><strong>…0004 (família A).</strong> NF-e de R$ 5.000,00 autorizada contra a Comercial e <strong>não escriturada</strong>. Hipóteses: entrada não registrada (e portanto crédito de R$ 900,00 não aproveitado, mas também compra fora da contabilidade); nota recusada pelo recebedor; operação cancelada fora do sistema. Pede-se confirmação: intimação do contribuinte, consulta aos eventos de manifestação.</p>
+<p><strong>…0005 (família B).</strong> Escriturada, mas sem XML. <strong>Documento não autorizado</strong> ou chave errada; crédito de R$ 90,00 sem suporte.</p>
+<p><strong>Resumo provisório.</strong> Crédito escriturado nas linhas 0001, 0002, 0003, 0005: 180 + 460 + 144 + 90 = 874. Suportado por XML autorizado e não cancelado: 180 + 432 = 612. Diferença <strong>R$ 262,00</strong> (28 + 144 + 90) a questionar, e uma entrada de R$ 5.000,00 a esclarecer. Note que cada R$ tem origem numa família diferente.</p>
+</div>
+
+=== armadilhas
+- <strong>Cruzar por número e série</strong> em vez de chave.
+- <strong>Ler "não escriturada" como prova de sonegação.</strong> É uma diferença a ser explicada; a prova vem depois.
+- <strong>Ignorar eventos.</strong> A nota pode estar autorizada e depois cancelada, ou ter CC-e. Sempre associe os eventos à chave.
+- <strong>Ignorar a perspectiva do CFOP.</strong> 5102 no XML e 1102 na EFD é correspondência certa; 5102 nos dois lados é problema.
+- <strong>Comparar valor da nota com soma de itens.</strong> Frete, seguro, desconto e outras despesas explicam diferenças legítimas.
+- <strong>Período.</strong> Nota emitida em setembro e escriturada em outubro pode ser extemporânea, não omissa.
+
+=== bancas
+- A cobrança direta do cruzamento aparece em questões de auditoria que dão um conjunto de dados (documentos autorizados, registros da EFD) e pedem classificar o achado ou o cálculo da diferença.
+- Questões conceituais afirmam que a EFD "dispensa" o detalhamento das notas porque há apuração no Bloco E, ou que a NF-e traz os tributos só no total: ambos errados, e a lição 0.1 e esta mostram por quê.
+- Itens de "dever do auditor": verificar consistência, conformidade com a legislação e a inexistência de omissões, subfaturamento ou outras irregularidades.
+
+=== auditor
+O cruzamento só funciona se as duas bases forem confiáveis. Antes de qualquer conclusão, valide: todas as chaves têm 44 dígitos e DV correto? há duplicidade? o período de cada base é o mesmo? as notas canceladas e denegadas foram tratadas? Um terço dos "achados" de um cruzamento mal montado desaparece nessa limpeza.
+
+=== base
+- Ajuste SINIEF 07/05: autorização de uso, eventos, idoneidade (lições 1.3, 1.8 e 1.9)
+- Ajuste SINIEF 02/09: EFD como escrituração completa; compartilhamento (lições 2.1 a 2.6)
+- Guia Prático da EFD ICMS/IPI: registros C100 (campos CHV_NFE, COD_SIT, VL_DOC, VL_ICMS), C170, C190, E110, E111, D100
+
+=== dominio
+- Sei montar o cruzamento por chave e classificar a diferença em A, B ou C.
+- Sei o que comparar em cada nota (valor, ICMS, situação, CFOP, datas) e por que a perspectiva do CFOP muda.
+- Sei as relações internas que a EFD precisa satisfazer entre C170, C190 e E110.
+- Sei por que uma diferença é um achado a explicar e não uma conclusão.

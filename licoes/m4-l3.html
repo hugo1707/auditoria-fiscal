@@ -4,44 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>4.3 Eventos, correção e substituição do CT-e</title>
+<title>4.3 Roteiro de auditoria e levantamento quantitativo de estoque</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m4-l3">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 4</span>CT-e e CT-e OS (MOC 4.00)</div>
-  <div class="cell"><span>Lição</span>4.3</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>MOC CT-e 4.00 — eventos; Ajuste SINIEF 09/2007</div>
-</div>
-<h1>Eventos, correção e substituição do CT-e</h1>
-<p class="obj">Conhecer cancelamento, CC-e, prestação em desacordo e CT-e substituto, com seus prazos.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 4</span>Auditoria com os arquivos</div><div class="cell"><span>Lição</span>4.3</div><div class="cell"><span>Tempo</span>35 min</div><div class="cell c-norma"><span>Norma principal</span>Ajustes SINIEF 07/05 e 02/09 · Guia Prático da EFD (Blocos 0, C, H e K)</div></div>
+<h1>Roteiro de auditoria e levantamento quantitativo de estoque</h1>
+<p class="obj">Organizar uma auditoria em etapas, aplicar a equação do estoque a um item e tratar as causas legítimas de diferença antes de concluir.</p>
 <div class="content">
-<h3>Cancelamento</h3>
-<p>O MOC CT-e 4.00 admite cancelamento em prazo não superior a <strong>168 horas</strong> da autorização, desde que não iniciada a prestação. Estar vinculado a MDF-e ou a outros eventos impede o cancelamento.</p>
-<h3>Carta de Correção</h3>
-<p>Como na NF-e, não corrige variáveis que determinam o imposto, dados que mudem remetente, destinatário ou tomador, nem a data de emissão.</p>
-<h3>Fim do CT-e de anulação</h3>
-<p>Desde junho de 2023 (Ajuste SINIEF 31/2022 e NT correspondente), o erro que não cabe em CC-e é tratado assim:</p>
+<h3>Um roteiro em sete etapas</h3>
 <ol>
-<li>O tomador registra o evento <strong>Prestação do Serviço em Desacordo</strong> (610110) em até 45 dias da autorização do CT-e com erro.</li>
-<li>O transportador emite o <strong>CT-e substituto</strong> (tpCTe = 3) em até 60 dias da autorização do original.</li>
+<li><strong>Delimitar.</strong> Contribuinte, estabelecimentos, período e objetivo (omissão de saída? crédito? enquadramento?). Confirmar a obrigatoriedade e o perfil da EFD (lições 2.2 e 2.3).</li>
+<li><strong>Obter as bases.</strong> XML autorizados (emitidos e destinados), eventos, CT-e e MDF-e, e todas as versões da EFD recepcionadas (cada retificação tem um recibo).</li>
+<li><strong>Validar as bases.</strong> Chaves de 44 dígitos e DV, duplicidades, período, notas canceladas, denegadas ou inutilizadas. Registrar o que foi excluído e por quê.</li>
+<li><strong>Cruzar por chave</strong> (lição 4.1) e classificar em A, B e C.</li>
+<li><strong>Testar as hipóteses</strong> com as provas independentes: eventos de manifestação, MDF-e, registros de passagem, CT-e, pagamentos (lição 4.2).</li>
+<li><strong>Confirmar com o contribuinte.</strong> Intimar, ouvir explicações e documentos. Uma parte dos achados se resolve aqui.</li>
+<li><strong>Concluir e documentar.</strong> O que é infração (com base na lei do Estado), o que é erro sem prejuízo, o que ficou sem conclusão. Guardar as bases e os critérios usados.</li>
 </ol>
-<p>Cada CT-e admite um único substituto, e o substituto não pode ser cancelado.</p>
-<h3>Outros eventos úteis à auditoria</h3>
-<p>Comprovante de entrega, registro de passagem pelos postos fiscais e EPEC.</p>
+
+<h3>O levantamento quantitativo de estoque</h3>
+<p>Para uma mercadoria, em um período, a equação é simples:</p>
+<pre class="code" data-lang=""><code>estoque inicial  +  entradas  -  saídas  =  <mark>estoque final esperado</mark>
+(Bloco H do período anterior)   (C100/C170 e XML)   (C100/C170 e XML)
+
+diferença = estoque final inventariado (Bloco H) - estoque final esperado</code></pre>
+<ul>
+<li><strong>Estoque final inventariado menor que o esperado</strong> (diferença negativa): saíram mais unidades do que as documentadas. Hipótese de <strong>saída sem nota</strong>, o que levaria a omissão de saída e de receita.</li>
+<li><strong>Estoque final inventariado maior que o esperado</strong> (diferença positiva): entraram mais unidades do que as documentadas. Hipótese de <strong>entrada sem nota</strong>, cuja origem se apura.</li>
+</ul>
+
+<h3>Antes de concluir, descarte as causas legítimas</h3>
+<p>A maior parte das diferenças de estoque numa primeira passada não é infração. Os erros típicos:</p>
+<ul>
+<li><strong>Mesma mercadoria, códigos diferentes.</strong> Uma mercadoria comprada com um código do fornecedor e vendida com outro aparece como dois itens no <code>0200</code>/Bloco H: um com sobra, outro com falta. Unifique pelo critério físico (descrição, NCM, unidade) antes de calcular.</li>
+<li><strong>Unidade de medida.</strong> Compra em caixa, venda em unidade, inventário em quilo. Converta pelo fator do cadastro (<code>0220</code>).</li>
+<li><strong>Devoluções, bonificações, remessas e retornos.</strong> Têm CFOP e entram na equação; esquecê-los gera diferença falsa.</li>
+<li><strong>Perdas, quebras e consumo próprio.</strong> Há tratamento fiscal específico em cada Estado; documente-as e discuta com o contribuinte.</li>
+<li><strong>Corte de período.</strong> Nota emitida em um mês e entrada física em outro.</li>
+<li><strong>Estoque de terceiros e em poder de terceiros.</strong> O Bloco H distingue o que é do contribuinte do que ele guarda ou do que está com outro (<code>IND_PROP</code>).</li>
+</ul>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Um CT-e substituto muda valores ou tomador de uma prestação já ocorrida. Confronte o original e o substituto: o crédito do tomador deve seguir o substituto, e o débito do transportador deve ter sido ajustado de forma coerente.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>MOC CT-e 4.00 — seção de eventos e regras de validação do cancelamento</li><li>Ajuste SINIEF 09/2007 — cláusulas sobre cancelamento, CC-e e substituição (redação do Ajuste SINIEF 31/2022)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual o prazo de cancelamento do CT-e no MOC 4.00?</summary><p>Até 168 horas da autorização, sem início da prestação.</p></details><details class="q"><summary><span class="qn">2</span>Quem registra o evento de Prestação em Desacordo e em que prazo?</summary><p>O tomador, em até 45 dias da autorização do CT-e com erro.</p></details><details class="q"><summary><span class="qn">3</span>O CT-e substituto pode ser cancelado?</summary><p>Não.</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>Comercial Exemplo, setembro/2026. Mercadoria: detergente líquido 500 ml, que no cadastro (<code>0200</code>) aparece com <strong>dois códigos</strong>: <code>DET-500</code> (o que o fornecedor usa) e <code>DET-500-A</code> (criado pela loja para um lote antigo). Dados do período:</p>
+<div class="tbl"><table>
+<tr><th>Código</th><th>Estoque inicial (H, agosto)</th><th>Entradas (C170 = XML)</th><th>Saídas (C170)</th><th>Inventário em 30/09 (H)</th></tr>
+<tr><td><code>DET-500</code></td><td>100</td><td>500</td><td>430</td><td>150</td></tr>
+<tr><td><code>DET-500-A</code></td><td>0</td><td>0</td><td>0</td><td>20</td></tr>
+</table></div>
+<div class="res">
+<p><strong>Primeira passada, código a código.</strong></p>
+<p><code>DET-500</code>: esperado = 100 + 500 − 430 = 170; inventariado = 150; diferença = <strong>−20</strong> (parece saída sem nota).</p>
+<p><code>DET-500-A</code>: esperado = 0; inventariado = 20; diferença = <strong>+20</strong> (parece entrada sem nota).</p>
+<p>Duas "infrações" opostas, de mesmo tamanho: sinal de que são a mesma coisa.</p>
+<p><strong>Segunda passada: unificar pela mercadoria</strong> (mesma descrição, NCM e unidade). Esperado = 170 + 0 = 170; inventariado = 150 + 20 = 170; diferença = <strong>0</strong>. Não há omissão: houve inventário feito sob o código "errado". A conclusão é erro de cadastro e de inventário, sem imposto a cobrar, apenas orientação para unificar os códigos.</p>
+<p>Se a unificação deixasse resíduo (por exemplo, inventariado total de 150 em vez de 170), aí sim a falta de 20 unidades ficaria como pergunta a esclarecer: perdas? consumo próprio? saída sem nota? O auditor pediria o registro de perdas, conferiria pedidos e entregas do período e só então decidiria.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>Calcular com o código, não com a mercadoria.</strong> A causa mais frequente de falsa omissão.</li><li><strong>Concluir "omissão de saída" a partir de falta sem testar perdas e unidades.</strong></li><li><strong>Usar o Bloco H como verdade absoluta.</strong> Ele é declarado pelo próprio contribuinte e é uma data, não um período.</li><li><strong>Esquecer retornos, devoluções e remessas.</strong></li><li><strong>Misturar estabelecimentos.</strong> O estoque é por estabelecimento.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>O levantamento aparece em questões de auditoria com um cenário de estoque e códigos diferentes para a mesma mercadoria, e as alternativas testam se você sabe que o Bloco H pode controlar duas mercadorias onde há uma, o que impede o inventário correto por NCM.</li><li>Fórmulas de estoque (inicial + entradas − saídas) em questões de cálculo.</li><li>Roteiro de auditoria: a banca pergunta a ordem correta ou o que fazer antes de lavrar; a resposta valoriza validar as bases e ouvir o contribuinte antes de concluir.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Tenha uma regra de bolso: toda diferença é uma pergunta, nunca uma resposta. O roteiro de sete etapas existe para que a conclusão apareça só depois da prova, e para que a defesa do contribuinte (que virá) encontre um trabalho em que cada número tem origem e critério registrados.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Guia Prático da EFD ICMS/IPI: Bloco H (inventário, <code>H005</code>, <code>H010</code>), cadastro <code>0200</code> e <code>0220</code> (fatores de conversão), Bloco K</li><li>Ajuste SINIEF 02/09: Bloco K e livro modelo 3</li><li>Legislação estadual: levantamento quantitativo de estoque, perdas, presunções e penalidades</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei descrever o roteiro de auditoria em etapas e por que validar as bases vem antes de cruzar.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei aplicar a equação do estoque e interpretar uma diferença positiva ou negativa.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei listar as causas legítimas de diferença (códigos, unidades, devoluções, perdas, corte, terceiros).</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei por que a diferença de estoque é o início da investigação e não a conclusão.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m4-l3">Marcar lição como concluída</button>
-<nav class="pager"><a href="m4-l2.html" class="prev"><small>Anterior</small>4.2 Tipos de CT-e, tipos de serviço e ICMS no transporte</a><a href="m5-l1.html" class="next"><small>Próxima</small>5.1 MDF-e: obrigatoriedade e estrutura</a></nav>
+<nav class="pager"><a href="m4-l2.html" class="prev"><small>Anterior</small>4.2 Divergências típicas e o que cada uma indica</a><a href="../plano.html" class="next"><small>Fim da trilha</small>Rever o cronograma</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

@@ -1,0 +1,69 @@
+title: CT-e: autorização, tipos, DACTE, contingência e cancelamento
+min: 25
+norma: Ajuste SINIEF 09/07, cláusulas 6ª a 14ª · MOC CT-e
+obj: Percorrer a vida do CT-e (autorização, distribuição, DACTE, contingência, cancelamento), distinguir os tipos de CT-e e de serviço e ler a tributação do transporte no XML.
+
+=== content
+<h3>Autorização e distribuição</h3>
+<p>A lógica é a da NF-e, com um detalhe de competência. A autorização de uso é solicitada pela internet, normalmente à UF <strong>onde a prestação começa</strong>. A administração analisa requisitos formais (regularidade fiscal, autoria, integridade da assinatura, leiaute) e cientifica o emitente do resultado. Só depois da autorização o CT-e pode ser usado como documento fiscal.</p>
+<p>Concedida a autorização, o CT-e é transmitido à <strong>Receita Federal</strong>, às UFs de <strong>início</strong> e de <strong>término</strong> da prestação e à do <strong>tomador</strong> do serviço e, quando for o caso, à SUFRAMA. É o equivalente, no transporte, da tabela de destinatários que você aprendeu na lição 1.4.</p>
+<p>Também aqui valem a <strong>idoneidade</strong> (dolo, fraude, simulação ou erro) e o dever do <strong>tomador</strong> de verificar a validade e a autorização de uso <em>antes</em> de aproveitar o crédito do imposto.</p>
+
+<h3>Tipos de CT-e e de serviço</h3>
+<div class="tbl"><table>
+<tr><th>Campo</th><th>Valores</th></tr>
+<tr><td><code>tpCTe</code> (tipo do CT-e)</td><td>0 normal · 1 complementar de valores · 3 substituto. Na versão 4.00 não há mais CT-e de anulação</td></tr>
+<tr><td><code>tpServ</code> (tipo do serviço)</td><td>0 normal · 1 subcontratação · 2 redespacho · 3 redespacho intermediário · 4 serviço vinculado a multimodal</td></tr>
+<tr><td><code>modal</code></td><td>01 rodoviário · 02 aéreo · 03 aquaviário · 04 ferroviário · 05 dutoviário · 06 multimodal</td></tr>
+</table></div>
+<p>Há ainda o <strong>CT-e simplificado</strong>, para prestações com vários remetentes ou destinatários e um único tomador, sob condições (por exemplo, mesma UF de início e término e mesmo CFOP).</p>
+
+<h3>O ICMS no transporte (como aparece no XML)</h3>
+<p>O grupo <code>imp</code> do CT-e traz a tributação da <strong>prestação</strong>:</p>
+<ul>
+<li>ICMS00: tributação normal · ICMS20: com redução de base de cálculo</li>
+<li>ICMS45: isenta, não tributada ou diferida</li>
+<li>ICMS60: cobrado por substituição tributária (responsabilidade atribuída ao tomador)</li>
+<li>ICMS90: outros · ICMSOutraUF: ICMS devido a UF diversa da de origem · ICMSSN: emitente do Simples Nacional</li>
+</ul>
+<p>O XML só <em>registra</em> a opção tributária; a regra material (quem recolhe, quando o tomador retém) está na legislação de cada UF e em convênios.</p>
+
+<h3>DACTE, contingência e cancelamento</h3>
+<ul>
+<li><strong>DACTE</strong> é o documento auxiliar (equivalente do DANFE): acompanha a carga e facilita a consulta. A norma prevê hipóteses em que a impressão é dispensada.</li>
+<li><strong>Contingência.</strong> Havendo problema técnico, o emitente pode usar o evento prévio de emissão em contingência (EPEC) ou a impressão em formulário de segurança, conforme a norma; o texto mais recente acrescenta a contingência off-line. Confira a data de vigência de cada alternativa.</li>
+<li><strong>Cancelamento.</strong> Pode ser pedido após a autorização, em regra em até <strong>168 horas</strong> e desde que a prestação não tenha começado. Repare que o prazo é bem maior do que o das 24 horas da NF-e.</li>
+</ul>
+
+=== caso
+<p>Um CT-e foi autorizado com o valor do frete menor do que o realmente cobrado. Qual o instrumento, e o que muda em relação à NF-e?</p>
+<div class="res">
+<p>Na NF-e, valor não se corrige por CC-e: nova nota ou cancelamento. No CT-e, a diferença de <strong>valor</strong> se resolve com um <strong>CT-e complementar de valores</strong> (<code>tpCTe</code>=1), que referencia o CT-e original e acrescenta o que faltou. Se o CT-e original estiver errado de forma que não se aproveite, existe o <strong>CT-e substituto</strong> (<code>tpCTe</code>=3), que substitui o anterior.</p>
+<p>A lição de método: antes de responder "como se corrige", responda <em>o quê</em> está errado (valor, dado cadastral, o próprio documento) e <em>qual norma</em> rege o documento.</p>
+</div>
+
+=== armadilhas
+- <strong>Prazo de cancelamento do CT-e = 24 horas.</strong> A referência do Ajuste é 168 horas, desde que a prestação não tenha iniciado.
+- <strong>Autorizador "UF do destinatário".</strong> A solicitação é, em regra, à UF de início da prestação.
+- <strong>CT-e de anulação na versão 4.00.</strong> Não há mais.
+- <strong>ICMS60 = isento.</strong> ICMS60 é substituição tributária; isento/não tributado/diferido é o ICMS45.
+- <strong>DACTE como o documento fiscal.</strong> É auxiliar.
+
+=== bancas
+- Questões de CT-e são menos frequentes do que as de NF-e e tendem a ser de memória de cláusula. Prepare a lista de tipos e de campos, não os detalhes de cada versão do MOC.
+- Em provas de auditoria, o CT-e aparece como ponte: "o frete escriturado na EFD sem o CT-e correspondente" ou "o CT-e que aponta uma NF-e inexistente".
+- Quando a banca pergunta o prazo, vale reconhecer o desenho: NF-e 24 horas, CT-e 168 horas, contingência pendente 168 horas.
+
+=== auditor
+Frete é um terreno clássico de crédito indevido: o tomador aproveita crédito sobre CT-e de transportador de fachada ou sobre frete que já está embutido no preço. Cruze o CT-e por chave com a NF-e que ele diz transportar e confira se o frete foi realmente de mercadoria sujeita ao ICMS tributada pelo tomador.
+
+=== base
+- Ajuste SINIEF 09/07, cláusulas sexta a nona (autorização, análise, distribuição)
+- Ajuste SINIEF 09/07, cláusulas décima a décima quarta (uso, DACTE, guarda, contingência, cancelamento)
+- MOC CT-e 4.00: tipos de CT-e e de serviço, grupo de impostos
+
+=== dominio
+- Sei a quem a autorização é solicitada e para quem o CT-e é transmitido.
+- Sei listar tpCTe, tpServ e os modais.
+- Sei o prazo de cancelamento do CT-e e como ele difere do da NF-e.
+- Sei ler o grupo de ICMS do CT-e (00, 20, 45, 60, 90, outra UF, Simples).

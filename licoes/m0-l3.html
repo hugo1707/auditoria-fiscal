@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16323F">
+<title>0.3 A EFD é um arquivo de texto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
+</head>
+<body class="">
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
+<main>
+<article class="lesson" data-id="m0-l3">
+<div class="form"><div class="cell c-mod"><span>Módulo 0</span>Os arquivos por dentro</div><div class="cell"><span>Lição</span>0.3</div><div class="cell"><span>Tempo</span>25 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 02/09 · Guia Prático da EFD ICMS/IPI (estrutura do arquivo)</div></div>
+<h1>A EFD é um arquivo de texto</h1>
+<p class="obj">Ler um trecho de EFD, entender registro, campo e bloco, e ligar uma linha do C100 ao XML da NF-e que ela escritura.</p>
+<div class="content">
+<p>Se a NF-e é um XML cheio de marcas, a <strong>EFD ICMS/IPI</strong> é o oposto visual: um arquivo <strong>.txt</strong> de linhas curtas, sem marca nenhuma, em que cada informação é separada da seguinte por uma barra vertical (<code>|</code>). O significado de cada pedaço vem apenas da <strong>posição</strong>. Quem erra uma posição, erra o campo.</p>
+<p>Aqui está um trecho da EFD da <em>Comercial Exemplo</em> (o destinatário da nota que vimos na lição 0.1), referente a setembro de 2026. As linhas do meio do arquivo foram omitidas onde aparece <code>[...]</code>.</p>
+
+<pre class="code" data-lang="txt"><code>|0000|019|0|01092026|30092026|COMERCIAL EXEMPLO LTDA|11222333000181||SE|271234567|2800308|||A|1|
+|0001|0|
+|0150|F001|DISTRIBUIDORA EXEMPLO S/A|1058|12345678000195||271000019|2800308||RUA DO COMERCIO|55||CENTRO|
+|0190|UN|Unidade|
+|0200|DET-500|Detergente liquido 500 ml|||UN|00|34022000|||18,00||
+[...]
+|C001|0|
+|C100|0|1|F001|55|00|001|4521|<mark>28260912345678000195550010000045211837492617</mark>|14092026|15092026|<mark>1000,00</mark>|1|0,00|0,00|1000,00|9|0,00|0,00|0,00|1000,00|<mark>180,00</mark>|0,00|0,00|0,00|0,00|0,00|0,00|0,00|
+|C170|1|DET-500||100|UN|1000,00|0,00|0|000|<mark>1102</mark>||1000,00|18,00|180,00|0,00|0,00|0,00|||||||98|||||0,00|98|||||0,00|||
+|C190|000|1102|18,00|1000,00|1000,00|180,00|0,00|0,00|0,00|0,00||
+[...]
+|E100|01092026|30092026|
+|E110|2500,00|0,00|0,00|0,00|1200,00|0,00|0,00|0,00|0,00|1300,00|0,00|<mark>1300,00</mark>|0,00|0,00|
+[...]
+|9999|...|</code></pre>
+
+<h3>Registro, campo, bloco</h3>
+<ul>
+<li><strong>Registro</strong> é uma linha. Os quatro primeiros caracteres entre barras dizem <em>que tipo de linha</em> é: <code>0000</code> abre o arquivo, <code>C100</code> é um documento, <code>C170</code> um item, <code>E110</code> a apuração do ICMS.</li>
+<li><strong>Campo</strong> é cada pedaço entre barras. A ordem é fixa e vem do Guia Prático. Campo vazio aparece como duas barras seguidas (<code>||</code>).</li>
+<li><strong>Bloco</strong> é um grupo de registros do mesmo assunto, identificado pela letra (ou número) inicial do registro. Todo bloco abre com um registro <code>X001</code> (que diz se há dados) e fecha com <code>X990</code> (quantas linhas tem).</li>
+</ul>
+<div class="tbl"><table>
+<tr><th>Bloco</th><th>Conteúdo</th></tr>
+<tr><td>0</td><td>Abertura do arquivo e cadastros: contribuinte, participantes (<code>0150</code>), unidades, itens (<code>0200</code>)</td></tr>
+<tr><td>B</td><td>Serviços sujeitos ao ISS (usado só no Distrito Federal)</td></tr>
+<tr><td>C</td><td>Documentos fiscais de <strong>mercadorias</strong> (NF-e, NFC-e, notas em papel…)</td></tr>
+<tr><td>D</td><td>Documentos de <strong>transporte e comunicação</strong> (CT-e…)</td></tr>
+<tr><td>E</td><td><strong>Apuração</strong> do ICMS e do IPI</td></tr>
+<tr><td>G</td><td>CIAP: crédito de ICMS do ativo permanente</td></tr>
+<tr><td>H</td><td>Inventário (estoque em uma data)</td></tr>
+<tr><td>K</td><td>Controle da produção e do estoque</td></tr>
+<tr><td>1</td><td>Outras informações (benefícios, exportação, ajustes específicos)</td></tr>
+<tr><td>9</td><td>Controle e encerramento do arquivo (quantos registros de cada tipo, total de linhas)</td></tr>
+</table></div>
+
+<h3>Do XML à linha de texto</h3>
+<p>Olhe o <code>C100</code> do trecho e compare com o XML da lição 0.1. É a <strong>mesma nota</strong>, reescrita em outro formato:</p>
+<div class="tbl"><table>
+<tr><th>Campo da EFD</th><th>Valor</th><th>De onde vem no XML</th></tr>
+<tr><td><code>IND_OPER</code></td><td>0 (entrada)</td><td>a EFD é do <em>destinatário</em>; para ele a nota é entrada (no XML, <code>tpNF</code>=1 é a visão do emitente)</td></tr>
+<tr><td><code>IND_EMIT</code></td><td>1 (terceiros)</td><td>a nota foi emitida por outro, não pelo próprio declarante</td></tr>
+<tr><td><code>COD_PART</code></td><td>F001</td><td>código do fornecedor, definido no <code>0150</code> (que traz o CNPJ do emitente)</td></tr>
+<tr><td><code>COD_MOD</code> / <code>COD_SIT</code></td><td>55 / 00</td><td><code>mod</code> / documento regular</td></tr>
+<tr><td><code>SER</code> / <code>NUM_DOC</code></td><td>001 / 4521</td><td><code>serie</code> / <code>nNF</code></td></tr>
+<tr><td><code>CHV_NFE</code></td><td>2826…2617</td><td>a chave de acesso: <strong>o elo entre os dois mundos</strong></td></tr>
+<tr><td><code>DT_DOC</code> / <code>DT_E_S</code></td><td>14092026 / 15092026</td><td>data de emissão (<code>dhEmi</code>) / data da entrada. Formato ddmmaaaa, sem separadores</td></tr>
+<tr><td><code>VL_DOC</code></td><td>1000,00</td><td><code>vNF</code>. Decimal com <strong>vírgula</strong></td></tr>
+<tr><td><code>VL_BC_ICMS</code> / <code>VL_ICMS</code></td><td>1000,00 / 180,00</td><td><code>vBC</code> / <code>vICMS</code> do total</td></tr>
+</table></div>
+<p>O <code>C170</code> repete o raciocínio por <strong>item</strong> e o <code>C190</code> é o <strong>resumo</strong> do documento agrupado por CST, CFOP e alíquota. Observe o CFOP: no XML era <code>5102</code> (saída, dentro do estado); na EFD do comprador é <code>1102</code> (entrada, dentro do estado). O primeiro dígito muda porque a perspectiva muda; o resto do código continua descrevendo a mesma natureza da operação.</p>
+
+<h3>O que a EFD tem que o XML não tem</h3>
+<p>O XML documenta <em>uma operação</em>. A EFD documenta <em>um período</em> (aqui, setembro) e acrescenta o que só o contribuinte sabe: em que data a mercadoria entrou, qual a <strong>apuração</strong> do imposto do mês (<code>E110</code>: débitos, créditos, saldo a recolher), o <strong>inventário</strong> (Bloco H) e, para indústrias, a <strong>produção</strong> (Bloco K). O <code>E110</code> do trecho mostra o raciocínio: débitos de R$ 2.500,00 menos créditos de R$ 1.200,00 deixam um saldo a recolher de R$ 1.300,00. O ICMS de R$ 180,00 da nossa nota está dentro dos créditos.</p>
+</div>
+<section class="caso"><h2>Caso resolvido</h2><p>A linha abaixo vem da EFD do destinatário. O auditor tem o XML da lição 0.1 e vai conferir.</p>
+<pre class="code" data-lang="txt"><code>|C100|0|1|F001|55|00|001|4521|28260912345678000195550010000045211837492617|14092026|15092026|1200,00|1|0,00|0,00|1200,00|9|...</code></pre>
+<div class="res">
+<p><strong>Leitura.</strong> Entrada (<code>IND_OPER</code>=0), de terceiro (<code>IND_EMIT</code>=1), modelo 55, regular, número 4521, série 1. A chave aponta para a nota que já conhecemos.</p>
+<p><strong>Cruzamento.</strong> O XML diz <code>vNF</code>=1000,00; a EFD escriturou <code>VL_DOC</code>=1200,00. Tudo o mais coincide (chave, número, série, emitente), então não é outra nota: é a <em>mesma nota escriturada por valor diferente</em>. Como o ICMS escriturado (e portanto o crédito apropriado) costuma acompanhar o valor, o próximo passo é olhar <code>VL_ICMS</code> e <code>C170</code> para ver se a diferença de R$ 200,00 gerou crédito a maior.</p>
+<p>O ponto da lição: só foi possível comparar porque a chave está nos dois lados e porque sabemos qual campo corresponde a qual.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"A EFD tem estrutura livre."</strong> É o contrário: leiaute rígido, definido em Ato COTEPE, igual para todas as UFs. Quem varia por UF são certas obrigações (prazo, por exemplo), não a estrutura.</li><li><strong>Apuração só no Bloco C.</strong> A apuração é do Bloco E. O Bloco C traz documentos. Os demais blocos não são "acessórios sem efeito fiscal": H, K, G e 1 têm efeito.</li><li><strong>Bloco E dispensa o C.</strong> Não dispensa: o contribuinte escritura cada documento no C (ou D) <em>e</em> apura no E.</li><li><strong>Perspectiva do CFOP e do indicador.</strong> Entrada e saída dependem de quem escritura.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Perguntas sobre <strong>quais blocos existem e o que cada um registra</strong>, quase sempre com uma alternativa que atribui a um bloco o papel de outro (apuração no Bloco C, cadastro no E).</li><li>Itens de Certo/Errado que afirmam padronização ou liberdade: "cada UF define seus blocos", "estrutura livre", "campos conforme a empresa". São errados.</li><li>Casos que descrevem uma NF-e e um registro da EFD e pedem a relação entre eles (chave, valores, entrada/saída).</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Abra uma EFD no Bloco de Notas pelo menos uma vez. Passar os olhos pelo <code>0000</code> (período, perfil, IE), conferir se há <code>C100</code> e <code>E110</code> e olhar o <code>9999</code> responde em segundos se o arquivo é o que se espera. A leitura crua também ensina o que um relatório de ferramenta esconde: campo vazio, ordem dos registros, decimal com vírgula.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 02/09: EFD como arquivo digital, com leiaute definido em Ato COTEPE</li><li>Guia Prático da EFD ICMS/IPI: estrutura do arquivo, registros <code>0000</code>, <code>0150</code>, <code>0200</code>, <code>C100</code>, <code>C170</code>, <code>C190</code>, <code>E110</code> e blocos</li><li>Ato COTEPE/ICMS que aprova o leiaute vigente (confira a versão do campo <code>COD_VER</code>)</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei dizer o que é registro, campo e bloco e como se lê uma linha da EFD.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei listar os blocos principais (0, C, D, E, G, H, K, 1, 9) e o assunto de cada um.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei ligar um <code>C100</code> ao XML da nota pela chave e dizer de onde vem cada campo importante.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei explicar por que o CFOP muda de 5xxx para 1xxx entre o XML do vendedor e a EFD do comprador.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
+<button class="done-btn" type="button" data-id="m0-l3">Marcar lição como concluída</button>
+<nav class="pager"><a href="m0-l2.html" class="prev"><small>Anterior</small>0.2 DANFE, chave de acesso e protocolo</a><a href="m0-l4.html" class="next"><small>Próxima</small>0.4 O mapa: quem emite, quem escritura, quem recebe</a></nav>
+</article>
+</main>
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

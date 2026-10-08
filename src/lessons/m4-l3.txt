@@ -1,0 +1,82 @@
+title: Roteiro de auditoria e levantamento quantitativo de estoque
+min: 35
+norma: Ajustes SINIEF 07/05 e 02/09 · Guia Prático da EFD (Blocos 0, C, H e K)
+obj: Organizar uma auditoria em etapas, aplicar a equação do estoque a um item e tratar as causas legítimas de diferença antes de concluir.
+
+=== content
+<h3>Um roteiro em sete etapas</h3>
+<ol>
+<li><strong>Delimitar.</strong> Contribuinte, estabelecimentos, período e objetivo (omissão de saída? crédito? enquadramento?). Confirmar a obrigatoriedade e o perfil da EFD (lições 2.2 e 2.3).</li>
+<li><strong>Obter as bases.</strong> XML autorizados (emitidos e destinados), eventos, CT-e e MDF-e, e todas as versões da EFD recepcionadas (cada retificação tem um recibo).</li>
+<li><strong>Validar as bases.</strong> Chaves de 44 dígitos e DV, duplicidades, período, notas canceladas, denegadas ou inutilizadas. Registrar o que foi excluído e por quê.</li>
+<li><strong>Cruzar por chave</strong> (lição 4.1) e classificar em A, B e C.</li>
+<li><strong>Testar as hipóteses</strong> com as provas independentes: eventos de manifestação, MDF-e, registros de passagem, CT-e, pagamentos (lição 4.2).</li>
+<li><strong>Confirmar com o contribuinte.</strong> Intimar, ouvir explicações e documentos. Uma parte dos achados se resolve aqui.</li>
+<li><strong>Concluir e documentar.</strong> O que é infração (com base na lei do Estado), o que é erro sem prejuízo, o que ficou sem conclusão. Guardar as bases e os critérios usados.</li>
+</ol>
+
+<h3>O levantamento quantitativo de estoque</h3>
+<p>Para uma mercadoria, em um período, a equação é simples:</p>
+~~~
+estoque inicial  +  entradas  -  saídas  =  [[estoque final esperado]]
+(Bloco H do período anterior)   (C100/C170 e XML)   (C100/C170 e XML)
+
+diferença = estoque final inventariado (Bloco H) - estoque final esperado
+~~~
+<ul>
+<li><strong>Estoque final inventariado menor que o esperado</strong> (diferença negativa): saíram mais unidades do que as documentadas. Hipótese de <strong>saída sem nota</strong>, o que levaria a omissão de saída e de receita.</li>
+<li><strong>Estoque final inventariado maior que o esperado</strong> (diferença positiva): entraram mais unidades do que as documentadas. Hipótese de <strong>entrada sem nota</strong>, cuja origem se apura.</li>
+</ul>
+
+<h3>Antes de concluir, descarte as causas legítimas</h3>
+<p>A maior parte das diferenças de estoque numa primeira passada não é infração. Os erros típicos:</p>
+<ul>
+<li><strong>Mesma mercadoria, códigos diferentes.</strong> Uma mercadoria comprada com um código do fornecedor e vendida com outro aparece como dois itens no <code>0200</code>/Bloco H: um com sobra, outro com falta. Unifique pelo critério físico (descrição, NCM, unidade) antes de calcular.</li>
+<li><strong>Unidade de medida.</strong> Compra em caixa, venda em unidade, inventário em quilo. Converta pelo fator do cadastro (<code>0220</code>).</li>
+<li><strong>Devoluções, bonificações, remessas e retornos.</strong> Têm CFOP e entram na equação; esquecê-los gera diferença falsa.</li>
+<li><strong>Perdas, quebras e consumo próprio.</strong> Há tratamento fiscal específico em cada Estado; documente-as e discuta com o contribuinte.</li>
+<li><strong>Corte de período.</strong> Nota emitida em um mês e entrada física em outro.</li>
+<li><strong>Estoque de terceiros e em poder de terceiros.</strong> O Bloco H distingue o que é do contribuinte do que ele guarda ou do que está com outro (<code>IND_PROP</code>).</li>
+</ul>
+
+=== caso
+<p>Comercial Exemplo, setembro/2026. Mercadoria: detergente líquido 500 ml, que no cadastro (<code>0200</code>) aparece com <strong>dois códigos</strong>: <code>DET-500</code> (o que o fornecedor usa) e <code>DET-500-A</code> (criado pela loja para um lote antigo). Dados do período:</p>
+<div class="tbl"><table>
+<tr><th>Código</th><th>Estoque inicial (H, agosto)</th><th>Entradas (C170 = XML)</th><th>Saídas (C170)</th><th>Inventário em 30/09 (H)</th></tr>
+<tr><td><code>DET-500</code></td><td>100</td><td>500</td><td>430</td><td>150</td></tr>
+<tr><td><code>DET-500-A</code></td><td>0</td><td>0</td><td>0</td><td>20</td></tr>
+</table></div>
+<div class="res">
+<p><strong>Primeira passada, código a código.</strong></p>
+<p><code>DET-500</code>: esperado = 100 + 500 − 430 = 170; inventariado = 150; diferença = <strong>−20</strong> (parece saída sem nota).</p>
+<p><code>DET-500-A</code>: esperado = 0; inventariado = 20; diferença = <strong>+20</strong> (parece entrada sem nota).</p>
+<p>Duas "infrações" opostas, de mesmo tamanho: sinal de que são a mesma coisa.</p>
+<p><strong>Segunda passada: unificar pela mercadoria</strong> (mesma descrição, NCM e unidade). Esperado = 170 + 0 = 170; inventariado = 150 + 20 = 170; diferença = <strong>0</strong>. Não há omissão: houve inventário feito sob o código "errado". A conclusão é erro de cadastro e de inventário, sem imposto a cobrar, apenas orientação para unificar os códigos.</p>
+<p>Se a unificação deixasse resíduo (por exemplo, inventariado total de 150 em vez de 170), aí sim a falta de 20 unidades ficaria como pergunta a esclarecer: perdas? consumo próprio? saída sem nota? O auditor pediria o registro de perdas, conferiria pedidos e entregas do período e só então decidiria.</p>
+</div>
+
+=== armadilhas
+- <strong>Calcular com o código, não com a mercadoria.</strong> A causa mais frequente de falsa omissão.
+- <strong>Concluir "omissão de saída" a partir de falta sem testar perdas e unidades.</strong>
+- <strong>Usar o Bloco H como verdade absoluta.</strong> Ele é declarado pelo próprio contribuinte e é uma data, não um período.
+- <strong>Esquecer retornos, devoluções e remessas.</strong>
+- <strong>Misturar estabelecimentos.</strong> O estoque é por estabelecimento.
+
+=== bancas
+- O levantamento aparece em questões de auditoria com um cenário de estoque e códigos diferentes para a mesma mercadoria, e as alternativas testam se você sabe que o Bloco H pode controlar duas mercadorias onde há uma, o que impede o inventário correto por NCM.
+- Fórmulas de estoque (inicial + entradas − saídas) em questões de cálculo.
+- Roteiro de auditoria: a banca pergunta a ordem correta ou o que fazer antes de lavrar; a resposta valoriza validar as bases e ouvir o contribuinte antes de concluir.
+
+=== auditor
+Tenha uma regra de bolso: toda diferença é uma pergunta, nunca uma resposta. O roteiro de sete etapas existe para que a conclusão apareça só depois da prova, e para que a defesa do contribuinte (que virá) encontre um trabalho em que cada número tem origem e critério registrados.
+
+=== base
+- Guia Prático da EFD ICMS/IPI: Bloco H (inventário, <code>H005</code>, <code>H010</code>), cadastro <code>0200</code> e <code>0220</code> (fatores de conversão), Bloco K
+- Ajuste SINIEF 02/09: Bloco K e livro modelo 3
+- Legislação estadual: levantamento quantitativo de estoque, perdas, presunções e penalidades
+
+=== dominio
+- Sei descrever o roteiro de auditoria em etapas e por que validar as bases vem antes de cruzar.
+- Sei aplicar a equação do estoque e interpretar uma diferença positiva ou negativa.
+- Sei listar as causas legítimas de diferença (códigos, unidades, devoluções, perdas, corte, terceiros).
+- Sei por que a diferença de estoque é o início da investigação e não a conclusão.

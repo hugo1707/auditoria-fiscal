@@ -1,0 +1,71 @@
+title: MDF-e: o manifesto da carga e a prova de circulação
+min: 20
+norma: Ajuste SINIEF 21/10 · MOC MDF-e
+obj: Explicar para que serve o MDF-e, quem o emite, quais eventos ele tem e por que ele é a prova eletrônica de circulação, sem depender do DANFE.
+
+=== content
+<h3>Para que existe</h3>
+<p>O <strong>Manifesto Eletrônico de Documentos Fiscais (MDF-e), modelo 58</strong>, foi instituído pelo Ajuste SINIEF 21/10. A NF-e documenta a venda e o CT-e documenta o frete; falta algo que documente <strong>a viagem</strong>: este veículo, este condutor, este trajeto, carregando <em>estes</em> documentos. É o papel do MDF-e. Seu documento auxiliar é o <strong>DAMDFE</strong>.</p>
+<p>Pense numa carreta que sai com cinco NF-e e dois CT-e. Sem o MDF-e, o fiscal de trânsito teria de olhar sete documentos. Com ele, a lista está num só.</p>
+
+<h3>Quem emite</h3>
+<ul>
+<li>o <strong>transportador</strong> emitente de CT-e, quando a carga é acobertada por mais de um conhecimento;</li>
+<li>o <strong>emitente de NF-e</strong> que transporta os bens em veículo próprio, arrendado ou contratando transportador autônomo.</li>
+</ul>
+<p>O campo <code>tpEmit</code> registra o caso: 1 prestador de serviço de transporte · 2 transportador de carga própria · 3 prestador que emitirá CT-e globalizado. A obrigatoriedade foi alterada várias vezes pelo Ajuste e por atos da UF; consulte a redação vigente.</p>
+
+<h3>O que o MDF-e contém</h3>
+<ul>
+<li>UF de início e de fim do percurso, e as <strong>UFs de percurso</strong> intermediárias;</li>
+<li>municípios de <strong>carregamento</strong> e de <strong>descarregamento</strong> e, em cada descarregamento, as <strong>chaves</strong> dos CT-e ou NF-e ali entregues;</li>
+<li>no modal rodoviário: placa do veículo de tração e dos reboques, condutores, RNTRC e dados de contratação e pagamento do frete;</li>
+<li>totais: quantidade de documentos, valor e peso da carga.</li>
+</ul>
+
+<h3>Eventos do MDF-e</h3>
+<div class="tbl"><table>
+<tr><th>Evento</th><th>Quando</th></tr>
+<tr><td>Cancelamento</td><td>só antes do início da viagem e no prazo de 24 horas</td></tr>
+<tr><td>Encerramento</td><td>ao término do trajeto; informa o município e a UF de encerramento</td></tr>
+<tr><td>Inclusão de condutor</td><td>quando muda ou se acrescenta motorista</td></tr>
+<tr><td>Inclusão de DF-e</td><td>documentos carregados ao longo do percurso</td></tr>
+<tr><td>Registro de passagem</td><td>gerado pelo <strong>fisco</strong> em postos fiscais e sistemas de monitoramento</td></tr>
+</table></div>
+<p>Manifestos <strong>pendentes de encerramento</strong> geram rejeição em novos MDF-e do mesmo veículo, conforme as regras do MOC: encerrar não é formalidade.</p>
+
+<h3>Por que é prova de circulação</h3>
+<p>A NF-e é emitida pelo vendedor e o CT-e pelo transportador, ambos <em>antes</em> da viagem. O que prova que a mercadoria realmente andou são os <strong>registros produzidos fora do controle exclusivo do contribuinte</strong>: os registros de passagem, o encerramento e a própria cadeia de eventos do MDF-e. Eles provam que a mercadoria circulou, por onde e quando, mesmo que a NF-e tenha sido depois cancelada ou não escriturada. Daí a conexão com o DANFE: onde o MDF-e está emitido, a norma permite dispensar a impressão do DANFE (por exemplo, no modal ferroviário), porque a prova de circulação é eletrônica.</p>
+
+=== caso
+<p>Numa auditoria, a Comercial Beta alega que uma NF-e de venda foi cancelada porque "a mercadoria nunca saiu". O fisco encontra um MDF-e do mesmo dia, com a chave daquela NF-e incluída, e um registro de passagem no posto fiscal de divisa. O cancelamento foi feito 20 horas depois da autorização.</p>
+<div class="res">
+<p>O prazo (20 h) cabia nas 24 horas, mas o cancelamento exige <strong>não circulação</strong>. O MDF-e e o registro de passagem são prova de circulação produzida fora do controle da empresa: a mercadoria andou. O cancelamento, portanto, <strong>não cumpria a condição</strong> e a operação deve ser tratada como realizada (com o respectivo débito de ICMS e a escrituração da saída).</p>
+<p>Observe o método: a norma da NF-e diz o que é necessário (não circulação); o MDF-e e os eventos de passagem dão o meio de prova.</p>
+</div>
+
+=== armadilhas
+- <strong>MDF-e = nota do frete.</strong> O frete é o CT-e. O MDF-e agrupa documentos de uma viagem.
+- <strong>Cancelar MDF-e depois de iniciada a viagem.</strong> Só antes do início, em 24 horas.
+- <strong>Registro de passagem emitido pelo transportador.</strong> É produzido pelo fisco.
+- <strong>MDF-e dispensa a NF-e.</strong> Não: ele a lista, não a substitui.
+- <strong>Obrigatoriedade sempre igual.</strong> Mudou várias vezes: leia a redação vigente.
+
+=== bancas
+- Quando aparece, o MDF-e vem como parte de questões sobre DANFE e trânsito (dispensa no modal ferroviário "ainda que emitido o MDF-e") ou como evento que registra que a NF-e consta em um manifesto.
+- Ao tratar de eventos da NF-e, a banca escreve "o registro de que esta NF-e consta em um MDF-e": reconheça a relação nos dois sentidos.
+- Em provas de auditoria, é fonte de prova de circulação.
+
+=== auditor
+Se o contribuinte nega a circulação, o MDF-e e o registro de passagem são a primeira prova a procurar; se afirma a circulação, procure o encerramento. Manifestos nunca encerrados, trajetos incompatíveis com a mercadoria e placas de veículos que não pertencem ao transportador são indicadores clássicos.
+
+=== base
+- Ajuste SINIEF 21/10 (MDF-e, modelo 58; DAMDFE; obrigados)
+- MOC MDF-e: leiaute, eventos e regras de validação
+- Ajuste SINIEF 07/05, cláusula nona: relação com a dispensa do DANFE
+
+=== dominio
+- Sei explicar para que serve o MDF-e e como se relaciona com NF-e e CT-e.
+- Sei quem emite e o que o manifesto contém.
+- Sei listar os eventos e quando o cancelamento é possível.
+- Sei por que o registro de passagem e o encerramento provam a circulação.

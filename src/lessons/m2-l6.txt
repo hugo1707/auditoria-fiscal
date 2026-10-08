@@ -1,0 +1,68 @@
+title: Recepção no SPED, compartilhamento entre fiscos e Bloco K
+min: 30
+norma: Ajuste SINIEF 02/09, cláusulas 15ª a 17ª (e dispositivos do Bloco K)
+obj: Explicar onde a EFD é recebida, como as UFs acessam as informações umas das outras, em que prazo e sob que condições, e situar o Bloco K na estrutura.
+
+=== content
+<h3>Quem recebe a EFD</h3>
+<p>A recepção do arquivo é <strong>centralizada no ambiente nacional do SPED</strong>, que é <strong>administrado pela Receita Federal do Brasil</strong> (e não pelas UFs). Os arquivos recebidos são <strong>imediatamente retransmitidos</strong> à unidade federada em que está inscrito o estabelecimento do contribuinte. Não existe prazo de 24 horas para isso; a norma diz imediatamente.</p>
+<p>Há também o caminho inverso, autorizado: observados os padrões do ambiente nacional, a UF pode <strong>recepcionar o arquivo diretamente em suas bases de dados</strong> e então retransmiti-lo, também de imediato, ao ambiente nacional. A regra geral do SPED continua valendo para os casos em que o arquivo não tenha sido retransmitido das bases das administrações.</p>
+<div class="tbl"><table>
+<tr><th>Caminho</th><th>Primeira parada</th><th>Segunda parada</th></tr>
+<tr><td>Regra</td><td>ambiente nacional do SPED (RFB)</td><td>UF do estabelecimento</td></tr>
+<tr><td>Faculdade da UF</td><td>base de dados da UF</td><td>ambiente nacional do SPED</td></tr>
+</table></div>
+
+<h3>Compartilhamento entre os fiscos</h3>
+<p>O ponto central é a <strong>troca de informações</strong>:</p>
+<ul>
+<li>Independentemente do local de recepção, fica <strong>assegurado o compartilhamento</strong> entre os usuários do SPED das informações das <strong>operações e prestações interestaduais</strong> e da <strong>apuração da substituição tributária interestadual</strong>. Faz sentido: são as informações em que uma UF depende do que a outra escriturou.</li>
+<li>Para as demais informações, o acesso de uma UF a dados de contribuinte de outra UF se faz mediante <strong>requerimento acompanhado da ordem de fiscalização</strong>. A ordem de fiscalização é limitada às informações de <strong>um contribuinte e suas filiais</strong> por requerimento.</li>
+<li>O responsável pelas informações deve atender à solicitação em <strong>10 dias úteis</strong>.</li>
+</ul>
+<p>O desenho protege duas coisas ao mesmo tempo: o sigilo fiscal (acesso só com ordem de fiscalização, limitado a um contribuinte e filiais) e a eficiência do controle (as informações interestaduais ficam abertas por padrão).</p>
+
+<h3>Bloco K: produção e estoque</h3>
+<p>O <strong>Bloco K</strong> substitui o <strong>Registro de Controle da Produção e do Estoque</strong> (livro modelo 3) e atende à indústria e a equiparados. A obrigatoriedade foi <strong>escalonada</strong> por faturamento e por atividade (CNAE), com anos diferentes para cada faixa (lição 2.2). Duas ideias bastam para a prova:</p>
+<ul>
+<li>o Bloco K é o livro modelo 3 na EFD;</li>
+<li>a escrituração <strong>parcial</strong> do Bloco K, no período do cronograma, <strong>não desobriga</strong> o livro modelo 3. Só a escrituração completa o substitui.</li>
+</ul>
+
+<h3>Estrutura da EFD e o Bloco K</h3>
+<p>Releia o mapa de blocos da lição 0.3: o K é um dos blocos de movimento, ao lado de C, D, E, G e H. Para o auditor, a utilidade do K é ligar <em>o que entrou</em> (C100/C170, insumos) ao <em>que saiu</em> (C100/C170, produtos) e ao <em>que ficou</em> (H), fechando o estoque da indústria.</p>
+
+=== caso
+<p>A fiscalização da Bahia, que investiga uma distribuidora baiana, quer saber como a distribuidora sergipana (fornecedora) escriturou a venda de R$ 400 mil que a distribuidora baiana diz nunca ter recebido. Que caminhos a Bahia tem?</p>
+<div class="res">
+<p><strong>Caminho 1: o que já é compartilhado.</strong> Trata-se de operação <strong>interestadual</strong>; o compartilhamento das informações das operações e prestações interestaduais constantes da EFD é <em>assegurado</em> entre os usuários do SPED. A Bahia consulta o que a fornecedora escriturou.</p>
+<p><strong>Caminho 2: informações além do compartilhado.</strong> Se precisar de mais (por exemplo, os livros inteiros da fornecedora), a Bahia faz <strong>requerimento com ordem de fiscalização</strong> limitada à fornecedora e às suas filiais, e a UF de Sergipe tem <strong>10 dias úteis</strong> para atender.</p>
+<p>Em ambos os casos, a informação passa pelo ambiente nacional do SPED, administrado pela RFB, e não por um "convênio entre as UFs" a cada pedido.</p>
+</div>
+
+=== armadilhas
+- <strong>"A recepção é centralizada no ambiente nacional administrado pelas UFs."</strong> Administra a RFB.
+- <strong>"Retransmitidos em até 24 horas."</strong> A norma diz <em>imediatamente</em>.
+- <strong>"Prazo de 5 dias úteis"</strong> para atender ao compartilhamento: são <strong>10 dias úteis</strong>.
+- <strong>"O ambiente nacional só recebe os arquivos que a UF não recepcionou diretamente"</strong>: a norma ressalva os casos retransmitidos das bases das UFs.
+- <strong>Ordem de fiscalização ampla.</strong> É por requerimento e limitada a um contribuinte e filiais.
+- <strong>Bloco K parcial desobriga o livro 3.</strong> Não: só o completo.
+
+=== bancas
+- Os itens de recepção e compartilhamento tendem a vir em pares de Certo/Errado quase idênticos: "administrado pela RFB" / "administrado pelas UFs"; "imediatamente" / "em até 24 horas"; "10 dias úteis" / "5 dias úteis".
+- A palavra "exceto" aparece: "o ambiente nacional administrará a recepção geral, exceto nos casos retransmitidos das bases das administrações" é item errado por inverter a ressalva.
+- Bloco K: itens que combinam "parcial" e "dispensa do livro modelo 3", ou que trocam o ano de início para as faixas de faturamento.
+
+=== auditor
+O compartilhamento é o que viabiliza o cruzamento entre UFs: a venda interestadual aparece na escrituração do vendedor e na do comprador, em Estados diferentes, e o SPED os coloca na mesma mesa. Para dados fora do compartilhamento automático, lembre-se de que o pedido formal é de um contribuinte e suas filiais por vez.
+
+=== base
+- Ajuste SINIEF 02/09, cláusulas décima quinta a décima sétima: recepção no ambiente nacional, retransmissão, recepção pela UF, compartilhamento, ordem de fiscalização e prazo de 10 dias úteis
+- Ajuste SINIEF 02/09, cláusula terceira (cronograma do Bloco K) e dispositivos sobre Livro modelo 3
+- Guia Prático da EFD ICMS/IPI: Bloco K
+
+=== dominio
+- Sei quem administra o ambiente nacional do SPED e como a EFD chega à UF.
+- Sei o que é compartilhado por padrão e como uma UF obtém o restante.
+- Sei os limites da ordem de fiscalização e o prazo de resposta.
+- Sei que o Bloco K substitui o livro modelo 3, e que o parcial não o dispensa.

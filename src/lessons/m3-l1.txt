@@ -1,0 +1,79 @@
+title: CT-e: conceito, uso, credenciamento e participantes
+min: 25
+norma: Ajuste SINIEF 09/07, cláusulas 1ª a 4ª
+obj: Aplicar ao CT-e o que você já aprendeu com a NF-e (conceito, validade, credenciamento), reconhecer o que ele substitui e identificar os participantes da prestação, inclusive em subcontratação e redespacho.
+
+=== content
+<p>O <strong>Conhecimento de Transporte Eletrônico (CT-e), modelo 57</strong>, é para o transporte o que a NF-e é para a mercadoria: o documento digital do <em>serviço</em> de transporte. Quem entendeu os módulos 0 e 1 tem metade da lição pronta. Esta página destaca o que muda.</p>
+
+<h3>O que repete a NF-e</h3>
+<ul>
+<li><strong>Conceito.</strong> Documento emitido e armazenado eletronicamente, de existência apenas digital, para documentar operações e prestações.</li>
+<li><strong>Validade jurídica.</strong> Assinatura eletrônica qualificada <strong>e</strong> autorização de uso pela administração tributária da UF do contribuinte, <strong>antes</strong> da ocorrência do fato gerador. (Dizer "após o fato gerador" é a troca clássica.)</li>
+<li><strong>Credenciamento prévio</strong> na UF em cujo cadastro de contribuinte do ICMS está inscrito.</li>
+<li><strong>Arquivo XML</strong>, com <strong>chave de acesso</strong> composta por código numérico gerado pelo emitente, CNPJ do emitente, número e série; numeração sequencial de <strong>1 a 999.999.999</strong>, por estabelecimento e por série, reiniciada ao atingir o limite.</li>
+<li>Documento auxiliar: o <strong>DACTE</strong>, equivalente do DANFE.</li>
+</ul>
+
+<h3>O que muda</h3>
+<div class="tbl"><table>
+<tr><th>Tema</th><th>CT-e</th></tr>
+<tr><td>Contribuintes</td><td>do <strong>ICMS</strong> (prestadores de serviço de transporte tributado pelo ICMS)</td></tr>
+<tr><td>Substitui</td><td>documentos de transporte de cargas dos diversos modais (rodoviário, aquaviário, aéreo, ferroviário) e notas de serviço de transporte. Leia a lista completa e as vedações na cláusula 1ª.</td></tr>
+<tr><td>Obrigação do tomador</td><td>onde a emissão do CT-e é obrigatória, o <strong>tomador do serviço deve exigir sua emissão</strong>, sendo <strong>vedada a aceitação de outro documento</strong> em substituição</td></tr>
+<tr><td>Modelo</td><td>57. Para serviços que não são de carga (pessoas, valores…), existe o CT-e OS, modelo 67</td></tr>
+</table></div>
+
+<h3>Os participantes</h3>
+<p>O CT-e tem mais papéis do que a NF-e, porque o transporte tem mais mãos:</p>
+<div class="tbl"><table>
+<tr><th>Papel</th><th>Quem é</th></tr>
+<tr><td>Remetente</td><td>quem envia a carga (normalmente o emitente da NF-e)</td></tr>
+<tr><td>Destinatário</td><td>destinatário final</td></tr>
+<tr><td>Expedidor</td><td>quem <strong>entrega</strong> a carga ao transportador, quando não é o remetente</td></tr>
+<tr><td>Recebedor</td><td>quem <strong>recebe</strong> a carga do transportador, quando não é o destinatário</td></tr>
+<tr><td>Tomador</td><td>quem contrata e paga o serviço (pode ser remetente, expedidor, recebedor, destinatário ou outro)</td></tr>
+</table></div>
+<p>Expedidor e recebedor são de indicação <strong>facultativa</strong> pelo emitente ("poderá indicar"): só se informam quando existem. Não existe obrigação de indicá-los em toda emissão.</p>
+
+<h3>Subcontratação e redespacho</h3>
+<p>Quando o serviço é subcontratado ou redespachado, os papéis mudam de ponto de vista. Para o CT-e do transportador subcontratado ou redespachado:</p>
+<ul>
+<li><strong>expedidor</strong> é o transportador ou o remetente que <em>entregou a carga ao transportador</em> subcontratado/redespachado;</li>
+<li><strong>recebedor</strong> é quem <em>recebe a carga do transportador</em> subcontratado/redespachado.</li>
+</ul>
+<p>No <strong>redespacho intermediário</strong>, quando expedidor e recebedor são transportadores de carga não própria, devidamente identificados, fica <strong>dispensado</strong> o preenchimento dos campos de remetente e destinatário. No tipo de serviço <strong>vinculado a multimodal</strong>, informa-se a chave do CT-e multimodal em lugar dos documentos da carga, e também se dispensam remetente e destinatário.</p>
+
+=== caso
+<p>A Transportadora Alfa recebe de uma indústria (Beta) a carga para entregar a uma loja (Gama). Alfa subcontrata a Transportadora Delta para o trecho final, até a loja. Identifique os papéis no CT-e emitido pela Delta.</p>
+<div class="res">
+<p>Para o CT-e da <strong>Delta</strong>, o <strong>expedidor</strong> é a Alfa: foi ela quem entregou a carga ao transportador subcontratado. O <strong>recebedor</strong> é quem recebe a carga da Delta, no caso a loja Gama (que é também a destinatária). O <strong>remetente</strong> original continua sendo a Beta, a menos que a regra do tipo de serviço dispense sua indicação.</p>
+<p>O <strong>tomador</strong> é quem contratou e paga <em>aquele</em> serviço, no CT-e da Delta é a Alfa que a contratou, e portanto Alfa é a tomadora da subcontratada. A Beta é tomadora do serviço de Alfa.</p>
+</div>
+
+=== armadilhas
+- <strong>"Autorização de uso após a ocorrência do fato gerador."</strong> É antes.
+- <strong>"Obrigatório indicar expedidor e recebedor."</strong> É facultativo.
+- <strong>Expedidor e recebedor na subcontratação:</strong> são definidos pelo ponto de vista de quem recebe e entrega a carga ao transportador subcontratado/redespachado.
+- <strong>Tomador aceita outro documento no lugar do CT-e</strong> onde a emissão é obrigatória: vedado.
+- <strong>Credenciamento "na RFB".</strong> É na UF de inscrição no cadastro do ICMS.
+- <strong>Multimodal:</strong> a chave do CT-e multimodal substitui os documentos da carga.
+
+=== bancas
+- O Ajuste do CT-e é cobrado em itens de Certo/Errado que reproduzem trechos paralelos aos da NF-e: a banca troca "antes" por "após", "facultativo" por "obrigatório" e aposta que você os confunda com o que já viu.
+- Itens de subcontratação, redespacho e multimodal citam a cláusula quase literal, testando o conhecimento do que se dispensa em cada caso.
+- A lista de documentos substituídos aparece com um item fora da norma entre os corretos.
+
+=== auditor
+O CT-e relaciona, por chave, as NF-e transportadas. Quando o frete aparece escriturado, mas a NF-e correspondente não, ou o inverso, há um vazio no cruzamento. A discussão sobre quem é tomador importa porque o tomador do serviço é quem tem direito ao crédito do frete e, em alguns casos, a obrigação de reter o imposto.
+
+=== base
+- Ajuste SINIEF 09/07, cláusula primeira (instituição; documentos substituídos; validade jurídica; conceito)
+- Ajuste SINIEF 09/07, cláusulas segunda e terceira (expedidor, recebedor, subcontratação, redespacho, multimodal)
+- Ajuste SINIEF 09/07, cláusula quarta (credenciamento) e quinta (XML, chave, numeração)
+
+=== dominio
+- Sei repetir para o CT-e a validade jurídica, o credenciamento e a numeração, apontando as semelhanças com a NF-e.
+- Sei listar os participantes e dizer quais são facultativos.
+- Sei identificar expedidor e recebedor em subcontratação e redespacho.
+- Sei o que se dispensa no redespacho intermediário e no serviço vinculado a multimodal.

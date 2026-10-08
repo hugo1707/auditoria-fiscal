@@ -1,0 +1,72 @@
+title: Para onde a NF-e vai depois de autorizada
+min: 25
+norma: Ajuste SINIEF 07/05, cláusulas 8ª e 8ª-A (distribuição da NF-e) e dispositivos sobre entrega ao destinatário
+obj: Dizer, para cada tipo de operação, a quais administrações a NF-e é transmitida, quem autoriza, e o que o emitente deve entregar ao destinatário e ao transportador.
+
+=== content
+<h3>Quem autoriza e quem recebe a cópia</h3>
+<p>A autorização de uso é concedida pela administração tributária da <strong>UF do emitente</strong>. Ela pode usar, para isso, a infraestrutura tecnológica da Receita Federal. Em contingência, entra o ambiente virtual (SVC, lição 1.6).</p>
+<p>Concedida a autorização, essa mesma UF <strong>transmite a NF-e</strong> a outros destinatários:</p>
+<div class="tbl"><table>
+<tr><th>Operação</th><th>A NF-e vai para</th></tr>
+<tr><td>Qualquer uma</td><td>a <strong>Receita Federal do Brasil</strong></td></tr>
+<tr><td>Interestadual</td><td>+ UF de <strong>destino</strong> das mercadorias</td></tr>
+<tr><td>Exportação</td><td>+ UF onde deva se processar o <strong>embarque</strong> para o exterior</td></tr>
+<tr><td>Importação (mercadoria ou bem do exterior)</td><td>+ UF de <strong>desembaraço aduaneiro</strong></td></tr>
+<tr><td>Destinatário em área incentivada</td><td>+ <strong>SUFRAMA</strong></td></tr>
+<tr><td>Operação interna, sem nenhum dos casos acima</td><td>só a RFB (e à própria UF)</td></tr>
+</table></div>
+<p>A lógica é a de quem <em>precisa saber</em> da operação para exercer o seu controle: a UF de destino controla o ICMS que lhe cabe e a entrada da mercadoria; a do embarque controla a saída para o exterior; a do desembaraço, a entrada de importados; a SUFRAMA, os incentivos da zona franca.</p>
+<p><strong>Consumidor final não contribuinte, operação interestadual.</strong> Quando o destino final ocorre em UF diferente da do domicílio do adquirente, a UF de destino é aquela onde ocorre efetivamente a <strong>entrada física</strong> da mercadoria (ou o fim da prestação do serviço), e não a do endereço do comprador.</p>
+
+<h3>Outros destinatários da informação</h3>
+<ul>
+<li><strong>Administrações municipais</strong> (ISSQN): a UF do emitente ou a RFB podem transmitir a NF-e ou dar informações parciais, observado o sigilo fiscal, <em>mediante prévio convênio ou protocolo</em>.</li>
+<li><strong>Outros órgãos</strong> da administração direta, indireta, fundações e autarquias que precisem das informações: também <em>mediante convênio ou protocolo</em>. Não é "independentemente".</li>
+</ul>
+
+<h3>O emitente e o destinatário</h3>
+<p>Autorizada a nota, o emitente tem deveres práticos:</p>
+<ul>
+<li>encaminhar ou disponibilizar para download o <strong>arquivo da NF-e e o protocolo de autorização</strong> ao destinatário, <strong>imediatamente após</strong> receber a autorização;</li>
+<li>o <strong>tomador do serviço de transporte</strong> faz o mesmo ao transportador contratado, <strong>antes do início da prestação</strong>.</li>
+</ul>
+<p>Do lado de quem recebe, o dever é <strong>verificar a validade e a autenticidade</strong> da NF-e e a existência de autorização de uso. É por isso que a nota autorizada fica disponível para consulta pelo destinatário (lição 1.9).</p>
+
+=== caso
+<p>A Distribuidora Exemplo (SE) autoriza quatro NF-e no mesmo dia: (A) venda a cliente em Aracaju; (B) venda a loja em Salvador; (C) exportação com embarque no Porto de Santos; (D) venda a empresa na Zona Franca de Manaus. Para onde a SEFAZ de Sergipe transmite cada uma?</p>
+<div class="res">
+<ul>
+<li><strong>A</strong>: RFB. Operação interna.</li>
+<li><strong>B</strong>: RFB + <strong>Bahia</strong> (UF de destino).</li>
+<li><strong>C</strong>: RFB + <strong>São Paulo</strong>, onde se processa o embarque. A UF do cliente estrangeiro não existe, e a de origem já a tem.</li>
+<li><strong>D</strong>: RFB + <strong>Amazonas</strong> (destino interestadual) + <strong>SUFRAMA</strong> (área incentivada).</li>
+</ul>
+<p>E se na operação B o comprador for pessoa física com endereço em Salvador, mas a mercadoria for entregue em Feira de Santana (BA)? A UF de destino continua a Bahia. Se fosse entregue em Maceió, a UF de destino seria Alagoas, porque a regra segue a <em>entrada física</em>, e não o domicílio do comprador.</p>
+</div>
+
+=== armadilhas
+- <strong>Exportação → UF "de destino".</strong> É a UF do <em>embarque</em>. A de desembaraço é da <em>importação</em>.
+- <strong>Importação → UF de embarque.</strong> É a de desembaraço aduaneiro.
+- <strong>"Interestadual → UF de saída."</strong> É a UF de destino das mercadorias.
+- <strong>Autorizar "pela UF de destino."</strong> Quem autoriza é a UF do emitente.
+- <strong>Outros órgãos "independentemente de convênio".</strong> Precisa de convênio ou protocolo.
+- <strong>Destino final do consumidor.</strong> Pela entrada física, e não pelo domicílio do adquirente.
+
+=== bancas
+- É um dos temas mais repetidos: o mesmo enunciado se repete com a operação trocada (exportação, importação, interestadual), e a alternativa certa muda de "embarque" para "desembaraço" para "destino". Aprenda pela lógica de quem controla, não pela decoreba.
+- Em Certo/Errado, a lista completa vem num item só (RFB, destino, embarque, desembaraço, SUFRAMA) e a armadilha é uma palavra: "independentemente de convênio", "somente".
+- O enunciado costuma colocar o leitor no papel de auditor "indagado pela entidade auditada", mas a resposta é só aplicar a tabela.
+
+=== auditor
+Esta lição diz onde procurar a cópia da nota quando o emitente some. A UF de destino recebe a NF-e interestadual de ofício: o confronto entre o que o Estado de destino recebeu e o que o comprador escriturou é uma das malhas clássicas de omissão de entradas.
+
+=== base
+- Ajuste SINIEF 07/05, cláusulas oitava e oitava-A: transmissão da NF-e à RFB, à UF de destino, de embarque e de desembaraço, à SUFRAMA, a municípios e a outros órgãos; regra do consumidor final
+- Ajuste SINIEF 07/05: dispositivos sobre entrega do arquivo e do protocolo ao destinatário e ao transportador, e sobre a verificação da validade pelo destinatário (localize a cláusula na redação consolidada)
+
+=== dominio
+- Sei dizer, para operação interna, interestadual, exportação, importação e área incentivada, para onde a NF-e é transmitida.
+- Sei explicar por que cada administração recebe a nota (o que ela controla).
+- Sei a regra da UF de destino para consumidor final não contribuinte.
+- Sei o que o emitente deve entregar ao destinatário e o tomador ao transportador, e quando.

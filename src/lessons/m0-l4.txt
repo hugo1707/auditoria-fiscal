@@ -1,0 +1,83 @@
+title: O mapa: quem emite, quem escritura, quem recebe
+min: 20
+norma: Ajustes SINIEF 07/05, 09/07, 21/10 e 02/09 · MOC e Guia Prático (relação entre norma e manual)
+obj: Montar o mapa do ecossistema, com os documentos, os atores, as normas que os regem e o caminho dos arquivos até o fisco.
+
+=== content
+<p>As próximas lições entram nas normas uma a uma. Antes, vale ter o mapa inteiro na cabeça, porque a maior parte dos erros de interpretação nasce de confundir <em>quem faz o quê</em> e <em>qual norma manda em quê</em>.</p>
+
+<h3>Os atores</h3>
+<div class="tbl"><table>
+<tr><th>Ator</th><th>Papel</th></tr>
+<tr><td>Emitente</td><td>Gera o XML da NF-e, assina e transmite. Responde pelo conteúdo.</td></tr>
+<tr><td>Destinatário</td><td>Recebe a mercadoria. Verifica a validade da nota, escritura e pode <strong>manifestar-se</strong> sobre a operação.</td></tr>
+<tr><td>Transportador</td><td>Presta o serviço de transporte e emite o <strong>CT-e</strong>. Emite também o <strong>MDF-e</strong> quando a carga circula entre municípios ou UFs.</td></tr>
+<tr><td>Administração tributária da UF (SEFAZ)</td><td>Credencia contribuintes, analisa e <strong>autoriza</strong> os documentos, recebe a EFD e fiscaliza.</td></tr>
+<tr><td>Receita Federal (RFB)</td><td>Administra o <strong>ambiente nacional</strong>: recebe uma cópia de cada documento autorizado e a EFD, e retransmite às UFs.</td></tr>
+</table></div>
+
+<h3>O caminho de um documento</h3>
+<ol>
+<li><strong>Emissão.</strong> O emitente gera o XML e o assina (lições 0.1 e 1.2).</li>
+<li><strong>Autorização.</strong> A SEFAZ da UF do emitente analisa e concede (ou não) a autorização de uso. Em contingência, o ambiente virtual de outra SEFAZ ou da RFB pode fazer esse papel (lição 1.6).</li>
+<li><strong>Distribuição.</strong> Autorizada a nota, o fisco a repassa à RFB e, conforme o tipo de operação, à UF de destino, de embarque ou de desembaraço (lição 1.4).</li>
+<li><strong>Circulação.</strong> A mercadoria viaja com o DANFE (ou, quando a norma dispensa, só com o registro eletrônico). Se houver transporte contratado, o CT-e documenta o serviço e o MDF-e agrupa a carga.</li>
+<li><strong>Eventos.</strong> Ao longo da vida da nota, emitente, destinatário e fisco registram eventos: cancelamento, correção, manifestação, comprovante de entrega (lições 1.7 e 1.8).</li>
+<li><strong>Escrituração.</strong> No mês seguinte, emitente e destinatário escrituram a nota nas suas EFDs, que são transmitidas ao SPED (módulo 2).</li>
+<li><strong>Auditoria.</strong> O fisco cruza os documentos autorizados com o que foi escriturado (módulo 4).</li>
+</ol>
+
+<h3>Quem manda em quê: norma e manual</h3>
+<p>Quatro camadas aparecem nas provas e valem ser separadas:</p>
+<div class="tbl"><table>
+<tr><th>Camada</th><th>O que é</th><th>Exemplos</th></tr>
+<tr><td>Ajuste SINIEF</td><td>Norma do CONFAZ que <strong>institui</strong> o documento ou a escrituração e fixa regras jurídicas: quem pode usar, prazos, efeitos.</td><td>07/05 (NF-e), 09/07 (CT-e), 21/10 (MDF-e), 02/09 (EFD), 19/16 (NFC-e)</td></tr>
+<tr><td>Manual técnico</td><td>Detalha o <strong>leiaute</strong> e as regras de validação. É aprovado por Ato COTEPE e referido pelo Ajuste.</td><td>MOC da NF-e, MOC do CT-e, MOC do MDF-e, Guia Prático da EFD</td></tr>
+<tr><td>Nota Técnica</td><td>Altera ou esclarece o manual entre versões.</td><td>NTs do Portal Nacional</td></tr>
+<tr><td>Legislação da UF</td><td>Transforma em obrigação local o que o Ajuste deixa aos Estados: prazos alternativos, obrigatoriedade, penalidades.</td><td>RICMS, instruções normativas</td></tr>
+</table></div>
+<p>Uma regra de ouro para leitura de prova: quando o enunciado fala "de acordo com o Ajuste", responda pelo Ajuste. Se disser "segundo a legislação do Estado X", o prazo ou a exigência pode ser diferente. Muita questão só testa se você sabe qual das duas camadas está em jogo.</p>
+
+<h3>Qual arquivo é de quê</h3>
+<div class="vs dois">
+<div><h4>Documentos eletrônicos (DF-e)</h4><p>NF-e (mod. 55), NFC-e (mod. 65), CT-e (mod. 57), MDF-e (mod. 58). Formato <strong>XML</strong>. Existem para documentar cada operação; só valem depois de autorizados.</p></div>
+<div><h4>Escrituração (EFD)</h4><p>Um arquivo <strong>.txt</strong> por estabelecimento e por mês. Existe para registrar e apurar. A recepção não homologa o que está dentro dele (lição 2.4).</p></div>
+</div>
+
+=== caso
+<p>A Distribuidora Exemplo (SE) vende R$ 50 mil de mercadorias a uma loja na Bahia, que contrata uma transportadora para levar a carga. Que documentos existem, quem os emite e quem os recebe?</p>
+<div class="res">
+<ol>
+<li>A Distribuidora emite a <strong>NF-e</strong>. Quem autoriza é a SEFAZ de <strong>Sergipe</strong> (UF do emitente), que repassa a nota à RFB e, por ser operação interestadual, à SEFAZ da <strong>Bahia</strong> (UF de destino).</li>
+<li>A transportadora emite o <strong>CT-e</strong>, autorizado, em regra, pela SEFAZ da UF onde a prestação começa (aqui, Sergipe). O CT-e referencia a chave da NF-e.</li>
+<li>Para a viagem interestadual, a transportadora emite o <strong>MDF-e</strong> com a lista dos documentos transportados (a NF-e e o CT-e). O MDF-e é o que a fiscalização de trânsito consulta primeiro.</li>
+<li>A loja, ao receber, pode registrar a <strong>Confirmação da Operação</strong> (evento da NF-e). O transportador, quando entrega, pode ter o <strong>Comprovante de Entrega</strong> registrado.</li>
+<li>No mês seguinte, a Distribuidora escritura a saída (<code>C100</code> com <code>IND_OPER</code>=1), a loja escritura a entrada, e a transportadora escritura o CT-e (no Bloco D da EFD de quem for contribuinte de ICMS obrigado). Cada EFD é recebida no SPED e retransmitida às UFs.</li>
+</ol>
+<p>Se alguém no meio do caminho "não existe" (um CT-e sem NF-e correspondente, uma entrada na EFD sem XML autorizado), é exatamente isso que o fisco cruza.</p>
+</div>
+
+=== armadilhas
+- <strong>"A UF de destino autoriza a nota."</strong> Quem autoriza é a UF do <em>emitente</em> (ou o ambiente de contingência). A de destino <em>recebe</em> a nota depois.
+- <strong>Ajuste x MOC.</strong> O leiaute está no manual; o efeito jurídico (validade, idoneidade, prazos) está no Ajuste. Quem lê "o MOC define que a NF-e vale…" erra a camada.
+- <strong>EFD é documento fiscal?</strong> Não: é escrituração. Documentos são NF-e, CT-e etc.
+- <strong>RFB x UF.</strong> A RFB administra o ambiente nacional do SPED; a fiscalização do ICMS é da UF.
+
+=== bancas
+- Provas de auditoria fiscal tendem a misturar DF-e e EFD no mesmo enunciado: o item descreve uma etapa do fluxo (emissão, autorização, escrituração) e pergunta quem pratica o ato ou onde a informação fica.
+- Em Certo/Errado, a troca de agente (emitente por destinatário, UF de origem por UF de destino, RFB por Estado) é a forma mais comum de fabricar a versão errada.
+- Itens que citam o Ajuste e, no meio da frase, usam uma regra do manual ou da legislação estadual como se fosse do Ajuste.
+
+=== auditor
+Antes de cruzar qualquer base, desenhe o fluxo daquela operação: quais documentos deveriam existir, quem os emitiria, em que ordem e em que EFD cada um aparece. A auditoria é a procura pelos pontos do desenho que não têm correspondente.
+
+=== base
+- Ajuste SINIEF 07/05 (NF-e e DANFE), 09/07 (CT-e e DACTE), 21/10 (MDF-e e DAMDFE), 02/09 (EFD), 19/16 (NFC-e)
+- Atos COTEPE que aprovam os manuais técnicos (MOC e Guia Prático)
+- Portais nacionais da NF-e, CT-e e MDF-e e portal do SPED
+
+=== dominio
+- Sei descrever o caminho de uma NF-e da emissão à EFD, dizendo quem pratica cada ato.
+- Sei diferenciar Ajuste SINIEF, manual técnico (MOC/Guia), Nota Técnica e legislação estadual.
+- Sei dizer quais documentos acompanham uma venda interestadual com transporte contratado.
+- Sei distinguir documento fiscal eletrônico de escrituração.

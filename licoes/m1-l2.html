@@ -4,43 +4,68 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>1.2 A EFD ICMS/IPI dentro do SPED</title>
+<title>1.2 Requisitos de emissão: leiaute, numeração, série, assinatura e campos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m1-l2">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 1</span>Sistema Público de Escrituração Digital</div>
-  <div class="cell"><span>Lição</span>1.2</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 02/2009</div>
-</div>
-<h1>A EFD ICMS/IPI dentro do SPED</h1>
-<p class="obj">Saber o que a EFD substitui, quem está obrigado, como o arquivo é gerado e quando pode ser retificado.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 1</span>NF-e e DANFE — Ajuste SINIEF 07/05</div><div class="cell"><span>Lição</span>1.2</div><div class="cell"><span>Tempo</span>25 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 07/05, cláusula 3ª</div></div>
+<h1>Requisitos de emissão: leiaute, numeração, série, assinatura e campos</h1>
+<p class="obj">Listar o que a norma exige para que um arquivo seja uma NF-e (formato, numeração, chave, assinatura, identificação de mercadorias e partes) e separar o que é regra do Ajuste do que é detalhe do MOC.</p>
 <div class="content">
-<p>A Escrituração Fiscal Digital ICMS/IPI é disciplinada pelo <strong>Ajuste SINIEF 02/2009</strong>. O leiaute do arquivo está no <strong>Ato COTEPE/ICMS 44/2018</strong> (e alterações) e o detalhamento de preenchimento, no <strong>Guia Prático da EFD ICMS/IPI</strong> — que, nesta trilha, estudamos na versão 3.2.2.</p>
-<h3>O que ela substitui</h3>
-<p>A EFD é composta pela totalidade das informações necessárias à apuração do ICMS e do IPI e substitui a escrituração e impressão dos livros Registro de Entradas, Registro de Saídas, Registro de Inventário, Registro de Apuração do IPI, Registro de Apuração do ICMS, o documento CIAP e o Livro de Controle da Produção e do Estoque.</p>
-<h3>Características do arquivo</h3>
+<p>A cláusula 3ª é uma lista de requisitos que o arquivo precisa cumprir. Em vez de decorá-la como lista, agrupe em cinco perguntas.</p>
+
+<h3>1. Em que forma?</h3>
 <ul>
-<li>Arquivo digital em texto, com registros agrupados em blocos, gerado pelo contribuinte e submetido ao <strong>PVA</strong> (Programa Validador e Assinador).</li>
-<li>Assinatura com certificado ICP-Brasil e transmissão ao ambiente SPED, que emite recibo.</li>
-<li>EFD distinta para cada estabelecimento — a centralização só existe onde a legislação da UF permitir.</li>
-<li>Periodicidade mensal; o prazo de entrega é fixado conforme o Ajuste e a legislação de cada UF.</li>
+<li><strong>Leiaute</strong> estabelecido no <strong>MOC</strong> (Manual de Orientação do Contribuinte), aprovado por Ato COTEPE.</li>
+<li><strong>Padrão XML</strong>: nada de CSV, TXT ou PDF como arquivo da NF-e.</li>
+<li>Gerada por <strong>software desenvolvido ou adquirido pelo contribuinte</strong>. A emissão por sistema fornecido pela administração é o caso excepcional da NF-e avulsa.</li>
 </ul>
-<h3>Retificação</h3>
-<p>O Ajuste trata da retificação em cláusula própria: há prazos em que ela independe de autorização do fisco, e fora deles exige autorização. A retificação não produz efeitos para período que esteja sob ação fiscal. Esse ponto é central para o auditor: um arquivo retificado após o início do procedimento não "apaga" a infração.</p>
+
+<h3>2. Como é numerada?</h3>
+<ul>
+<li><strong>Sequencial de 1 a 999.999.999</strong>, por <strong>estabelecimento</strong> e por <strong>série</strong>, e reiniciada ao atingir o limite.</li>
+<li><strong>Série</strong>: algarismos arábicos em ordem crescente; a série única é representada pelo número <strong>zero</strong>; <strong>subsérie é vedada</strong>.</li>
+<li>A UF <strong>pode restringir</strong> a quantidade de séries. O contribuinte não escolhe livremente.</li>
+</ul>
+<p>Se a sequência quebrar (um número pulado), a solução é a inutilização (lição 1.7).</p>
+
+<h3>3. Como se identifica?</h3>
+<p>Pela <strong>chave de acesso</strong> (lição 0.2): código numérico <em>gerado pelo emitente</em>, CNPJ/CPF do emitente, número e série da NF-e (mais UF, mês, modelo, forma de emissão e DV). Não existe "código numérico do receptor".</p>
+
+<h3>4. Quem garante a autoria?</h3>
+<p>Assinatura digital do <strong>emitente</strong>, com certificado emitido por entidade credenciada pela <strong>ICP-Brasil</strong> (e não "credenciada pela administração tributária"), contendo o CNPJ ou CPF de qualquer dos estabelecimentos do contribuinte. Serve para garantir a <strong>autoria</strong> e a integridade do documento digital.</p>
+
+<h3>5. Que informações obrigatórias o fisco pede?</h3>
+<div class="tbl"><table>
+<tr><th>Informação</th><th>Ideia</th><th>Detalhe que costuma cair</th></tr>
+<tr><td>NCM</td><td>classificação da mercadoria na Nomenclatura Comum do Mercosul</td><td>obrigatória, em especial nas operações de estabelecimento industrial ou equiparado; é <em>classificação</em>, não identificação interna (para isso há <code>cProd</code>, de livre escolha do emitente)</td></tr>
+<tr><td>CEST</td><td>Código Especificador da Substituição Tributária (7 dígitos)</td><td>obrigatório para mercadorias listadas em convênio específico, <strong>mesmo que a operação não esteja sujeita</strong> à substituição ou à antecipação</td></tr>
+<tr><td>GTIN</td><td>código de barras do produto</td><td>validado no <strong>Cadastro Centralizado de GTIN</strong>, hospedado na SEFAZ Virtual do RS</td></tr>
+<tr><td>CRT</td><td>código do regime tributário do emitente</td><td>diz se é Simples, regime normal etc.</td></tr>
+<tr><td>Intermediador</td><td>CNPJ do agente que intermediou a venda</td><td>quando a transação ocorre em ambiente virtual ou presencial com intermediador</td></tr>
+<tr><td>Local de entrega/retirada</td><td>endereço diferente do destinatário</td><td>só se preenche quando <strong>for diferente</strong>; se for o mesmo endereço, os grupos não são preenchidos</td></tr>
+</table></div>
+<p>O <strong>MEI</strong>, em regra, é dispensado de informar GTIN, CEST e NCM: seria desproporcional exigir o mesmo do microempreendedor e da indústria.</p>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Antes de qualquer cruzamento, levante o histórico de entregas: quais períodos foram transmitidos, quais foram retificados e quando. Uma sequência de retificações pouco antes da intimação é, por si só, um sinal a observar.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 02/2009 (EFD ICMS/IPI) — incluindo a cláusula sobre retificação</li><li>Ato COTEPE/ICMS 44/2018 (leiaute)</li><li>Guia Prático da EFD ICMS/IPI v3.2.2 — Capítulo I (Introdução) e Capítulo II (Regras gerais)</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Cite quatro livros substituídos pela EFD ICMS/IPI.</summary><p>Registro de Entradas, Registro de Saídas, Registro de Inventário, Registro de Apuração do ICMS (também Apuração do IPI, CIAP e Controle da Produção e do Estoque).</p></details><details class="q"><summary><span class="qn">2</span>Onde está o leiaute do arquivo e onde está a orientação de preenchimento?</summary><p>Leiaute: Ato COTEPE/ICMS 44/2018. Orientação: Guia Prático da EFD ICMS/IPI.</p></details><details class="q"><summary><span class="qn">3</span>Uma retificação transmitida durante a fiscalização regulariza o período?</summary><p>Não. O Ajuste SINIEF 02/2009 restringe a retificação e ela não produz efeitos para período sob ação fiscal.</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>Uma distribuidora de ração pretende emitir a série 1 da NF-e para o depósito A e para o depósito B usando uma única contagem de números, "para facilitar". Também quer criar a subsérie 1-A para vendas pela internet, e colocar no lugar do CNPJ do certificado digital o do sócio. Aponte o que a norma impede.</p>
+<div class="res">
+<p><strong>Contagem única.</strong> A numeração é por <strong>estabelecimento e por série</strong>. A e B têm sequências independentes, ainda que usem a mesma série. A chave inclui o CNPJ do emitente, de modo que dois estabelecimentos nunca colidem na chave.</p>
+<p><strong>Subsérie.</strong> Vedada. O que a empresa pode fazer, se a UF permitir, é usar a série 2 para a internet. A UF pode restringir a quantidade de séries.</p>
+<p><strong>Certificado do sócio.</strong> A assinatura precisa conter o CNPJ ou CPF de <em>qualquer dos estabelecimentos do contribuinte</em>. O certificado de pessoa física do sócio, com o CPF dele, não satisfaz. A NF-e seria rejeitada na análise de autoria (lição 1.3).</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>Código numérico "gerado pelo receptor"</strong>: quem gera é o emitente.</li><li><strong>Certificação "pela administração tributária"</strong>: a certificação é ICP-Brasil.</li><li><strong>Software "disponibilizado pela administração"</strong> como regra: é a exceção da avulsa. Regra: desenvolvido ou adquirido pelo contribuinte.</li><li><strong>"O Fisco não pode restringir séries."</strong> Pode.</li><li><strong>Subséries.</strong> Vedadas; série única é o zero.</li><li><strong>Local de entrega igual ao do destinatário.</strong> A pegadinha é dizer que deve ser preenchido e constar no DANFE. Não deve.</li><li><strong>CEST só em operação sujeita a ST.</strong> A norma o exige para as mercadorias listadas, independentemente de a operação estar sujeita.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Itens que reproduzem a cláusula e trocam um detalhe técnico: limite da numeração (999.999.999), forma da série única, quem gera o código numérico, quem certifica a assinatura.</li><li>Pedem para marcar como correto o item que lista corretamente os requisitos; os distratores trocam XML por outro formato ou "receptor" por "emitente".</li><li>Em estilo analítico (afirmativas I, II, III), aparecem NCM, CEST e GTIN com a regra do MEI ou com o cadastro centralizado.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>Os requisitos de emissão viram regras de crítica automática no ambiente de autorização: um número duplicado ou uma assinatura inválida nem chega a virar documento. Para o auditor, o interesse está no que passa na crítica e ainda assim é irregular: NCM errada, CEST ausente, local de entrega que esconde o destino real da mercadoria.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 07/05, cláusula terceira: leiaute no MOC, XML, numeração, série, código numérico, assinatura digital, NCM, CEST, GTIN, CRT, intermediador</li><li>MOC NF-e: regras de validação de numeração, série e campos obrigatórios</li><li>Cadastro Centralizado de GTIN (CCG), mantido na SEFAZ Virtual do RS</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei reproduzir os limites da numeração (1 a 999.999.999) e as regras de série (zero, sem subsérie, UF pode restringir).</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei dizer quem gera o código numérico e quem certifica a assinatura.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei diferenciar NCM, CEST e GTIN e dizer quando cada um é exigido.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei o que fazer com os grupos de local de entrega/retirada quando o endereço coincide com o do destinatário.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m1-l2">Marcar lição como concluída</button>
-<nav class="pager"><a href="m1-l1.html" class="prev"><small>Anterior</small>1.1 O que é o SPED e por que ele existe</a><a href="m1-l3.html" class="next"><small>Próxima</small>1.3 Documentos fiscais eletrônicos: o modelo nacional</a></nav>
+<nav class="pager"><a href="m1-l1.html" class="prev"><small>Anterior</small>1.1 O que é a NF-e, quem pode usá-la e o credenciamento</a><a href="m1-l3.html" class="next"><small>Próxima</small>1.3 Transmissão e autorização de uso: rejeição e concessão</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>

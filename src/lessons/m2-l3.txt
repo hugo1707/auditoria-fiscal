@@ -1,0 +1,68 @@
+title: Conteúdo, perfil e estabelecimentos: o que entra em cada arquivo
+min: 25
+norma: Ajuste SINIEF 02/09, cláusulas 4ª a 7ª
+obj: Dizer o que o arquivo precisa conter, sob qual enfoque, como o perfil é atribuído e quantos arquivos o contribuinte entrega, e por quanto tempo os guarda.
+
+=== content
+<h3>A totalidade das informações</h3>
+<p>A EFD é composta pela <strong>totalidade das informações</strong> necessárias à apuração do período. Isso inclui, sem exceção, a <strong>descrição dos itens</strong> de mercadorias, produtos e serviços (o cadastro <code>0200</code> que você viu na lição 0.3). Um arquivo que traz o documento mas não a descrição do que foi movimentado está incompleto.</p>
+<p>Duas regras de conteúdo que aparecem juntas:</p>
+<ul>
+<li><strong>Enfoque do declarante.</strong> As informações são prestadas sob o enfoque <em>do declarante</em> (o contribuinte que escritura), e não sob o enfoque do fisco. Por isso a mesma NF-e é saída na EFD do vendedor e entrada na EFD do comprador.</li>
+<li><strong>Exceções à tributação devem aparecer.</strong> Qualquer situação de exceção na tributação do ICMS ou do IPI, como <strong>isenção, imunidade, não incidência, diferimento ou suspensão</strong> do recolhimento, deve ser informada no arquivo, <strong>indicando-se o respectivo dispositivo legal</strong>. Quem escritura uma saída sem imposto precisa dizer <em>por quê</em>.</li>
+</ul>
+
+<h3>Perfil do estabelecimento</h3>
+<p>Estabelecimentos podem ter <strong>perfis diferentes</strong> para efeito do leiaute (A, B ou C): o perfil define a profundidade das informações exigidas. Quem atribui o perfil é a <strong>administração tributária da UF</strong> onde o estabelecimento está localizado. Se a UF <strong>não atribuir</strong> perfil, o contribuinte deve obedecer ao leiaute do <strong>perfil "A"</strong>, o mais completo. A atribuição não cabe à Receita Federal.</p>
+<p>A razão do "A" como padrão: na dúvida, o contribuinte informa mais, e não menos.</p>
+
+<h3>Um arquivo por estabelecimento</h3>
+<p>Em regra, o contribuinte com mais de um estabelecimento (filial, sucursal, agência, depósito, fábrica…) entrega <strong>um arquivo individualizado por estabelecimento</strong>. Isso vale <em>mesmo que</em> a apuração dos impostos ou a escrituração contábil seja centralizada: centralizar a contabilidade não centraliza a EFD.</p>
+<p>A exceção é a <strong>inscrição centralizada</strong> prevista em Convênio, Protocolo ou Ajuste: nesse caso as informações dos estabelecimentos da mesma UF podem ser prestadas de forma centralizada.</p>
+<div class="tbl"><table>
+<tr><th>Situação</th><th>Arquivos</th></tr>
+<tr><td>Empresa com matriz e duas filiais, cada uma inscrita no ICMS; apuração e contabilidade centralizadas</td><td>3 arquivos (um por estabelecimento)</td></tr>
+<tr><td>Empresa com matriz e duas filiais com <strong>inscrição centralizada</strong> prevista em norma</td><td>informações podem ser prestadas de forma centralizada, nos termos da norma</td></tr>
+</table></div>
+
+<h3>Guarda</h3>
+<p>O contribuinte deve armazenar o arquivo digital da EFD pelo <strong>mesmo prazo estabelecido na legislação para a guarda dos documentos fiscais</strong> (o prazo decadencial). A EFD não tem prazo de guarda próprio e menor.</p>
+
+<h3>Obediência ao leiaute</h3>
+<p>O arquivo anexado a um processo de fiscalização <strong>respeita o leiaute</strong> definido em Ato COTEPE. Não há "características próprias de cada empresa" que justifiquem outra estrutura.</p>
+
+=== caso
+<p>A Rede Sol tem uma matriz em Aracaju (apuração centralizada, contabilidade centralizada) e duas filiais em Itabaiana e Lagarto, todas inscritas no ICMS de Sergipe. O contador propõe entregar um único arquivo "consolidado" porque a apuração é única. A SEFAZ ainda não atribuiu perfil a nenhum estabelecimento. O que está errado e o que a Rede Sol deve usar?</p>
+<div class="res">
+<p><strong>Um arquivo só?</strong> Não. Em regra, um arquivo por estabelecimento, <em>ainda que</em> a apuração e a contabilidade sejam centralizadas. A centralização da contabilidade não é a exceção; a exceção é a inscrição centralizada prevista em norma, e não consta do enunciado.</p>
+<p><strong>Perfil.</strong> Como a UF não atribuiu, aplica-se o perfil <strong>A</strong>.</p>
+<p><strong>No conteúdo.</strong> Cada arquivo traz a totalidade das informações do estabelecimento, incluindo descrição dos itens e, para as saídas isentas (ex.: uma operação com isenção por convênio), o <strong>dispositivo legal</strong> da isenção.</p>
+</div>
+
+=== armadilhas
+- <strong>"Informações sob o enfoque do fisco."</strong> É do declarante.
+- <strong>"A totalidade não inclui a descrição dos itens."</strong> Inclui.
+- <strong>"Compete à RFB atribuir o perfil."</strong> Compete à UF.
+- <strong>"Sem atribuição, perfil B (ou C, K, G)."</strong> O padrão é o <strong>A</strong>. Perfil "K" ou "G" nem existe como perfil.
+- <strong>Contabilidade centralizada → arquivo único.</strong> Não: um por estabelecimento. A exceção é a inscrição centralizada.
+- <strong>Exceções à tributação opcionais.</strong> São obrigatórias, com o dispositivo legal.
+- <strong>Guarda "por menos tempo".</strong> Mesmo prazo dos documentos fiscais.
+
+=== bancas
+- Itens de múltipla escolha com várias frases curtas: enfoque do fisco, descrição dos itens fora, centralização obrigatória em arquivo único. Todas erradas, e a única certa é a das exceções com dispositivo legal.
+- Em Certo/Errado o item é longo e cobra duas ideias (regra e exceção): a regra do arquivo individualizado e a exceção da inscrição centralizada. Vale ler o item como duas metades.
+- Questão curta de perfil: "quando a UF não atribui, qual o perfil?" com letras A, B, C, K e G.
+
+=== auditor
+Perfil e exceções são o terreno da auditoria de conteúdo. Saída sem imposto sem dispositivo legal na escrituração é um indício forte: ou a exceção não existe, ou o contribuinte não sabe justificar. E arquivo "consolidado" quando era devido um por estabelecimento é omissão de entrega de todos os estabelecimentos menos um.
+
+=== base
+- Ajuste SINIEF 02/09, cláusulas quarta a sétima: totalidade das informações, enfoque do declarante, exceções à tributação, perfil, arquivo por estabelecimento, guarda
+- Ato COTEPE que aprova o leiaute e define os perfis (A, B e C)
+- Legislação estadual sobre atribuição de perfil
+
+=== dominio
+- Sei dizer o que a "totalidade das informações" inclui e sob qual enfoque são prestadas.
+- Sei como as situações de exceção à tributação devem ser informadas.
+- Sei quem atribui o perfil e qual vale na falta de atribuição.
+- Sei a regra do arquivo por estabelecimento, sua exceção e o prazo de guarda.

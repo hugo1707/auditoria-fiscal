@@ -1,0 +1,78 @@
+title: O que é a NF-e, quem pode usá-la e o credenciamento
+min: 25
+norma: Ajuste SINIEF 07/05, cláusulas 1ª e 2ª
+obj: Definir NF-e, explicar de onde vem sua validade jurídica e decidir quem pode emiti-la, em substituição a quê, e com que credenciamento.
+
+=== content
+<h3>Conceito e validade jurídica</h3>
+<p>O Ajuste institui a <strong>Nota Fiscal Eletrônica (NF-e), modelo 55</strong>, e o seu documento auxiliar, o DANFE. O conceito tem três ideias: documento <em>emitido e armazenado eletronicamente</em>, de <em>existência apenas digital</em>, com o intuito de <em>documentar operações e prestações</em>.</p>
+<p>A validade jurídica vem de <strong>duas coisas somadas</strong>, e nenhuma das duas sozinha basta:</p>
+<ol>
+<li>a <strong>assinatura eletrônica qualificada</strong> do emitente (certificado ICP-Brasil); e</li>
+<li>a <strong>autorização de uso</strong> concedida pela administração tributária da <strong>unidade federada do contribuinte</strong>, <strong>antes</strong> da ocorrência do fato gerador.</li>
+</ol>
+<p>Pense no que cada uma garante. A assinatura prova <em>quem emitiu</em> e que o conteúdo não mudou. A autorização prova que o fisco <em>aceitou</em> o documento como regular na forma. Sem a primeira, qualquer um poderia emitir em nome de outro; sem a segunda, o emitente decidiria sozinho que seu documento vale.</p>
+
+<h3>Quem pode usar e no lugar de quê</h3>
+<p>A NF-e pode ser utilizada pelos contribuintes do <strong>IPI ou do ICMS</strong>. Não é um documento de ISS (serviço municipal tem sua nota própria). Ela pode substituir:</p>
+<ul>
+<li>a Nota Fiscal modelo 1 ou 1-A; e</li>
+<li>a Nota Fiscal de Produtor, modelo 4 (por contribuintes <strong>inscritos</strong>; produtor sem inscrição não está no alcance).</li>
+</ul>
+<p>Cuidado com os números: <strong>55 é NF-e</strong> (operações em geral); <strong>65 é a NFC-e</strong>, a nota de <em>consumidor</em> do varejo, regida por outro Ajuste (19/16). O modelo 65 não substitui o 1/1-A.</p>
+
+<div class="vs dois">
+<div><h4>NF-e (modelo 55)</h4><p>Emitida pelo contribuinte, com software próprio ou adquirido, certificado digital do emitente e autorização da SEFAZ.</p></div>
+<div><h4>NF-e avulsa</h4><p>Emitida por <em>sistema disponibilizado pela administração tributária</em> e com a assinatura digital <strong>da própria administração</strong>. Serve a quem não está credenciado a emitir. Não é "NFC-e".</p></div>
+</div>
+
+<h3>Credenciamento</h3>
+<p>Para emitir NF-e, o contribuinte precisa estar <strong>previamente credenciado</strong> na UF em cujo cadastro do ICMS está inscrito. O credenciamento pode ser:</p>
+<ul>
+<li><strong>voluntário</strong>: o contribuinte pede; ou</li>
+<li><strong>de ofício</strong>: a administração credencia por iniciativa própria.</li>
+</ul>
+<p>Quem está credenciado, <em>em regra</em>, não pode mais emitir NF modelo 1/1-A nem NF de Produtor modelo 4, salvo se a legislação estadual permitir. O credenciamento vale ainda que o contribuinte obrigado não use, até então, sistema eletrônico de processamento de dados: a obrigação o alcança do mesmo jeito.</p>
+
+<h3>Obrigatoriedade</h3>
+<p>Quem torna obrigatório o uso é cada UF, por <strong>Protocolo ICMS</strong>, em geral por atividade econômica (CNAE) e por tipo de destinatário. O texto do Ajuste prevê que o Protocolo é <strong>dispensado</strong> na hipótese de contribuinte inscrito no cadastro do ICMS de <strong>uma única</strong> UF e a partir de 1º/12/2010 (releia a redação consolidada, porque é um trecho muito cobrado). O ponto de prova é o instrumento: <em>Protocolo ICMS</em>, e não lei complementar, nem decreto federal.</p>
+
+=== caso
+<p>Três consultas chegam à SEFAZ no mesmo dia. Responda cada uma e diga em qual dispositivo se apoia.</p>
+<ol>
+<li><em>Um produtor rural com inscrição estadual quer emitir NF-e no lugar da Nota de Produtor.</em></li>
+<li><em>Uma contabilista autônoma, só prestadora de serviço (ISS), quer emitir NF-e modelo 55.</em></li>
+<li><em>Uma indústria foi credenciada "de ofício" e alega que nunca pediu. Pode recusar?</em></li>
+</ol>
+<div class="res">
+<p><strong>1.</strong> Pode. A NF-e substitui a nota modelo 4, e o produtor é contribuinte inscrito (cláusula 1ª).</p>
+<p><strong>2.</strong> Não por esse caminho. A NF-e é utilizada por contribuintes de IPI ou ICMS; o serviço sujeito só ao ISS é documentado pela nota municipal. O que determina é o <em>imposto</em> do contribuinte.</p>
+<p><strong>3.</strong> Não pode recusar a validade do ato: o credenciamento pode ser voluntário <em>ou de ofício</em> (cláusula 2ª). Uma vez credenciada, a indústria deve emitir a NF-e e, em regra, deixa de poder usar o modelo 1/1-A.</p>
+</div>
+
+=== armadilhas
+- <strong>Modelo 55 x 65 trocados.</strong> "NF-e modelo 65 em substituição à nota modelo 1/1-A" é a clássica versão errada. Modelo 65 é a NFC-e.
+- <strong>"Qualquer contribuinte" pode trocar a Nota de Produtor.</strong> Exige inscrição.
+- <strong>Quem autoriza:</strong> a UF do contribuinte, não uma "administração tributária nacional".
+- <strong>NF-e do ISS.</strong> Contribuinte de ISS não usa o modelo 55 pelo Ajuste; fala-se de IPI ou ICMS.
+- <strong>NF-e avulsa chamada de NFC-e.</strong> A emitida pelo sistema do fisco, com assinatura do fisco, é a avulsa.
+- <strong>Credenciamento só voluntário</strong> ou "só de ofício": são as duas formas.
+
+=== bancas
+- Estilo Certo/Errado: copiam a definição inteira e trocam <em>um</em> elemento (modelo, imposto, UF autorizadora, momento da autorização: "após" o fato gerador em vez de "antes").
+- Estilo alternativas longas: três ou quatro afirmações plausíveis, uma delas atribuindo a obrigatoriedade a lei complementar, a uma resolução nacional ou a uma "administração tributária nacional".
+- Estilo analítico (afirmativas I, II, III): combinam a lista de documentos substituídos com a regra do Protocolo ICMS; exigem lembrar a data e o critério da dispensa.
+
+=== auditor
+Credenciamento é o primeiro filtro de legitimidade de um emitente. Em auditoria, uma NF-e de contribuinte descredenciado ou inapto não deveria sequer ter sido autorizada; quando aparece na base, a pergunta passa a ser <em>por que</em> (sistema, brecha de prazo, UF que não faz a crítica).
+
+=== base
+- Ajuste SINIEF 07/05, cláusula primeira (instituição, conceito, substituição de documentos, modelo 55, NF-e avulsa)
+- Ajuste SINIEF 07/05, cláusula segunda (credenciamento voluntário ou de ofício; obrigatoriedade por Protocolo ICMS)
+- Ajuste SINIEF 19/16 (NFC-e, modelo 65): apenas para não confundir os modelos
+
+=== dominio
+- Sei explicar as duas condições da validade jurídica da NF-e e o que cada uma garante.
+- Sei dizer quais documentos a NF-e substitui e quais ficam fora (modelo 65, ISS).
+- Sei diferenciar NF-e, NFC-e e NF-e avulsa.
+- Sei descrever o credenciamento (prévio; voluntário ou de ofício) e o instrumento da obrigatoriedade (Protocolo ICMS).

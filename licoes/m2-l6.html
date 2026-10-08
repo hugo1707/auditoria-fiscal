@@ -4,50 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16323F">
-<title>2.6 Contingência e particularidades da NFC-e</title>
+<title>2.6 Recepção no SPED, compartilhamento entre fiscos e Bloco K</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>">
 </head>
 <body class="">
-<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · DF-e e EFD</a><nav><a href="../plano.html">Cronograma</a><a href="../fontes.html">Fontes</a></nav></header>
+<header class="top"><a href="../index.html" class="brand">Auditoria Fiscal · NF-e, EFD e CT-e</a><nav><a href="../plano.html">Cronograma</a><a href="../bancas.html">Bancas</a><a href="../fontes.html">Fontes</a></nav></header>
 <main>
-
 <article class="lesson" data-id="m2-l6">
-<div class="form">
-  <div class="cell c-mod"><span>Módulo 2</span>NF-e e NFC-e (MOC 7.0)</div>
-  <div class="cell"><span>Lição</span>2.6</div>
-  <div class="cell"><span>Tempo</span>20 min</div>
-  <div class="cell c-norma"><span>Norma principal</span>MOC 7.0 e Ajuste SINIEF 19/2016</div>
-</div>
-<h1>Contingência e particularidades da NFC-e</h1>
-<p class="obj">Conhecer as formas de emissão em contingência e as regras que distinguem a NFC-e da NF-e.</p>
+<div class="form"><div class="cell c-mod"><span>Módulo 2</span>EFD ICMS/IPI — Ajuste SINIEF 02/09</div><div class="cell"><span>Lição</span>2.6</div><div class="cell"><span>Tempo</span>30 min</div><div class="cell c-norma"><span>Norma principal</span>Ajuste SINIEF 02/09, cláusulas 15ª a 17ª (e dispositivos do Bloco K)</div></div>
+<h1>Recepção no SPED, compartilhamento entre fiscos e Bloco K</h1>
+<p class="obj">Explicar onde a EFD é recebida, como as UFs acessam as informações umas das outras, em que prazo e sob que condições, e situar o Bloco K na estrutura.</p>
 <div class="content">
-<h3>Formas de emissão (tpEmis)</h3>
+<h3>Quem recebe a EFD</h3>
+<p>A recepção do arquivo é <strong>centralizada no ambiente nacional do SPED</strong>, que é <strong>administrado pela Receita Federal do Brasil</strong> (e não pelas UFs). Os arquivos recebidos são <strong>imediatamente retransmitidos</strong> à unidade federada em que está inscrito o estabelecimento do contribuinte. Não existe prazo de 24 horas para isso; a norma diz imediatamente.</p>
+<p>Há também o caminho inverso, autorizado: observados os padrões do ambiente nacional, a UF pode <strong>recepcionar o arquivo diretamente em suas bases de dados</strong> e então retransmiti-lo, também de imediato, ao ambiente nacional. A regra geral do SPED continua valendo para os casos em que o arquivo não tenha sido retransmitido das bases das administrações.</p>
 <div class="tbl"><table>
-<tr><th>tpEmis</th><th>Forma</th></tr>
-<tr><td>1</td><td>Normal</td></tr>
-<tr><td>2</td><td>Contingência FS-IA (formulário de segurança)</td></tr>
-<tr><td>4</td><td>EPEC — evento prévio de emissão em contingência</td></tr>
-<tr><td>5</td><td>Contingência FS-DA</td></tr>
-<tr><td>6</td><td>SVC-AN (SEFAZ Virtual de Contingência Ambiente Nacional)</td></tr>
-<tr><td>7</td><td>SVC-RS</td></tr>
-<tr><td>9</td><td>Contingência off-line da NFC-e</td></tr>
+<tr><th>Caminho</th><th>Primeira parada</th><th>Segunda parada</th></tr>
+<tr><td>Regra</td><td>ambiente nacional do SPED (RFB)</td><td>UF do estabelecimento</td></tr>
+<tr><td>Faculdade da UF</td><td>base de dados da UF</td><td>ambiente nacional do SPED</td></tr>
 </table></div>
-<p>Nas contingências em que a nota é emitida sem autorização prévia, o XML deve ser transmitido assim que cessar o problema, nos prazos do MOC e da legislação.</p>
-<h3>NFC-e (modelo 65)</h3>
+
+<h3>Compartilhamento entre os fiscos</h3>
+<p>O ponto central é a <strong>troca de informações</strong>:</p>
 <ul>
-<li>Instituída pelo Ajuste SINIEF 19/2016 para operações com <strong>consumidor final</strong>, em regra presenciais ou com entrega em domicílio, e <strong>internas</strong> (idDest=1).</li>
-<li>O DANFE NFC-e traz QR Code gerado com o CSC (Código de Segurança do Contribuinte), permitindo a consulta pelo consumidor.</li>
-<li>A identificação do destinatário é, em regra, opcional, salvo nos casos previstos pela UF (ex.: valores acima de limite, entrega em domicílio).</li>
-<li>Não é documento hábil para operações com contribuinte que vá revender ou para operações interestaduais.</li>
+<li>Independentemente do local de recepção, fica <strong>assegurado o compartilhamento</strong> entre os usuários do SPED das informações das <strong>operações e prestações interestaduais</strong> e da <strong>apuração da substituição tributária interestadual</strong>. Faz sentido: são as informações em que uma UF depende do que a outra escriturou.</li>
+<li>Para as demais informações, o acesso de uma UF a dados de contribuinte de outra UF se faz mediante <strong>requerimento acompanhado da ordem de fiscalização</strong>. A ordem de fiscalização é limitada às informações de <strong>um contribuinte e suas filiais</strong> por requerimento.</li>
+<li>O responsável pelas informações deve atender à solicitação em <strong>10 dias úteis</strong>.</li>
 </ul>
+<p>O desenho protege duas coisas ao mesmo tempo: o sigilo fiscal (acesso só com ordem de fiscalização, limitado a um contribuinte e filiais) e a eficiência do controle (as informações interestaduais ficam abertas por padrão).</p>
+
+<h3>Bloco K: produção e estoque</h3>
+<p>O <strong>Bloco K</strong> substitui o <strong>Registro de Controle da Produção e do Estoque</strong> (livro modelo 3) e atende à indústria e a equiparados. A obrigatoriedade foi <strong>escalonada</strong> por faturamento e por atividade (CNAE), com anos diferentes para cada faixa (lição 2.2). Duas ideias bastam para a prova:</p>
+<ul>
+<li>o Bloco K é o livro modelo 3 na EFD;</li>
+<li>a escrituração <strong>parcial</strong> do Bloco K, no período do cronograma, <strong>não desobriga</strong> o livro modelo 3. Só a escrituração completa o substitui.</li>
+</ul>
+
+<h3>Estrutura da EFD e o Bloco K</h3>
+<p>Releia o mapa de blocos da lição 0.3: o K é um dos blocos de movimento, ao lado de C, D, E, G e H. Para o auditor, a utilidade do K é ligar <em>o que entrou</em> (C100/C170, insumos) ao <em>que saiu</em> (C100/C170, produtos) e ao <em>que ficou</em> (H), fechando o estoque da indústria.</p>
 </div>
-<aside class="auditor"><h2>No olhar do auditor</h2><p>Emissão em contingência recorrente, em dias sem indisponibilidade registrada da SEFAZ, merece atenção: há notas off-line que nunca chegam a ser transmitidas. Compare a sequência numérica da NFC-e com a base autorizada e procure lacunas não inutilizadas.</p></aside>
-<section class="base"><h2>Base normativa</h2><ul><li>MOC NF-e/NFC-e 7.0 — grupo B (tpEmis) e seção de contingência</li><li>Ajuste SINIEF 19/2016 (NFC-e)</li><li>Legislação da UF sobre CSC, QR Code e limites de identificação</li></ul><p class="hint">Abra o normativo na seção indicada e leia o texto original antes de responder à fixação.</p></section>
-<section class="fix"><h2>Fixação</h2><p class="hint">Responda de cabeça e só então toque para conferir.</p><details class="q"><summary><span class="qn">1</span>Qual tpEmis corresponde à contingência off-line da NFC-e?</summary><p>tpEmis = 9.</p></details><details class="q"><summary><span class="qn">2</span>A NFC-e pode acobertar venda interestadual?</summary><p>Não. É destinada a operações internas com consumidor final.</p></details><details class="q"><summary><span class="qn">3</span>Para que serve o CSC?</summary><p>Para gerar o hash do QR Code, garantindo a autenticidade da consulta pelo consumidor.</p></details></section>
+<section class="caso"><h2>Caso resolvido</h2><p>A fiscalização da Bahia, que investiga uma distribuidora baiana, quer saber como a distribuidora sergipana (fornecedora) escriturou a venda de R$ 400 mil que a distribuidora baiana diz nunca ter recebido. Que caminhos a Bahia tem?</p>
+<div class="res">
+<p><strong>Caminho 1: o que já é compartilhado.</strong> Trata-se de operação <strong>interestadual</strong>; o compartilhamento das informações das operações e prestações interestaduais constantes da EFD é <em>assegurado</em> entre os usuários do SPED. A Bahia consulta o que a fornecedora escriturou.</p>
+<p><strong>Caminho 2: informações além do compartilhado.</strong> Se precisar de mais (por exemplo, os livros inteiros da fornecedora), a Bahia faz <strong>requerimento com ordem de fiscalização</strong> limitada à fornecedora e às suas filiais, e a UF de Sergipe tem <strong>10 dias úteis</strong> para atender.</p>
+<p>Em ambos os casos, a informação passa pelo ambiente nacional do SPED, administrado pela RFB, e não por um "convênio entre as UFs" a cada pedido.</p>
+</div></section>
+<section class="armadilhas"><h2>Onde o texto engana</h2><ul><li><strong>"A recepção é centralizada no ambiente nacional administrado pelas UFs."</strong> Administra a RFB.</li><li><strong>"Retransmitidos em até 24 horas."</strong> A norma diz <em>imediatamente</em>.</li><li><strong>"Prazo de 5 dias úteis"</strong> para atender ao compartilhamento: são <strong>10 dias úteis</strong>.</li><li><strong>"O ambiente nacional só recebe os arquivos que a UF não recepcionou diretamente"</strong>: a norma ressalva os casos retransmitidos das bases das UFs.</li><li><strong>Ordem de fiscalização ampla.</strong> É por requerimento e limitada a um contribuinte e filiais.</li><li><strong>Bloco K parcial desobriga o livro 3.</strong> Não: só o completo.</li></ul></section>
+<section class="bancas"><h2>Como as bancas costumam cobrar</h2><ul><li>Os itens de recepção e compartilhamento tendem a vir em pares de Certo/Errado quase idênticos: "administrado pela RFB" / "administrado pelas UFs"; "imediatamente" / "em até 24 horas"; "10 dias úteis" / "5 dias úteis".</li><li>A palavra "exceto" aparece: "o ambiente nacional administrará a recepção geral, exceto nos casos retransmitidos das bases das administrações" é item errado por inverter a ressalva.</li><li>Bloco K: itens que combinam "parcial" e "dispensa do livro modelo 3", ou que trocam o ano de início para as faixas de faturamento.</li></ul><p class="hint">Padrões de formulação, não questões. Veja o <a href="../bancas.html">guia por estilo de banca</a>.</p></section>
+<aside class="auditor"><h2>No olhar do auditor</h2><p>O compartilhamento é o que viabiliza o cruzamento entre UFs: a venda interestadual aparece na escrituração do vendedor e na do comprador, em Estados diferentes, e o SPED os coloca na mesma mesa. Para dados fora do compartilhamento automático, lembre-se de que o pedido formal é de um contribuinte e suas filiais por vez.</p></aside>
+<section class="base"><h2>Base normativa</h2><ul><li>Ajuste SINIEF 02/09, cláusulas décima quinta a décima sétima: recepção no ambiente nacional, retransmissão, recepção pela UF, compartilhamento, ordem de fiscalização e prazo de 10 dias úteis</li><li>Ajuste SINIEF 02/09, cláusula terceira (cronograma do Bloco K) e dispositivos sobre Livro modelo 3</li><li>Guia Prático da EFD ICMS/IPI: Bloco K</li></ul><p class="hint">Confira a redação vigente no texto consolidado: prazos e dispositivos mudam por alteração do Ajuste.</p></section>
+<section class="dominio"><h2>Antes de seguir, você domina?</h2><p class="hint">Marque só o que conseguiria explicar sem olhar. Fica salvo neste navegador.</p><ul><li><label><input type="checkbox" data-check="0"><span>Sei quem administra o ambiente nacional do SPED e como a EFD chega à UF.</span></label></li><li><label><input type="checkbox" data-check="1"><span>Sei o que é compartilhado por padrão e como uma UF obtém o restante.</span></label></li><li><label><input type="checkbox" data-check="2"><span>Sei os limites da ordem de fiscalização e o prazo de resposta.</span></label></li><li><label><input type="checkbox" data-check="3"><span>Sei que o Bloco K substitui o livro modelo 3, e que o parcial não o dispensa.</span></label></li></ul></section>
+<section class="notes"><h2>Suas anotações</h2><textarea id="note" rows="4" placeholder="Dúvidas, macetes, o que errou ao revisar… (salvo neste navegador)"></textarea></section>
 <button class="done-btn" type="button" data-id="m2-l6">Marcar lição como concluída</button>
-<nav class="pager"><a href="m2-l5.html" class="prev"><small>Anterior</small>2.5 Eventos: cancelamento, CC-e, inutilização e manifestação</a><a href="m3-l1.html" class="next"><small>Próxima</small>3.1 CFOP: a natureza da operação</a></nav>
+<nav class="pager"><a href="m2-l5.html" class="prev"><small>Anterior</small>2.5 Prazo de entrega e retificação da EFD</a><a href="m3-l1.html" class="next"><small>Próxima</small>3.1 CT-e: conceito, uso, credenciamento e participantes</a></nav>
 </article>
 </main>
 <script src="../assets/lessons.js"></script>
