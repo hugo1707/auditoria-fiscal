@@ -18,18 +18,19 @@ obj: Explicar quando o contribuinte pode operar em contingência, descrever as t
 
 <h3>Depois que a falha passa</h3>
 <ul>
-<li>Cessados os problemas, o emitente deve <strong>transmitir</strong> à administração as NF-e geradas em contingência. Para SVC e EPEC, o limite é de <strong>168 horas</strong> (7 dias) da emissão da NF-e. Releia no texto consolidado o prazo do FS-DA.</li>
+<li>Cessados os problemas, o emitente deve <strong>transmitir</strong> à administração as NF-e geradas em contingência. Para <strong>EPEC</strong> e <strong>FS-DA</strong>, o limite é de <strong>168 horas</strong> (7 dias) da emissão da NF-e (cláusula 11, § 7º). Provas costumam estender o mesmo prazo à SVC. Há ainda um quarto caso, a NF-e gerada em contingência com autorização posterior, que deve ser transmitida até o <strong>primeiro dia útil subsequente</strong> à emissão (§ 7º-A).</li>
 <li>Se a NF-e enviada por EPEC ou FS-DA for <strong>rejeitada</strong>, o contribuinte gera de novo o arquivo <strong>com a mesma numeração e série</strong>, sana a irregularidade, solicita a autorização, imprime o DANFE da nota autorizada e providencia, junto ao destinatário, a entrega da NF-e autorizada e do novo DANFE.</li>
 <li>O EPEC em si é analisado e pode ser <strong>rejeitado</strong> pelas mesmas famílias de falhas (recepção, autoria, credenciamento, duplicidade, leiaute).</li>
 </ul>
 
 <h3>A NF-e que ficou "pendente" na hora da falha</h3>
-<p>Se a transmissão foi feita <em>antes</em> da contingência e ficou sem retorno, o contribuinte pode ter emitido outra nota para a mesma operação. Quando o retorno vem, três situações:</p>
+<p>Se a transmissão foi feita <em>antes</em> da contingência e ficou sem retorno, o contribuinte pode ter emitido outra nota para a mesma operação. A cláusula 11-A diz o que fazer, conforme o desfecho:</p>
 <ul>
-<li>veio <strong>autorizada</strong> e a operação <strong>não se efetivou</strong>, ou foi <strong>acobertada por outra NF-e emitida em contingência</strong>: o emitente deve solicitar o <strong>cancelamento</strong> — com prazo de <strong>168 horas</strong>, bem maior do que o ordinário;</li>
-<li>a operação aconteceu com a própria nota: nada a fazer;</li>
-<li>a nota <strong>não foi nem autorizada nem negada</strong>: não há documento a cancelar. Cancelamento pressupõe NF-e autorizada; o número sem uso segue a lógica da inutilização (lição 1.7; confira a redação do Ajuste para esse caso).</li>
+<li>a NF-e foi <strong>autorizada</strong> e a operação <strong>não se efetivou</strong>, ou foi <strong>acobertada por outra NF-e emitida em contingência</strong>: o emitente deve solicitar o <strong>cancelamento</strong>, com prazo de <strong>168 horas</strong> (cláusula 12-A), bem maior do que o ordinário;</li>
+<li>a NF-e <strong>não foi autorizada</strong>: não há documento a cancelar, e a numeração dessas notas é tratada por <strong>inutilização</strong> (cláusula 14);</li>
+<li>a operação aconteceu com a própria nota autorizada: nada a fazer.</li>
 </ul>
+<p>Antes de agosto de 2024 o texto falava em NF-e "nem autorizada nem denegada"; a lógica é a mesma, com a denegação fora do quadro.</p>
 
 === caso
 <p>Numa sexta-feira à tarde a SEFAZ de Sergipe sai do ar. Uma indústria precisa despachar 10 caminhões. A empresa tem certificado em dia, não tem formulário de segurança e já enviou as 10 NF-e, sem receber resposta. Qual caminho e que obrigações a seguem?</p>
@@ -44,7 +45,7 @@ obj: Explicar quando o contribuinte pode operar em contingência, descrever as t
 
 === armadilhas
 - <strong>EPEC com "única via".</strong> É no mínimo duas.
-- <strong>"Na SVC ou no EPEC o prazo é de 24 horas."</strong> É 168 horas.
+- <strong>"No EPEC ou no FS-DA o prazo é de 24 horas."</strong> É 168 horas.
 - <strong>Atribuir ao EPEC a autorização "por outra UF/RFB".</strong> Essa é a descrição do SVC.
 - <strong>Momento da emissão no FS-DA:</strong> a impressão do DANFE; no EPEC, a recepção do evento.
 - <strong>Pendente que retorna autorizada e não efetivada:</strong> cancelamento, não inutilização.
@@ -60,7 +61,7 @@ Contingência é terreno fértil para fraude de data e para notas "fantasma". Co
 
 === base
 - Ajuste SINIEF 07/05, cláusula décima primeira: SVC, EPEC, FS-DA; presunção de emissão; condição resolutória; prazos de transmissão; rejeição na contingência
-- Ajuste SINIEF 07/05, cláusula décima segunda-A: cancelamento de NF-e pendente de retorno (168 horas)
+- Ajuste SINIEF 07/05, cláusula décima primeira-A: NF-e pendente de retorno (cancelamento ou inutilização); cláusula décima segunda-A: cancelamento em 168 horas
 - MOC NF-e: tipos de emissão (<code>tpEmis</code>) e contingência
 
 === dominio
